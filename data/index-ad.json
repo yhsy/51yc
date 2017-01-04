@@ -1,0 +1,63 @@
+{
+    "succeed": true,
+    "code": null,
+    "msg": null,
+    "token": null,
+    "value": [
+        {
+            "id": 6,
+            "type": "1",
+            "title": "广告1",
+            "url": "http://www.baidu.com",
+            "mediaId": 1,
+            "background": "http://resource.micropoint99.com/image/ad/2016_10_19_1.jpg",
+            "platformId": 1,
+            "play": true,
+            "sort": 1,
+            "remark": null,
+            "startDate": 1451577600000,
+            "endDate": 1508554629000,
+            "creater": 1,
+            "updater": 1,
+            "createTime": 1476845829000,
+            "updateTime": 1476845829000
+        },
+        {
+            "id": 7,
+            "type": "1",
+            "title": "腾讯",
+            "url": "http://www.qq.com",
+            "mediaId": 1,
+            "background": "https://gss0.bdstatic.com/8r1VfDn-KggZnd_b8IqT0jB-xx1xbK/static/list/img/nis/banner_7e32954.jpg",
+            "platformId": 1,
+            "play": true,
+            "sort": 1,
+            "remark": null,
+            "startDate": 1451577600000,
+            "endDate": 1508554629000,
+            "creater": 1,
+            "updater": 1,
+            "createTime": 1476845829000,
+            "updateTime": 1476845829000
+        },
+        {
+            "id": 8,
+            "type": "1",
+            "title": "阿里巴巴",
+            "url": "http://www.alibaba.com",
+            "mediaId": 1,
+            "background": "http://p1.meituan.net/460.280/deal/debf567b11f8d0d12c9759fd6cef74a3136985.jpg",
+            "platformId": 1,
+            "play": true,
+            "sort": 1,
+            "remark": null,
+            "startDate": 1451577600000,
+            "endDate": 1508554629000,
+            "creater": 1,
+            "updater": 1,
+            "createTime": 1476845829000,
+            "updateTime": 1476845829000
+        }
+    ]
+}
+

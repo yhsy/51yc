@@ -1,0 +1,47 @@
+{
+  "succeed": true,
+  "code": null,
+  "msg": null,
+  "token": null,
+  "value": [
+    {
+      "id": 1,
+      "code": "",
+      "name": "纽约",
+      "imageUrl":"data/images/abroad1.jpg",
+      "level": 3,
+      "sort": 1,
+      "parentId": 2,
+      "creater": 1,
+      "updater": 1,
+      "createTime": 1476854211000,
+      "updateTime": 1476854211000
+    },
+    {
+      "id": 2,
+      "code": "",
+      "name": "洛杉矶",
+      "imageUrl":"data/images/abroad2.jpg",
+      "level": 3,
+      "sort": 1,
+      "parentId": 2,
+      "creater": 1,
+      "updater": 1,
+      "createTime": 1476854211000,
+      "updateTime": 1476854211000
+    },
+    {
+      "id": 3,
+      "code": "",
+      "name": "芝加哥",
+      "imageUrl":"data/images/abroad3.jpg",
+      "level": 3,
+      "sort": 1,
+      "parentId": 2,
+      "creater": 1,
+      "updater": 1,
+      "createTime": 1476854211000,
+      "updateTime": 1476854211000
+    }
+  ]
+}
