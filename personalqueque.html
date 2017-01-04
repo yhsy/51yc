@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html class="g-html2">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心--排队订单</title>
+    <link rel="stylesheet" href="css/libs/m-reset.css">
+    <link rel="stylesheet" href="scss/global.css">
+    <link rel="stylesheet" href="scss/personal.css">
+    
+</head>
+
+<body>
+    <div class="g-hd g-hd-personal-ordered">
+       <a href="personal.html" class="icon-back"></a>
+       <h2>排队订单</h2>
+    </div>
+
+    <div class="g-bd g-bd-personal">	
+		<div class="g-personal3">
+			<ul class="m-tnav f-cb">
+				<li class="act"><a href="javascript:;" id="queue_all">全部</a></li>
+				<li><a href="javascript:;" id="queue_wait">已取号</a></li>
+				<li><a href="javascript:;" id="queue_ok">已就餐</a></li>
+				<li><a href="javascript:;" id="queue_no">已过号</a></li>
+			</ul>
+		</div>
+
+		<div class="g-personal4">
+			<ul class="personal-ordered-list">
+				<li>
+					<h2 class="ordered-tit">顶龙意境粤菜(万象城店)</h2>
+					<div class="ordered-info queue-info">
+						<p>
+							<span class="queue-day">2016-10-21</span>
+							<em class="queue-number">23</em>
+							<em class="u-txt">号</em>
+							<span class="queque-state">已过号</span>
+						</p>
+						<p>
+							<span>我的编号:</span>
+							<em class="queue-desk">C3</em>
+							<span>大桌</span>
+						</p>
+						<p class="p3">
+							<span>就餐人数:</span>
+							<em class="queue_pnumber">4</em>
+							<em>人</em>
+						</p>
+					</div>
+					<div class="ordered-ft">
+						<span>排队</span>
+					</div>
+				</li>
+				<li>
+					<h2 class="ordered-tit">顶龙意境粤菜(万象城店)</h2>
+					<div class="ordered-info queue-info">
+						<p>
+							<span class="queue-day">2016-10-21</span>
+							<em class="queue-number">13</em>
+							<em class="u-txt">号</em>
+							<span class="queque-state">已过号</span>
+						</p>
+						<p>
+							<span>我的编号:</span>
+							<em class="queue-desk">C3</em>
+							<span>大桌</span>
+						</p>
+						<p class="p3">
+							<span>就餐人数:</span>
+							<em class="queue_pnumber">4</em>
+							<em>人</em>
+						</p>
+					</div>
+					<div class="ordered-ft">
+						<span>排队</span>
+					</div>
+				</li>
+				<li>
+					<h2 class="ordered-tit">顶龙意境粤菜(万象城店)</h2>
+					<div class="ordered-info queue-info">
+						<p>
+							<span class="queue-day">2016-10-21</span>
+							<em class="queue-number">53</em>
+							<em class="u-txt">号</em>
+							<span class="queque-state">已过号</span>
+						</p>
+						<p>
+							<span>我的编号:</span>
+							<em class="queue-desk">C3</em>
+							<span>大桌</span>
+						</p>
+						<p class="p3">
+							<span>就餐人数:</span>
+							<em class="queue_pnumber">4</em>
+							<em>人</em>
+						</p>
+					</div>
+					<div class="ordered-ft">
+						<span>排队</span>
+					</div>
+				</li>				
+			</ul>
+		</div>
+
+    </div>
+
+    <div class="g-ft g-ft-personal">
+		
+    </div>
+
+    <script src="js/rem.js"></script>
+     <!--引入zepto-->
+	<script src="js/libs/zepto.min.js"></script>
+	<script>
+		$(function(){
+
+			$(function(){	 
+
+			// 首次登录,载入获取会员数据(根据登录token来获取)
+			var url = "data/personal-queque.json";
+			PersonalQueueAjax(url);
+
+			// tab选中样式			
+			for(var i=0;i<$(".m-tnav li").length;i++){
+				$(".m-tnav li").click(function(){
+					$(".m-tnav li").removeClass('act');
+					$(this).addClass('act');
+				})
+				
+			}
+
+			// 全部
+			$('#queue_all').click(function(){
+				// var url = "http://api.51yuchu.com/vip/queue/order/all/list";
+
+				var url = "data/personal-queque.json";
+				PersonalQueueAjax(url);
+			})
+
+			// 已取号
+			$('#queue_wait').click(function(){
+				var url = "data/personal-queque1.json";
+				// var url = "http://api.51yuchu.com/vip/book/order/confirmed/list";
+				PersonalQueueAjax(url);
+				// console.log(222);
+			})
+
+			// 已就餐
+			$('#queue_ok').click(function(){
+				var url = "data/personal-queque2.json";
+				// var url = "http://api.51yuchu.com/vip/book/order/confirmed/list";
+				PersonalQueueAjax(url);
+				// console.log(222);
+			})
+
+			// 已过号
+			$('#queue_no').click(function(){
+				// var url = "http://api.51yuchu.com/vip/book/order/wait/confirmed/list";
+				var url = "data/personal-queque3.json";
+				PersonalQueueAjax(url);
+				// console.log(333);
+			})
+			// 排队订单~处理函数
+			function PersonalQueueAjax(url){
+
+				$.ajax({
+					type:"get",
+					// 这里的token要变化的
+					// header:{'Content-Type':'application/json','x-access-token': 1},
+					// url:"http://api.51yuchu.com/vip/book/order/all/list",
+					url:url,
+					// url:"data/personal-reserved.json",
+					dataType:"json",
+					success:function(data){
+						// console.log(data.succeed);
+						// 已登录(succeed = ture)
+						var strList = "";
+						if(data.succeed){
+							for(var i=0;i<data.value.length;i++){
+
+								// 根据商家状态,改变状态对应的内容
+								if(data.value[i].queueOrder.handleStatus == "STATUS_1"){
+									data.value[i].queueOrder["handleStatus"] = "已取号";
+									// console.log(data.value[i].bookOrder.handleStatus);
+								}else if(data.value[i].queueOrder.handleStatus == "STATUS_2"){
+									data.value[i].queueOrder["handleStatus"] = "已就餐";
+								}else if(data.value[i].queueOrder.handleStatus == "STATUS_3"){
+									data.value[i].queueOrder["handleStatus"] = "已过号";
+								}
+								// console.log(data.value[i].queueOrder.handleStatus);
+
+
+								// 餐桌类型状态,处理
+								if(data.value[i].queueOrder.tableType== 1){
+									data.value[i].queueOrder["tableType"] = "C1小桌";
+									// console.log(data.value[i].bookOrder.handleStatus);
+								}else if(data.value[i].queueOrder.tableType == 2){
+									data.value[i].queueOrder["tableType"] = "C2中桌";
+								}else if(data.value[i].queueOrder.tableType == 3){
+									data.value[i].queueOrder["tableType"] = "C3大桌";
+								}
+								// console.log(data.value[i].queueOrder.tableType);
+
+
+								// 逐条插入数据
+								strList += '<li><h2 class="ordered-tit">'+ data.value[i].restaurant.name +'</h2><div class="ordered-info queue-info"><p><span class="queue-day">'+ data.value[i].queueOrder.orderTime.slice(0,4) +'-'+ data.value[i].queueOrder.orderTime.slice(4,6) +'-'+ data.value[i].queueOrder.orderTime.slice(6,8) +'</span> <em class="queue-number">'+data.value[i].queueOrder.queueNumber+'</em> <em class="u-txt">号</em> <span class="queque-state">'+data.value[i].queueOrder.handleStatus+'</span></p><p><span>我的编号:</span> <em class="queue-desk">'+data.value[i].queueOrder.tableType.slice(0,2)+'</em> <span>'+data.value[i].queueOrder.tableType.slice(2,4)+'</span></p><p class="p3"><span>就餐人数:</span> <em class="queue_pnumber">'+data.value[i].queueOrder.number+'</em> <em>人</em></p></div><div class="ordered-ft"><span>排队</span></div></li>';
+
+							}
+
+							$('.personal-ordered-list').html(strList);
+
+
+						}
+					}
+				}) 
+			}
+					
+
+		})	
+		})
+	</script>
+</body>
+
+</html>

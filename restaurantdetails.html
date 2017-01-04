@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>预厨--餐厅详情页</title>
+    <link rel="stylesheet" href="css/libs/m-reset.css">
+    <link rel="stylesheet" href="scss/global.css">
+    <link rel="stylesheet" href="scss/restaurant.css">
+</head>
+
+<body>
+    <div class="g-hd g-hd-restaurant">
+        <a href="javascript:history.back(-1);" class="icon-back"></a>
+        <div class="m-logos">
+            <img src="images/logos2.png" alt="">
+        </div>
+    </div>
+    <!-- 遮罩 -->
+	<div class="m-mask-modal"></div>
+
+	<div class="m-modal1" id="modal_box">
+		<div class="modal1-hd">
+			<h2>温馨提示</h2>
+		</div>
+		<div class="modal1-bd">
+			<p class="modal-text">恭喜您,签到成功!</p>
+		</div>
+		<div class="modal1-ft">
+			<span class="modal-btn-ok" id="modal_btn_ok">确定</span>
+		</div>
+	</div>
+
+	<div class="m-modal1" id="modal_collection">
+		<div class="modal1-hd">
+			<h2>温馨提示</h2>
+		</div>
+		<div class="modal1-bd">
+			<p>恭喜您,收藏成功!</p>
+		</div>
+		<div class="modal1-ft">
+			<span class="modal-btn-ok" id="btn_collection_ok">确定</span>
+		</div>
+	</div>
+
+
+	<form class="m-modal2" id="modal_comment">		
+		<div class="g-score">
+			<div class="m-score">
+				<div class="u-score"></div>
+				<div class="u-score"></div>
+				<div class="u-score"></div>
+				<div class="u-score"></div>
+				<div class="u-score"></div>
+			</div>
+		</div>
+
+		<textarea name="" id="comment_content" cols="30" rows="10" placeholder="请输入评论内容" ></textarea>
+		
+		<div class="m-photo-list">
+			<a class="btn-add-photo">
+				<i class="icon-photo"></i>
+			</a>
+		</div>
+		
+		<a href="javascript:;" class="btn-send">立即发布</a>
+
+
+	</form>
+
+    <div class="g-bd g-bd-restaurant">
+    	<div class="restaurant-banner">
+			<img src="images/business-img1-640.jpg" alt="" class="restaurant-img">
+			<div class="icon-tags"></div>
+    	</div>
+    	<ul class="m-tnav f-cb">
+    		<li>
+	    		<a href="javascript:;" id="btn_reserved">
+	    			<span>预定</span>
+	    			<i></i>
+	    		</a>
+    		</li>
+
+    		<!-- <li>
+    			<a href="restaurantqueue.html">
+	    			<span>排队</span>
+	    			<i></i>
+    			</a>
+    		</li> -->
+    		<li>
+	    		<a href="javascript:;" id="btn_ordered">
+	    			<span>点餐</span>
+	    			<i></i>
+	    		</a>
+    		</li>
+    	</ul>
+    	<div class="g-restaurant-con">
+			<div class="m-restaurant1 f-cb">
+				<div class="g-restaurant1-l">
+					<h2 class="restaurant-name">老三国诸葛烤鱼</h2>
+					<p class="restaurant-category">烤鱼</p>
+					<p class="restaurant-region">龙湾区</p>
+					<p class="p3">
+						¥
+						<span class="restaurant-sprice">200</span>
+						-&nbsp;¥
+						<span class="restaurant-eprice">300</span>
+					</p>
+				</div>
+				<div class="g-restaurant1-r">
+					<div class="m-reviews">
+						<h1 class="restaurant-per">88%</h1>
+						<p>
+							<span class="restaurant-ticket">857</span>票
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="m-restaurant2">
+				<ul class="restaurant-contact">
+					<li class="line2">
+					    <a href="javascript:;">
+					        <i class="icon-address"></i>
+					        <p class="restaurant-address">鹿城区南塘街200号</p>
+					        <i class="icon-arrow-right2"></i>
+					    </a>
+					</li>
+					<li>
+					    <a href="tel:13819415204" class="restaurant-tel-href">
+					        <i class="icon-tel"></i>
+					        <p class="restaurant-tel">13819415204</p>
+					       	<i class="icon-arrow-right2"></i>
+					    </a>
+					</li>
+					<li>
+					    <a href="javascript:;">
+					        <i class="icon-hours"></i>
+					        <p class="restaurant-hours">营业时间:8:00-21:00</p>
+					        <i class="icon-arrow-right2"></i>
+					    </a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="m-restaurant3">
+				<h2 class="m-commment-tit">
+					<a href="javascript:;" class="f-cb">
+						<p>网友点评(<span>11</span>)</p>
+						<i ></i>
+					</a>			
+				</h2>
+				<ul class="m-commment-list">
+					<li class="comment-item f-cb">
+						<div class="g-comment-l f-fl">
+							<div class="comment-avatar"></div>
+							<div class="comment-level">LV6</div>
+						</div>
+
+						<div class="g-comment-r f-fr">
+							<div class="g-comment-bd1 f-cb">
+								<h3 class="comment-username f-cb">
+										<span class="f-fl">飞翔中的大棚</span>
+										<em class="comment-date f-fr">9月27日</em>
+								</h3>
+								<div class="g-comment-number f-cb">
+										<span>打分</span>
+										<div class="comment-number f-cb">
+											<i class="icon-score"></i>
+											<i class="icon-score"></i>
+											<i class="icon-score"></i>
+											<i class="icon-score"></i>
+											<i class="icon-score"></i>
+										</div>
+										<span>¥</span>
+										<span class="comment-myprice">70</span>
+										<span>/人</span>
+								</div>
+								
+							</div>
+
+							<div class="comment-text">
+								这家店位于新城附近，吃海鲜为主，里面的海鲜都很新鲜。都是活的。进去服务员都…
+							</div>
+
+							<ul class="comment-imglist f-cb">
+								<li>
+									<a href="javascript:;">
+										<img src="data/images/r1.jpg" alt="">
+									</a>
+								</li>
+								<li>
+									<a href="javascript:;">
+										<img src="data/images/r2.jpg" alt="">
+									</a>
+								</li>
+								<li>
+									<a href="javascript:;">
+										<img src="data/images/r3.jpg" alt="">
+									</a>
+								</li>
+							</ul>
+
+							<!-- <div class="g-comment-ft f-cb">
+								<div class="f-fl">
+									<p class="p1">浏览<span class="comment-views">943</span></p>
+									<p>赞<span class="comment-liked">2</span></p>
+								</div>
+								<div class="f-fr">
+									<a href="javascript:;" class="btn-liked">
+										<i class="icon-love2"></i>
+										<em>赞</em>
+									</a>
+									<a href="javascript:;" class="btn-comment">
+										<i class="icon-note"></i>
+										<em>评论</em>
+									</a>
+								</div>
+							</div> -->
+						</div>
+
+						
+					</li>
+				</ul>
+			</div>
+
+    	</div>
+    </div>
+
+    <div class="g-ft">
+		<div class="-mob-share-ui" style="display: none">
+		    <ul class="-mob-share-list">
+		        <li class="-mob-share-weibo"><p>新浪微博</p></li>
+		        <li class="-mob-share-weixin"><p>微信</p></li>
+		        <li class="-mob-share-qzone"><p>QQ空间</p></li>
+		        <li class="-mob-share-qq"><p>QQ好友</p></li>
+		        <li class="-mob-share-renren"><p>人人网</p></li>
+		        <li class="-mob-share-kaixin"><p>开心网</p></li>
+		        <li class="-mob-share-douban"><p>豆瓣</p></li>
+		        <li class="-mob-share-facebook"><p>Facebook</p></li>
+		        <li class="-mob-share-twitter"><p>Twitter</p></li>
+		    </ul>
+		    <div class="-mob-share-close">取消</div>
+		</div>
+		<div class="-mob-share-ui-bg"></div>
+		<script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey=19aaa57d6a860"></script>
+		<!--MOB SHARE END-->
+		<nav class="g-bnav">
+			<ul class="m-bnav f-cb">
+				<li class="bnav-item f-fl">
+		   			<a href="javascript:;" id="bnav_comment">
+		   				<i class="icon-bnav-comment"></i>
+		   				<p>发布</p>
+		   			</a>
+		   		</li>
+		   		<li>
+		   			<a href="javascript:;" id="bnav_sign">
+		   				<i class="icon-bnav-sign"></i>
+		   				<p>签到</p>
+		   			</a>
+		   		</li>
+		   		<li>
+		   			<a href="javascript:;" id="bnav_collection">
+		   				<i class="icon-bnav-collection"></i>
+		   				<p>收藏</p>
+		   			</a>
+		   		</li>
+		   		<li class="act">
+		   			<a href="javascript:;" id="bnav_share" class="-mob-share-open">
+		   				<i class="icon-bnav-share"></i>
+		   				<p>分享</p>
+		   			</a>
+		   		</li>
+			</ul>
+		</nav>
+
+
+    </div>
+
+    <script src="js/rem.js"></script>   	
+	<script src="js/libs/zepto.min.js"></script>
+	<!-- 本地存储组件 -->
+	<script src="js/plugin/store.min.js"></script>
+	<!-- 分享组件 -->
+    <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_m.js" charset="utf-8"></script>
+    
+    <script>
+    	// 默认载入时
+	    	// 1.获取本地数据
+			    var token = store.get('wxToken');
+			    // console.log(user.lng);
+
+			    // 获取餐厅详情页的hash值(既#餐厅Id)
+			    var Urlhash = window.location.hash;
+
+			    // 取得餐厅id
+			    var rId = Urlhash.slice(1,Urlhash.length);;
+
+
+		    // 2.根据餐厅ID,修改餐厅的信息
+			    // http://api.51yuchu.com/restaurant/{id}/get
+			    // 修改餐厅信息
+			    restaurantInfo(rId);
+
+			    function restaurantInfo(rId){
+			    	$.ajax({
+			    		type:"get",
+			    		url:"http://api.51yuchu.com/restaurant/"+rId+"/get",
+			    		dataType:"json",
+			    		success:function(data){
+			    			if(data.succeed){
+			    					// console.log(data.value.restaurant.name)
+			    					// 获取餐厅数据
+				    					// 餐厅-图片地址
+				    					var rImg = data.value.restaurant.previewUrl;
+				    						// 餐厅-名称
+				    					var rName = data.value.restaurant.name;
+				    					// 餐厅-菜系
+				    					// var rCategory = data.value.restaurant.keyword;
+				    					// 餐厅-所在区域
+				    					var rRegion = data.value.country.name;
+				    					// 餐厅-平均消费区间
+				    					var rSprice = data.value.restaurant.startPrice;
+				    					var rEprice = data.value.restaurant.endPrice;
+				    					
+				    					// 餐厅-好评数
+				    					// 百分比
+				    					var rPer = data.value.praisePrecent + '%';
+				    					// 票数
+				    					var rTicket = data.value.commentAssessment;
+
+				    					// 餐厅-地址
+				    					var rAddress = data.value.restaurant.address;
+				    					// 餐厅-联系电话
+				    					var rTel = data.value.restaurant.mobile;
+				    					var TelHref = "tel:"+rTel;
+				    					// 餐厅-营业时间
+				    					var rHours = data.value.restaurant.serviceTimeStr;
+				    					// 餐厅评价列表
+				    					// var rScoreList =;
+
+
+			    					// 插入餐厅数据
+				    					// 餐厅-图片地址
+				    					$(".restaurant-img").prop("src",rImg);
+				    					// 餐厅-名称
+				    					$(".restaurant-name").html(rName);
+				    					// 餐厅-菜系
+
+				    					// 餐厅-所在区域
+				    					$(".restaurant-region").html(rRegion);
+				    					// 餐厅-地址
+				    					$(".restaurant-address").html(rAddress);
+				    					// 餐厅-电话
+				    					$(".restaurant-tel").html(rTel);		
+				    					$(".restaurant-tel-href").prop("href",TelHref);
+				    					// 餐厅-营业时间
+				    					$(".restaurant-hours").html(rHours);
+
+				    					// 餐厅-好评
+				    					// 百分比
+				    					$('.restaurant-per').html(rPer);
+				    					// 票数
+				    					$('.restaurant-ticket').html(rTicket);
+
+			    					// $(".restaurant-category").html();
+		    				}
+			    		}
+			    	})
+			    }
+
+		// 页面载入完成
+    	$(function(){
+    		/*
+				1.点击签到,弹出框(签到成功)
+				2.点击收藏,
+					a.用户登录时，Ajax提交店铺的id,用户的id()
+					  用户未登录时，跳转到登录页(并记录店铺的url),当用户注册登录完成,跳转回刚才的店铺
+					b.弹出收藏成功。
+    		*/ 
+
+    		
+    		// 显示隐藏模态窗
+    			// 点击发布
+    				$("#bnav_comment").click(function(){
+		    			modalShow($("#modal_comment"));
+		    		})
+
+		    		$(".btn-send").click(function(){
+		    			modalHide($("#modal_comment"));
+		    		})
+	    		// 点击签到
+		    		$("#bnav_sign").click(function(){;
+		    			mShow("恭喜您,签到成功!");
+		    		})
+
+	    		// 点击收藏
+		    		$("#bnav_collection").click(function(){
+		    			modalShow($("#modal_collection"));
+		    		})
+
+		    		$("#btn_collection_ok").click(function(){
+		    			modalHide($("#modal_collection"));
+
+		    			// 确定收藏,后台添加数据
+		    			$.ajax({
+		    				type:"post",
+		    				url:"http://api.51yuchu.com/vip/restaurant/collection/add",
+		    				dataType:"json",
+		    				headers:{'x-access-token': token,'Content-Type': 'application/json'},
+		    				data: JSON.stringify({'restaurantId': rId}),
+		    				success:function(data){
+		    					// console.log(data);
+		    				}
+		    			}) 
+		    		})
+
+	    		
+
+		    // 评论交互js
+		    	/*
+					1.循环星星集合,当点击评价星级时,取得星星的索引
+					2.去掉星星选中，根据索引循环添加星星选中效果
+		    	*/ 
+		    		$(".u-score").click(function(){
+		    			$(".m-score div").removeClass('act');
+		    			// console.log($(this).index());	
+		    			for(var i=0;i<$(this).index()+1;i++){
+		    				$(".m-score div").eq(i).addClass('act');
+		    			}
+		    		})
+
+		    // 预定
+		    	$("#btn_reserved").click(function(){
+		    		// 判断餐厅是否可以预约
+		    		// var reData = {"restaurantId":rId,"date":nowDate()}; 
+
+		    		// console.log(nowDate());
+
+
+		    		$.ajax({
+		    			type:"get",
+		    			headers:{"x-access-token":token},
+		    			url:"http://api.51yuchu.com/book/order/request?restaurantId="+ rId +"&date="+nowDate(),
+		    			dataType:"json",
+		    			success:function(data){
+		    				if(data.succeed){
+		    					// 判断餐厅是否可预约
+		    					if(data.value.canBook){
+		    						// 可预约-取得餐厅的Id,传给预定页
+		    						window.location.href = "restaurantreserved.html#"+rId;
+		    					}else{
+		    						// 不能预约-显示提示框    						
+						    		mShow("对不起,该餐厅暂未开通预定功能！");		    						
+		    					}
+		    				}
+		    			}
+		    		})
+
+
+		    		
+		    	})
+
+		    // 点餐
+		    	$("#btn_ordered").click(function(){
+		    		// 判断餐厅是否可以点餐	
+		    		$.ajax({
+		    			type:"get",
+		    			url:"http://api.51yuchu.com/restaurant/"+rId+"/get",
+		    			dataType:"json",
+		    			success:function(data){
+		    				if(data.succeed){
+		    					// 是否可点餐
+		    					if(data.value.restaurant.order){
+		    						// 可点餐-取得餐厅的Id,传给点餐页
+		    						window.location.href = "restaurantordered.html#"+rId;
+		    					}else{
+		    						// 不能点餐-显示提示框    						
+							    	mShow("对不起,该餐厅暂未开通预定功能！");
+		    					}
+		    				}		
+		    			}
+		    		})
+
+		    	})
+
+	    	// 函数集合
+		    	// 显示模态窗函数
+		    		function modalShow(modal){
+		    			$(".m-mask-modal").show();
+		    			modal.show();
+		    		}
+
+	    		// 隐藏模态窗函数
+		    		function modalHide(modal){
+		    			$(".m-mask-modal").hide();
+		    			modal.hide();
+		    		}
+
+		    	// 默认--没数据交互模态窗
+		    		function mShow(text){
+		    			$(".m-mask-modal").show();
+		    			$(".modal-text").html(text);
+		    			$("#modal_box").show();
+		    		}
+
+		    		function mHide(){
+		    			$(".m-mask-modal").hide();
+		    			$("#modal_box").hide();
+		    		}	
+
+		    		$("#modal_btn_ok").click(function(){
+		    			mHide();
+		    		})
+
+		    	// 获取系统时间函数(数字格式)
+					function nowDate(){
+					    // 取得当前系统时间
+					    var mydate = new Date();
+					    // 定义日期(注意:这里一定要先把strDate数据格式定义为字符串)
+					    var strDate = "";
+					    // 年
+					    var strDate = strDate + mydate.getFullYear();
+					    // 月
+					    var strDate = strDate + (mydate.getMonth()+1);
+					    // 日
+					    var strDate = strDate + mydate.getDate();
+					    // var str = "" + mydate.getFullYear() + "年";
+					    // str += (mydate.getMonth()+1) + "月";
+					    // str += mydate.getDate() + "日";
+					    // str+=mydate.getHours() + "时";
+					    // str+=mydate.getMinutes() + "分";
+					    // str+=mydate.getSeconds() + "秒";
+					    return strDate;				  
+					}
+
+    	})
+    </script>
+
+</body>
+
+</html>

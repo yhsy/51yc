@@ -1,0 +1,792 @@
+@charset "utf-8";
+
+//rem转换函数()
+@function torem($px){
+    @return $px / 40px * 1rem;
+}
+
+//基础全局样式
+    html{
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+    }
+    
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: torem(26px);
+        color:#000;
+        //overflow: hidden;  
+    }
+    a{
+        color:#000;
+        &:hover{
+            //color:none;
+            color:orange;
+        }
+    }
+   
+
+//头部
+.g-hd,.g-hds{
+    width: 100%;
+    height: torem(78px);
+    background:#1a1a1a;
+    position: relative;
+    border-bottom: torem(2px) solid #bdbdbd;
+    
+    .btn-close{
+        position: absolute;
+        left:torem(14px);
+        top:torem(25px);
+        width: torem(33px);
+        height: torem(33px);
+        background:url(../images/icon-close.png) no-repeat;
+        background-size: contain;
+    }
+    
+    //restauarant 页面
+        .btn-back{
+            position: absolute;
+            left:torem(36px);
+            top:torem(26px);
+            width: torem(38px);
+            height: torem(32px);
+            background:url(../images/icon-back.png) no-repeat;
+            background-size: contain;
+        }
+    
+    // 搜索框
+    .g-sch{
+        margin: 0 auto;
+        width: torem(426px);
+        height: torem(74px);
+        padding-top:torem(12px) ;
+        
+        .m-sch{
+            width: torem(426px);
+            height: torem(54px);  
+            background:#f2f2f2;
+            border-radius: torem(27px);
+            position: relative;   
+            
+           .icon-sch{
+               float: left;
+               margin: torem(12px) torem(10px) 0 torem(26px);
+               width: torem(29px);
+               height: torem(29px);
+               background: url(../images/icon-sch.png) no-repeat;
+               background-size: contain;
+           }
+          
+            input{
+                //margin: 0 torem(64px) 0 torem(64px);
+                float: left;
+                border: none;
+                color:#1a1a1a;
+                background:none;
+                width: torem(300px);
+                height: torem(54px);
+                line-height: torem(54px);
+                font-size: torem(26px);                     
+            }
+            
+            
+            .btn-sch-close{
+                display: none;
+                float:left;
+                width: torem(54px);
+                height: torem(54px);
+            }
+           .icon-sch-close{
+               display: inline-block;
+               margin: torem(11px);
+               width: torem(32px);
+               height: torem(32px);
+               background:url(../images/icon-sch-close.png) no-repeat;
+               background-size:contain;     
+           }
+           
+          
+        }        
+        
+    }
+    
+    
+}
+
+.g-hd-ordered{
+    position: fixed;
+    top:0;
+    left:0;
+    z-index:900;
+}
+
+//内容区
+.g-bd{
+    position: relative;
+    .m-country-tab1,.m-country-tab2{
+        width: 100%;           
+        overflow: hidden;  
+       
+        .m-tab{
+            width: 50%;
+            float: left;
+            overflow: hidden;
+            
+            a{
+                float: left;
+                width: 100%;    
+                font-size: torem(30px);
+                line-height: torem(70px);
+                text-align: center;
+                        
+            }
+            
+           
+        }
+        
+        .tab-active a{
+            border-bottom: torem(8px) solid #C6A557;
+        } 
+        
+       
+    }
+    
+    //changeCity 页面
+        .m-country-tab1{
+             background: #1a1a1a;
+             a{
+                color:#fff;
+                border-bottom: torem(8px) solid #fff;  
+             }
+        }
+        
+        .m-city-list{
+               width: 100%;
+            li{
+                
+            }
+            
+            a{
+                display: block;
+                position: relative;
+                height: torem(282px);
+                border-bottom: torem(2px) solid #bbb5b7;
+                img{
+                    width: 100%;
+                    height: torem(282px);             
+                }
+                
+                p{
+                    position: absolute;
+                    top:torem(122px);
+                    left:torem(250px);        
+                    i{
+                        display: inline-block;
+                        width: torem(19px);
+                        height: torem(27px);
+                        background:url(../images/icon-map.png) no-repeat;
+                        background-size: contain;
+                    }
+                    span{
+                        display: inline-block;
+                        height: torem(50px);
+                        line-height: torem(50px);
+                        font-size: torem(42px);
+                        color:#fff;
+                        
+                    }
+                }
+                
+            }
+        }
+    
+        
+        
+        
+        .m-country-tab2{
+            background: #f2f2f2;     
+            a{           
+                color:#1a1a1a;
+                border-bottom: torem(8px) solid #1a1a1a;           
+            }
+        }
+        
+        .m-tab-con{
+            background:#fff;      
+            .m-tab-con1,.m-tab-con2{
+                
+                h2{    
+                    height: torem(70px);
+                    line-height: torem(70px);
+                    font-size: torem(26px);
+                    text-indent: torem(70px);
+                    color:#1a1a1a;   
+                    overflow: hidden;
+                }
+                
+                .m-hot-list{          
+                    overflow: hidden;
+                    padding: 0 torem(60px);
+                    li{
+                        float: left;
+                        margin-right: torem(10px);
+                        margin-bottom: torem(12px);
+                    }
+                    a{
+                        float: left;
+                        width: torem(162px);
+                        height: torem(48px);
+                        line-height: torem(48px);
+                        text-align: center;
+                        border-radius: torem(10px);
+                        background:#e6e6e6;
+                        font-size: torem(24px);
+                    }
+                }
+                
+                
+            }
+            
+            .m-tab-con1{
+                background:#f2f2f2;
+            }        
+            
+        }
+        
+        
+    
+    //restauarant 页面
+        //筛选区
+        .m-mask{
+            display: none;
+            position: absolute;
+            left:0;
+            top: 0;
+            background:#000;
+            opacity: 0.8;
+            width: 100%;
+            height: 100%;
+            z-index:990;
+        }
+        
+        .tab-nav{
+            position: fixed;
+            top:torem(78px);
+            left:0;
+            z-index:991;
+            width: 100%;
+            background:#1a1a1a;
+            overflow: hidden;
+            li{
+                float: left;
+                width: 25%;
+            }
+            
+            .current{
+                background:#c6a557;
+            }
+            
+            a{
+                width: 100%;
+                margin: 0 auto;
+                float: left;
+                height: torem(66px);
+                line-height: torem(66px);
+                text-align: center;
+            }
+            
+            span{       
+                font-size: torem(24px);
+                color:#fff;
+            }
+            
+                //          span:after{
+                //              content: "";
+                //              margin-left: torem(10px);
+                //              margin-bottom: torem(4px);
+                //              display: inline-block;
+                //              width: torem(14px);
+                //              height: torem(9px);
+                //              background: url(../images/icon-arrow-down.png) no-repeat;
+                //              background-size: contain;
+                //          }
+            i{
+                margin-left: torem(10px);
+                margin-bottom: torem(4px);
+                display: inline-block;
+                width: torem(14px);
+                height: torem(9px);
+                background: url(../images/icon-arrow-down.png) no-repeat;
+                background-size: contain;
+            }
+            
+        }
+        
+        .tab-con-list{            
+            position: absolute;
+            top:torem(140px);
+            left:0;
+            z-index:992;
+
+           .tab-con{
+               display: none;
+           }
+            
+            .m-filter-sort{
+                overflow: hidden; 
+                padding: torem(46px) torem(40px);
+                background:#e6e6e6;      
+                li{
+                    float: left;   
+                    margin: 0 auto;
+                    margin-bottom: torem(20px);   
+                }
+                
+                a{
+                    float: left;
+                    font-size: torem(24px);
+                    height: torem(48px);
+                    line-height: torem(48px);
+                    padding:0 torem(24px) ;
+                    border: torem(2px) solid #000;;
+                    border-radius: torem(24px);
+                    margin-left: torem(20px);
+                    background:#fff;
+                }
+                a.current{
+                    background:#c6a557;
+                    color:#fff;
+                }
+            }
+            
+            #j_filter_group{
+                display: none;
+                background:#e6e6e6;
+                h3{
+                    font-size: torem(28px);
+                    text-indent: torem(40px);
+                    height: torem(68px);
+                    line-height: torem(68px);
+                    color:#c6a557;
+                }
+                
+                 .m-filter-sort{
+                     padding: torem(30px) torem(40px);
+                 }
+               
+            }
+            
+        }
+        
+        .g-restaurant{
+            padding: torem(140px) 0 torem(100px) 0;
+        }
+        
+        .m-restaurant-list{
+            width: 100%;   
+            .m-restaurant{                
+                overflow: hidden;
+                padding: torem(22px) torem(10px);   
+            }
+            .m-restaurant-img{
+                float: left;
+                width: torem(120px);
+                height: torem(120px);
+                background:#000;
+                margin-right: torem(14px);
+                
+                img{
+                    width: torem(120px);
+                    height: torem(120px);
+                }
+            }
+            .m-restaurant-text{
+                float: left;
+                
+                .m-restaurant-tit{
+                    height: torem(42px);
+                    line-height: torem(42px);
+                    font-size: torem(30px);
+                }
+                
+                .m-restaurant-region{
+                    height: torem(24px);
+                    line-height: torem(24px);
+                    font-size: torem(20px);  
+                }
+                
+                .m-restaurant-price{
+                    height: torem(36px);
+                    line-height: torem(36px);
+                    font-size: torem(20px);
+                }                
+            }
+            .m-restaurant-evaluate{
+                float: right;
+                position: relative;
+                width: torem(120px);
+                height: torem(120px);
+                img{
+                    width: torem(120px);
+                    height: torem(120px);
+                }
+                
+                .m-evaluate-con{
+                    position: absolute;
+                    top:torem(24px);
+                    left:torem(35px);
+                    
+                    h4{
+                        font-size:torem(18px);
+                        height: torem(24px);
+                        line-height: torem(24px);
+                    }
+                    
+                    .m-evaluate-ratio{
+                        font-size: torem(20px);
+                        height: torem(26px);
+                        line-height: torem(26px);
+                        
+                    }
+                    .m-evaluate-votes{
+                        font-size: torem(16px);
+                        height: torem(22px);
+                        line-height: torem(22px);
+                    }
+                    
+                }
+            }
+            
+        }
+        
+        
+        
+    
+    
+    
+}
+
+//search-Tab页
+.g-hds{
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 993;
+}
+
+.g-bds{
+    margin-top: torem(80px);  
+}
+.g-bds .g-restaurant{
+    padding: 0;
+}
+
+.m-mask-bd{
+    display: none; 
+    position: absolute;
+    left: 0;
+    top: torem(80px);
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    z-index: 992;
+    overflow:auto;
+    padding-bottom: torem(10px);
+    ul{
+        
+    }
+    
+    li{
+        height: torem(40px);
+        line-height: torem(40px);
+        padding: torem(5px) torem(10px);
+        .icon-schs{
+            float: left;
+            margin-top: torem(5px);
+            margin-right: torem(10px);
+            width: torem(30px);
+            height: torem(30px);
+            background:url(../images/icon-sch.png) no-repeat;
+            background-size: contain;
+        }
+        .u-restaurant-name{
+            float: left;
+            font-size: torem(24px);
+        }
+        .u-sch-count{
+            float: right;
+            font-size: torem(18px);
+            color:#a1a1a1;       
+        }
+        
+    }
+    
+}
+    
+ #restaurant_list{
+    display: none;
+    /*padding-bottom:torem(100px);*/
+}
+.btn-loading-more{
+    border: none;
+    width: 100%;
+    line-height: torem(50px);
+    background:#f2f2f2;
+    color:#333;
+    text-align: center;
+    font-size: torem(20px);
+}
+    
+.m-loading{
+    margin: 0 auto;
+    width: torem(124px);
+    height: torem(116px);
+}    
+
+
+//login.html 登录页
+.g-logings{
+    width: 100%;
+    height: 100%;
+    background:url(../images/bg-login-640.jpg) no-repeat;
+    background-size:contain;
+}
+
+.btn-close-login{
+    position: absolute;
+    top:torem(20px);
+    right:torem(20px);
+    width:torem(32px);
+    height: torem(32px);
+    background:url(../images/icon-close-login.png) no-repeat;
+    background-size:contain;
+}
+
+.m-login-mask{
+    width: 100%;
+    height: 100%;
+    background:#000;
+    opacity: 0.8;
+}
+
+.m-logo{
+    
+    img{
+        margin: torem(112px) torem(200px) torem(168px) torem(200px);
+        width: torem(240px);
+        height: torem(320px);
+    }
+}
+.m-logins{
+    margin: 0 auto;
+    width: torem(316px);
+    .btn-login{
+      display: block;
+      width: torem(316px);
+      height: torem(84px);
+      line-height: torem(84px);
+      color:#fff;
+      text-align: center;
+      border: torem(5px) solid #fff;
+      border-radius:torem(42px);
+      margin-bottom: torem(32px);
+    }
+    
+    .icon-phone{
+        float: left;
+        margin:torem(18px) torem(40px) 0 torem(94px); 
+        width: torem(28px);
+        height: torem(48px);
+        background:url(../images/icon-phone-login.png) no-repeat;
+        background-size: contain;
+    }  
+    
+    .icon-wechat{
+        float: left;
+        margin:torem(16px) torem(22px) 0 torem(80px);
+        width: torem(60px);
+        height: torem(50px);
+        background:url(../images/icon-wechat.png) no-repeat;
+        background-size: contain;
+    }  
+    span{
+        float: left;
+        color:#fff;
+        font-size: torem(28px);
+    }
+    
+}
+
+//loginPhone.html(手机登录)
+    .g-hd-plogin{
+        width: 100%;
+        height: torem(54px);
+        padding: torem(10px) 0;
+        background:#1A1A1A;
+        position: relative;
+        
+        .m-logos{
+            width: torem(134px);
+            height: torem(54px);
+            margin:0 auto;
+            
+            img{
+                width: torem(134px);
+                height: torem(54px);
+            }
+        }
+        
+        .btn-setting{
+            position: absolute;
+            right:torem(20px);
+            top:torem(15px);
+            width: torem(44px);
+            height: torem(44px);
+            background:url(../images/icon-setting.png) no-repeat;
+            background-size: contain;
+            text-indent: -9999px;
+        }    
+    }
+    
+    .g-bd-plogin{
+        background:#f2f2f2; 
+
+        .m-plogin{
+            padding: 0 torem(55px);
+            overflow: hidden;
+            padding-bottom: torem(574px); 
+
+            .m-plogin-tit{
+                font-size: torem(30px);
+                text-align: center;
+                line-height: torem(150px);
+                margin-top: torem(88px);
+                font-weight: bold;
+            }
+
+            input{
+                    float: left;
+                    height: torem(54px);
+                    line-height: torem(54px);
+                    border: torem(5px) solid #ddd;
+                    font-size: torem(22px);
+                    border-radius: torem(10px);
+            }
+
+            .m-plogin-ipt{   
+                overflow: hidden;        
+                .ipt-code{
+                    width:torem(114px);
+                    margin-right: torem(20px);
+                    text-indent: torem(40px);
+                }
+                .ipt-pnumber{
+                    width: torem(376px);
+                    text-indent: torem(30px);
+                }
+            }
+            
+            button{
+                float: left;
+                border: none;
+                border-radius: torem(10px);
+                height: torem(64px);
+                line-height: torem(64px);  
+                text-align: center;
+                background:#c8a05a;
+            }
+            .m-plogin-verification{
+                overflow: hidden;
+                margin: torem(20px) 0;
+                .ipt-verification{
+                    text-indent: torem(36px);
+                    margin-right: torem(20px);
+                    width: torem(344px);
+                }
+
+                .btn-verification{
+                    width: torem(156px);
+                    font-size: torem(22px);
+                }
+            }
+            
+            .btn-next{
+                    margin-left: torem(82px);
+                    width: torem(366px);
+                    font-size: torem(24px);
+            }  
+
+                    
+        }
+        
+    }
+
+    .g-ft-plogin{
+        .g-nav{
+            position:fixed;
+            bottom:0;
+            left:0;
+            width: 100%;
+            background:#1a1a1a;
+            border-top: torem(1px) solid #656565;
+            
+            .m-nav{
+                overflow: hidden;     
+                li{
+                    float: left;
+                    width: 25%;
+                    padding: torem(14px) 0;
+                    a{
+                        display: block;
+                        width: torem(100px);
+                        margin: 0 auto;
+                        text-align: center;
+                    }
+                    
+                    i{
+                        display: block;
+                        margin-left: torem(32px); 
+                        margin-bottom: torem(10px);
+                        height: torem(38px);  
+                    }
+                    
+                    .ico-nav-home{
+                        width:torem(36px);
+                        background:url(../images/ico-nav-home.png) no-repeat;
+                        background-size: contain;                  
+                    }
+                    .ico-nav-ordered{
+                        width: torem(43px);             
+                        margin-left: torem(28.5px);
+                        background:url(../images/ico-nav-ordered.png) no-repeat;
+                        background-size: contain;  
+                    }
+                    .ico-nav-search{
+                        width:torem(37px);
+                        margin-left: torem(31.5px);
+                        background:url(../images/ico-nav-search.png) no-repeat;
+                        background-size: contain;  
+                    }
+                    .ico-nav-my{
+                        width:torem(40px);
+                        height: torem(41px);
+                        margin-left: torem(30px);
+                        margin-bottom: torem(8px);
+                        background:url(../images/ico-nav-my.png) no-repeat;
+                        background-size: contain;  
+                        
+                    }
+                    
+                    
+                    p{
+                        color:#fff;
+                        font-size: torem(24px);
+                    }
+                }
+            }
+            
+        }
+    }
+    

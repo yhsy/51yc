@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html class="g-html2">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心--预约订单</title>
+    <link rel="stylesheet" href="css/libs/m-reset.css">
+    <link rel="stylesheet" href="scss/global.css">
+    <link rel="stylesheet" href="scss/personal.css">
+    
+</head>
+
+<body>
+    <div class="g-hd g-hd-personal-ordered">
+    	<!-- 返回个人中心(1.个人中心跳转了两次) -->
+       <a href="personal.html" class="icon-back"></a>
+       <h2>预约订单</h2>
+    </div>
+
+    <div class="g-bd g-bd-personal">	
+		<div class="g-personal3">
+			<ul class="m-tnav f-cb">
+				<li class="act"><a href="javascript:;" id="order_all">全部</a></li>
+				<li><a href="javascript:;" id="order_wait">未确认</a></li>				
+				<li><a href="javascript:;" id="order_ok">已确认</a></li>
+				<li><a href="javascript:;" id="order_no">预约失败</a></li>
+			</ul>
+		</div>
+
+		<div class="g-personal4">
+			<p class="m-prompt-text">您还没有预约订单,赶紧去预约吧！</p>
+			<ul class="personal-ordered-list">
+				<!-- 
+					<li>
+						<h2 class="ordered-tit">顶龙意境粤菜(万象城店)</h2>
+						<div class="ordered-info">
+							<p>
+								<span class="ordered-day">2016-10-21</span>
+								<span class="ordered-time">17:15</span>
+								<span class="ordered-state">待商家确定</span>
+							</p>
+							<p>
+								<span>到店时间:</span>
+								<em class="ordered-time">17:15</em>
+							</p>
+							<p class="p3">
+								<span>就餐人数:</span>
+								<em class="order_pnumber">4</em>
+								<em>人</em>
+							</p>
+						</div>
+						<div class="ordered-ft">
+							<span>预约</span>
+						</div>
+					</li>
+					<li>
+						<h2 class="ordered-tit">顶龙意境粤菜(万象城店)</h2>
+						<div class="ordered-info">
+							<p>
+								<span class="ordered-day">2016-10-21</span>
+								<span class="ordered-time">17:15</span>
+								<span class="ordered-state">待商家确定</span>
+							</p>
+							<p>
+								<span>到店时间:</span>
+								<em class="ordered-time">17:15</em>
+							</p>
+							<p class="p3">
+								<span>就餐人数:</span>
+								<em class="order_pnumber">4</em>
+								<em>人</em>
+							</p>
+						</div>
+						<div class="ordered-ft">
+							<span>预约</span>
+						</div>
+					</li>
+					<li>
+						<h2 class="ordered-tit">顶龙意境粤菜(万象城店)</h2>
+						<div class="ordered-info">
+							<p>
+								<span class="ordered-day">2016-10-21</span>
+								<span class="ordered-time">17:15</span>
+								<span class="ordered-state">待商家确定</span>
+							</p>
+							<p>
+								<span>到店时间:</span>
+								<em class="ordered-time">17:15</em>
+							</p>
+							<p class="p3">
+								<span>就餐人数:</span>
+								<em class="order_pnumber">4</em>
+								<em>人</em>
+							</p>
+						</div>
+						<div class="ordered-ft">
+							<span>预约</span>
+						</div>
+					</li> 
+				-->				
+			</ul>
+			
+
+		</div>
+
+    </div>
+
+    <div class="g-ft g-ft-personal">
+		
+    </div>
+
+    <script src="js/rem.js"></script>
+    <!-- 本地存储组件 -->
+	<script src="js/plugin/store.min.js"></script>
+    <!--引入zepto-->
+	<script src="js/libs/zepto.min.js"></script>
+
+	<script>
+		// 默认载入
+			// 判断是否登录
+			if(store.get('wxToken')){
+				// 首次登录,本地获取token(根据登录token来获取)
+				var token = store.get('wxToken');
+
+				// var url = "data/personal-reserved.json";
+				// var url = "http://api.51yuchu.com/vip/book/order/all/list";
+				// 默认显示全部订单
+				var url = "all";
+				PersonalReservedAjax(token,url);	
+			}else{
+				window.location.href = "personal.html";
+			}
+
+			// alert(token);
+
+			// 预约订单~处理函数
+			function PersonalReservedAjax(token,url){
+				$.ajax({
+					type:"get",
+					headers:{'Content-Type':'application/json','x-access-token': token},
+					url:"http://api.51yuchu.com/vip/book/order/"+url+"/list",
+					// url:"data/personal-reserved.json",
+					dataType:"json",
+					success:function(data){
+						// console.log(data.succeed);
+						// 已登录(succeed = ture)
+						var strList = "";
+						if(data.succeed){
+							// alert(data.value.length);
+							if(data.value.length == 0){
+								$(".m-prompt-text").show();
+							}else{
+								$(".m-prompt-text").hide();
+								for(var i=0;i<data.value.length;i++){
+
+									// 根据商家状态,改变状态对应的内容
+									if(data.value[i].bookOrder.handleStatus == "STATUS_1"){
+										data.value[i].bookOrder["handleStatus"] = "待商家处理";
+										// 全部状态的索引
+										dUrl = "restaurantreservedwait.html#/detail/"+url+"/"+i+"/";
+										// console.log(data.value[i].bookOrder.handleStatus);
+									}else if(data.value[i].bookOrder.handleStatus == "STATUS_2"){
+										// 全部状态的索引
+										data.value[i].bookOrder["handleStatus"] = "预约成功";
+										dUrl = "restaurantreservedsuccess.html#/detail/"+url+"/"+i+"/";
+									}else if(data.value[i].bookOrder.handleStatus == "STATUS_3"){
+										data.value[i].bookOrder["handleStatus"] = "预约失败";
+										dUrl = "javascript:;";
+									}
+
+									// 处理日期
+										// 年
+										// console.log(data.value[i].bookOrder.mealTime.slice(0,4));
+										// 月
+										// console.log(data.value[i].bookOrder.mealTime.slice(4,6));
+										// 日
+										// console.log(data.value[i].bookOrder.mealTime.slice(6,8));
+
+									// 逐条插入数据
+									strList += '<li><h2 class="ordered-tit"><a href="'+dUrl+'">'+ data.value[i].restaurant.name +'</a></h2><div class="ordered-info"><p><span class="ordered-day">'+ data.value[i].bookOrder.mealTime.slice(0,4) +'-'+ data.value[i].bookOrder.mealTime.slice(4,6) +'-'+  data.value[i].bookOrder.mealTime.slice(6,8) +'</span> <span class="ordered-time">'+ data.value[i].bookOrder.hour +':'+ data.value[i].bookOrder.minute +'</span> <span class="ordered-state">'+ data.value[i].bookOrder.handleStatus +'</span></p><p><span>到店时间:</span> <em class="ordered-time">'+ data.value[i].bookOrder.hour +':'+ data.value[i].bookOrder.minute +'</em></p><p class="p3"><span>就餐人数:</span> <em class="order_pnumber">'+ data.value[i].bookOrder.number +'</em> <em>人</em></p></div><div class="ordered-ft"><span>预约</span></div></li>';
+
+								}
+
+								$('.personal-ordered-list').html(strList);
+							}							
+						}
+					}
+				}) 
+			}
+
+		// 载入完成
+		$(function(){	 
+
+			// tab选中样式			
+			for(var i=0;i<$(".m-tnav li").length;i++){
+				$(".m-tnav li").click(function(){
+					$(".m-tnav li").removeClass('act');
+					$(this).addClass('act');
+				})
+				
+			}
+
+			// 全部
+			$('#order_all').click(function(){
+				// var url = "http://api.51yuchu.com/vip/book/order/all/list";
+				// var url = "data/personal-reserved.json";
+				url = "all";
+				PersonalReservedAjax(token,url);
+			})
+
+			// 待确认订单
+			$('#order_wait').click(function(){
+				// var url = "http://api.51yuchu.com/vip/book/order/wait/confirmed/list";
+				url = "wait/confirm";
+				// var url = "data/personal-reserved1.json";
+				PersonalReservedAjax(token,url);
+			})
+
+			// 已确认订单
+			$('#order_ok').click(function(){
+				// var url = "data/personal-reserved2.json";
+				url = "confirmed";
+				// var url = "http://api.51yuchu.com/vip/book/order/confirmed/list";
+				PersonalReservedAjax(token,url);
+				// console.log(222);
+			})
+
+			// 预约失败订单
+			$('#order_no').click(function(){
+				// var url = "data/personal-reserved3.json";
+				// PersonalReservedAjax(url);
+				// console.log(333);
+			})
+			
+					
+
+		})	
+	</script>
+</body>
+
+</html>

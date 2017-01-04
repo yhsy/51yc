@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html class="g-html">
+<head>
+    <meta charset="UTF-8">
+    <title>在线支付</title>
+    <link rel="stylesheet" href="../css/libs/m-reset.css">
+    <link rel="stylesheet" href="../scss/global.css">
+    <link rel="stylesheet" href="../scss/restaurant.css">
+</head>
+
+<body>
+    <div class="g-hd g-hd-restaurant">
+        <a href="javascript:;" class="icon-back"></a>
+        <p class="hd-tit">支付订单</p>
+    </div>
+
+    <div class="g-bd-restaurant g-bd-pay">	
+		<div class="m-restaurant-pay1">
+			<p>
+				<span>订单编号:</span>
+				<em class="ordered-number">1482992595191000000107</em>
+			</p>
+			<p>
+				<span>支付金额:</span>
+				<em class="pay-money">0.06</em>
+				<span class="u-fzc">元</span>
+			</p>
+		</div>
+		<div class="m-restaurant-pay2">
+			<ul class="pay-list">
+				<li class="pay-items">
+					<a href="javascript:;" class="pay-sel">
+						<img src="../images/icon-pay-weixin.png" alt="">
+						<div class="pay-info">
+							<h2>微信支付</h2>
+							<p>推荐安装微信6.0及以上用户使用</p>
+						</div>
+						<span class="pay-radio-cur"></span>
+					</a>
+				</li>
+				<!-- <li class="pay-items">
+					<a href="javascript:;" class="pay-sel">
+						<img src="images/icon-pay-alipay.png" alt="">
+						<div class="pay-info">
+							<h2>支付宝支付</h2>
+							<p>推荐有支付宝账号的用户使用</p>
+						</div>
+						<span></span>
+					</a>
+				</li>
+				<li class="pay-items">
+					<a href="javascript:;" class="pay-sel">
+						<img src="images/icon-pay-unionpay.png" alt="">
+						<div class="pay-info">
+							<h2>网银支付</h2>
+							<p>安全急速支付,无需开通网银</p>
+						</div>
+						<span></span>
+					</a>
+				</li>		 -->						
+			</ul>
+		</div>
+		
+		<div class="m-restaurant-pay3">
+			<a href="javascript:;" class="btn-pay-ok" id="btn_pay_ok">
+				<span>确定支付</span>
+				<!-- <em>¥</em>
+				<em class="pay-money">126</em> -->
+			</a>
+		</div>
+
+    </div>
+
+    <div class="g-ft g-ft-ordered-success">
+		
+    </div>
+
+    <script src="../js/rem.js"></script>
+    <!-- 本地存储组件 -->
+	<script src="../js/plugin/store.min.js"></script>
+	<!-- 微信公众接口 -->
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="../js/libs/zepto.min.js"></script>
+    <script>
+    	// 默认载入
+			// 获得token
+			var token = store.get("wxToken");
+
+
+     			//路由
+	   			if(window.location.search){
+	    			var Urlsearch = window.location.search;  	
+	    			// alert(Urlsearch);
+	    			// 以“=”进行分割并转换成数组
+	    			var hash = Urlsearch.split('='); 
+			    	// ?path=success&rId=9=&rNumber=1482993927499000000108=&sPrice=0.1
+			    	// 等号分割
+			    	// 0 => &path
+			    	// 1 => success/detail
+			    	// 2 => &rId
+			    	// 3 => 9
+			    	// 4 => &rNumber
+			    	// 5 => 1482993927499000000108
+			    	// 6 => &sPrice
+			    	// 7 => 0.1
+
+			   
+			    	// 根据search值,判断跳转的页面
+			    		// console.log(hash);
+			    		// datail 表示详情页过来的
+			    		// success表示 点餐页过来的
+
+			    		if(hash[1] == "success"){
+			    			// 餐厅Id
+			    			var rId = hash[3];
+			    			// 订单编号
+			    			var rNumber = hash[5];
+			    			// 订单总价
+			    			var sPrice = hash[7];
+
+			    			// 修改订单编号
+			    				$(".ordered-number").html(rNumber);
+
+			    			// 修改订单总价
+			    				$(".pay-money").html(sPrice);
+
+			    		}else if(hash[1] == "detail"){
+			    			// 餐厅Id
+			    			var rId = hash[3];
+			    			// 订单编号
+			    			var rNumber = hash[5];
+			    			// 订单总价
+			    			var sPrice = hash[7];
+
+			    			// 修改订单编号
+			    				$(".ordered-number").html(rNumber);
+
+			    			// 修改订单总价
+			    				$(".pay-money").html(sPrice);
+			    		}			    				    		
+				}
+			
+
+
+     		
+     		/*
+     			//路由
+	   			if(window.location.hash){
+	    			var Urlhash = window.location.hash;  	
+			    	// #/3/2016-12-13/17:30/6
+			    	// console.log(Urlhash);
+			    	//以“/”进行分割并转换成数组
+			    	var hash = Urlhash.split('/'); 
+
+			    	// 根据hash值,判断跳转的页面
+			    		// console.log(hash);
+			    		// pay表示详情页过来的
+			    		// success表示 点餐页过来的
+
+			    		if(hash[1] == "success"){
+			    			// 餐厅Id
+			    			var rId = hash[2];
+			    			// 订单编号
+			    			var rNumber = hash[3];
+			    			// 订单总价
+			    			var sPrice = hash[4];
+
+			    			// 修改订单编号
+			    				$(".ordered-number").html(rNumber);
+
+			    			// 修改订单总价
+			    				$(".pay-money").html(sPrice);
+
+			    		}else if(hash[1] == "pay"){
+			    			var getId = hash[2]; 
+			    			
+			    			// 改变详情页数据
+			    			PayAjax(token,getId);
+			    		}
+
+			    		// 跳转到详情页
+			    		
+
+			    		// 预点订单~处理函数
+						function PayAjax(token,id){
+							$.ajax({
+								type:"get",
+								headers:{'Content-Type':'application/json','x-access-token': token},
+								url:"http://api.51yuchu.com/dish/order/"+ id +"/load",
+								dataType:"json",
+								success:function(data){
+									// console.log(data.succeed);
+									// 已登录(succeed = ture)
+									var strList = "";
+									if(data.succeed){
+										var orderResponse = data.value.orderResponse;
+										var restaurant = data.value.restaurant;
+										var Items = data.value.items;
+
+										// 该页所需数据
+											// 订单编号,订单总价格,预订人,手机号码,
+											// 支付金额
+
+										// 逐条插入数据
+										// 订单编号:orderResponse.code 
+										// 餐厅图片:restaurant.previewUrl
+										// 支付金额:data.value.items[0].orderItem.discountPrice
+
+										// 订单号
+										$(".ordered-number").html(orderResponse.code);
+
+										// 支付金额
+										$(".pay-money").html(data.value.items[0].orderItem.discountPrice);	
+
+									}
+										
+								}
+							}) 
+						}
+				}
+			*/
+
+		// 载入完成
+    	$(function(){
+    		// 选中模拟ui
+    		$(".pay-sel").click(function(){
+    			$(".pay-sel span").removeClass('pay-radio-cur');
+    			// console.log($(".pay-sel span").length);
+    			$(this).children('span').addClass('pay-radio-cur');
+    		})
+
+    		// 支付
+    		$("#btn_pay_ok").click(function(){
+    			// token,content-type
+    			// 订单编号，交易类型
+    			payData = JSON.stringify({"outTradeNo":$(".ordered-number").html(),"tradeType":"JSAPI"});
+    			$.ajax({
+    				type:"post",
+    				headers:{'Content-Type':'application/json','x-access-token': token},
+					url:"http://api.51yuchu.com/wechat/pay/prepare",
+					data:payData,
+					dataType:"json",
+					success:function(data){
+						// alert(data.succeed);
+						// 返回成功,表示后台对接完成
+						if(data.succeed){
+
+								// 微信支付接口数据
+								// var wxPayData ={
+								// 					// 公众号ID
+								// 					"appId":data.value.appId,
+								// 					// 时间戳
+								// 					"timeStamp":data.value.timeStamp,
+								// 					// 随机字符串
+								// 					"nonceStr":data.value.nodeStr,
+								// 					// 订单详情扩展字符串
+								// 					"package":data.value.packageStr,
+								// 					// 签名方式(暂只支持MD5)
+								// 					"signType":MD5,
+								// 					// 签名
+								// 					"paySign":data.value.sign,
+								// 				};
+
+								var wxValue = data.value;														
+
+
+								/*方法1-start*/ 
+									
+										//调用微信支付接口
+										function onBridgeReady(){
+										    WeixinJSBridge.invoke(
+										        'getBrandWCPayRequest',{
+													"appId":wxValue.appId,
+													"timeStamp":wxValue.timeStamp,
+													"nonceStr":wxValue.nonceStr,
+													"package":wxValue.package,
+													"signType":wxValue.signType,
+													"paySign":wxValue.paySign
+												},
+										        function(res){     
+										        	// alert(res.err_msg);
+										            if(res.err_msg == "get_brand_wcpay_request:ok" ) {
+										            	// 支付成功后返回
+										            	// alert("支付成功");
+										            	// 
+										            	$.ajax({
+										    				type:"get",
+										    				headers:{'Content-Type':'application/json','x-access-token': token},
+															url:"http://api.51yuchu.com/wechat/pay/query?code="+$(".ordered-number").html()+"&tradeType=JSAPI",
+															dataType:"json",
+															success:function(data){
+																// alert(data.value);
+																// alert("返回成功!");
+																if(data.succeed){
+																	if(data.value=="SUCCESS"){
+																		// alert("恭喜您,支付成功！");
+																	}
+																}
+															}
+										            	})
+										            	// alert("支付成功!");
+										            	// alert(res);
+										            }     // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。 
+										        }
+										    ); 
+										}
+																										
+										if (typeof WeixinJSBridge == "undefined"){
+											// 这里不是空的
+											// alert("undefined");
+										    if( document.addEventListener ){
+										        document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+										    }else if (document.attachEvent){
+										        document.attachEvent('WeixinJSBridgeReady', onBridgeReady); 
+										        document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+										    }
+										}else{
+										    onBridgeReady();
+										    // alert(123);
+										} 
+									
+
+								/*方法1-end*/ 
+
+								/*方法2-start*/
+
+									/*
+										// 默认的微信配置
+										// var apiList =[]
+										// store.set("wxConfig":{timestamp:wxTimestamp,nonceStr:wxNonceStr,signature:wxSignature,jsApiList:wxJsApiList});
+										// 拿到本地的默认微信配置
+										var wxConfig = store.get('wxConfig');
+										// alert(wxConfig.timestamp);
+										// alert(wxConfig);
+
+										var host = "http:/test.51yuchu.com/";
+
+										$.ajax({
+											type:"get",
+											url:"http://api.51yuchu.com/wechat/fwh/get/config?url="+host,
+											dataType:"json",
+											success:function(data){
+												if(data.succeed){
+													// console.log(data);
+													var value = data.value;
+													// value.jsapiTicket
+
+													// 公众号ID
+													var wxAppid = value.appId;
+													// 签名时间戳
+													var wxTimestamp = value.timestamp;
+													// 签名的随机串
+													var wxNonceStr = value.nonceStr;
+													// 签名
+													var wxSignature = value.signature;
+													// JS接口列表
+													var wxJsApiList = ['checkJsApi','openLocation','getLocation','chooseWXPay'];
+													
+														wx.config({
+														    debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+														    appId: wxAppid, // 必填，公众号的唯一标识
+														    timestamp: wxTimestamp , // 必填，生成签名的时间戳
+														    nonceStr: wxNonceStr, // 必填，生成签名的随机串
+														    signature: wxSignature,// 必填，签名，见附录1
+														    jsApiList: wxJsApiList // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+														});
+
+														// config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
+
+														wx.ready(function(){
+															wx.chooseWXPay({
+															    timestamp: wxValue.timeStamp, // 支付签名时间戳，注意微信jssdk中的所有使用timestamp字段均为小写。但最新版的支付后台生成签名使用的timeStamp字段名需大写其中的S字符
+															    nonceStr: wxValue.nonceStr, // 支付签名随机串，不长于 32 位
+															    package: wxValue.package, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
+															    signType: wxValue.signType, // 签名方式，默认为'SHA1'，使用新版支付需传入'MD5'
+															    paySign: wxValue.paySign, // 支付签名
+															    success: function (res) {
+															    	alert("支付成功！");
+															    }
+
+															});
+
+															// 接口错误执行这里
+															wx.error(function(res){
+															    alert("支付失败");
+															});
+														});
+																	
+												}
+											}
+										})
+
+									*/
+
+									
+								/*方法2-end*/
+		}
+					}
+    			})
+    		})
+    	})
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html class="g-html">
+
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <link rel="stylesheet" href="css/libs/m-reset.css">
+    <link rel="stylesheet" href="scss/global.css">
+    <link rel="stylesheet" href="scss/restaurant.css">
+</head>
+
+<body>
+    <div class="g-hd g-hd-restaurant">
+        <a href="restaurantordered.html" class="icon-back"></a>
+        <p class="hd-tit">购物车</p>
+    </div>
+
+    <div class="g-bd-restaurant g-bd-ordered">
+    	<div class="m-restaurant-ordered2">
+			<p>
+				<strong>24</strong>
+				<span>份冷菜</span>
+				<em>+</em>
+				<strong>15</strong>
+				<span>份热菜</span>
+			</p>
+    	</div>
+    	<div class="m-restaurant-ordered3">
+    		<ul class="m-menu-list">
+				<li class="menu-items">
+					<img src="images/business-img2.jpg" alt="">
+					<h3>
+						<span class="menu-title">回锅肉炒饭</span>
+						<!-- <i class="menu-love">70</i> -->
+					</h3>
+					<p>
+
+						<em>¥
+						</em>
+						<em class="menu-price">15</em>
+						<a href="javascript:;" class="btn-plus">+</a>
+						<strong class="menu-num">1</strong>
+						<a href="javascript:;" class="btn-minus">-</a>
+						
+						
+					</p>
+				</li>
+				<li class="menu-items">
+					<img src="images/business-img2.jpg" alt="">
+					<h3 class="menu-title">牛肉炒饭</h3>
+
+					<p>
+						<em>¥
+						</em>
+						<em class="menu-price">20</em>
+						<a href="javascript:;" class="btn-plus">+</a>
+						<strong class="menu-num">1</strong>
+						<a href="javascript:;" class="btn-minus">-</a>						
+					</p>
+				</li>
+    		</ul>
+    	</div>
+    </div>
+
+    <div class="g-ft g-ft-ordered">
+		<div class="m-ordered-carts">
+			<div class="ordered-cart-txt2">
+				<!-- <a href="javascript:;" class="btn-cart-sels">
+					<i class="icon-radio"></i>
+					<span>全选</span>
+				</a> -->
+				
+				
+				
+			</div>
+			<a href="restaurantorderedconfirm.html" class="btn-ordered-statements" >下单结算</a>
+			<div class="cart-count">
+					<em>合计:</em>
+					<strong class="sum-price">35</strong>
+					<em class="count-text">元</em>
+				</div>
+			
+
+		</div>
+    </div>
+
+    <script src="js/rem.js"></script>
+    <script src="js/libs/zepto.min.js"></script>
+    <script>
+    	$(function(){
+    		// 全选按钮UI
+    		$(".btn-cart-sels").click(function(){
+    			// console.log($(this).children("i").prop("class"));
+    			if($(this).children("i").prop("class") == "icon-radio"){
+    				// console.log($(this).html());
+    				$(this).children("i").removeClass("icon-radio");
+    				$(this).children("i").addClass("icon-radio-cur");
+    			}else{
+    				$(this).children("i").removeClass("icon-radio-cur");
+    				$(this).children("i").addClass("icon-radio");
+    			}
+    			
+
+    		})
+
+		  	$(".btn-plus").click(function(){   
+  				// 数量
+				var t=parseInt($(this).siblings('.menu-num').html());
+				t++;
+				$(this).siblings('.menu-num').html(t);
+				// console.log(t);   
+			  
+			    // t.val(parseInt(t.val())+1)   
+			  
+			    setTotal();   
+			  
+		  	})   
+  
+		  	$(".btn-minus").click(function(){   
+		  		// 数量
+		  		var t=parseInt($(this).siblings('.menu-num').html());
+		  		t--;
+		  		if(t<0){
+		  			t = 0;
+		  		}
+		  		$(this).siblings('.menu-num').html(t);
+		  		// console.log(t);
+			    setTotal();   
+			  
+			})   
+			  
+			// 总数计算函数
+			function setTotal(){   
+			  
+			    var s = 0;
+			    var n = 0;   
+			  
+			    $(".m-menu-list li p").each(function(){   
+			  		// 总价
+			      	s += parseInt($(this).children('.menu-num').html())*parseInt($(this).children('.menu-price').html());
+			      	// 菜品总数
+			   		if(parseInt($(this).children('.menu-num').html())>0){
+			   			n++;
+			   		}	   			  
+			    });   
+			    // console.log(s);
+			  	// console.log(n);
+			    $(".sum-price").html(s);
+			    if(n>0){
+			    	$(".sum-num").html(n);
+			    	$(".sum-num").show();
+			    }else{
+			    	$(".sum-num").hide();
+			    }   
+			    
+			  
+			}   
+			  
+    	})
+    </script>
+</body>
+
+</html>

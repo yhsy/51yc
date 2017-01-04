@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html class="g-html2">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心--意见反馈</title>
+    <link rel="stylesheet" href="css/libs/m-reset.css">
+    <link rel="stylesheet" href="scss/global.css">
+    <link rel="stylesheet" href="scss/personal.css">
+    
+</head>
+
+<body>
+    <div class="g-hd">
+       <a href="javascript:history.go(-1)" class="icon-back"></a>
+       <h2>意见反馈</h2>
+       <a href="javascript:;" class="btn-send">发送</a>
+    </div>
+    
+    <!-- 遮罩 -->
+    <div class="m-mask-modal"></div>
+
+    <div class="m-modal1" id="modal_collection">
+        <div class="modal1-hd">
+            <h2>温馨提示</h2>
+        </div>
+        <div class="modal1-bd">
+            <p>感谢您的宝贵意见，反馈成功!</p>
+        </div>
+        <div class="modal1-ft">
+            <span class="modal-btn-ok">确定</span>
+        </div>
+    </div>
+
+    <div class="g-bd g-bd-personal-setting">	
+		<form class="g-personal6">
+			<div class="g-score">
+				<!-- <ul class="m-score">
+					<li><a href="javascript:;"></a></li>
+					<li><a href="javascript:;"></a></li>
+					<li><a href="javascript:;"></a></li>
+					<li><a href="javascript:;"></a></li>
+					<li><a href="javascript:;"></a></li>
+				</ul> -->
+                <div class="m-score">
+                    <div class="u-score"></div>
+                    <div class="u-score"></div>
+                    <div class="u-score"></div>
+                    <div class="u-score"></div>
+                    <div class="u-score"></div>
+                </div>
+			</div>
+
+			<textarea name="" id="" cols="30" rows="10" placeholder="请填写内容,对其他小伙伴帮助很大哦!" class="feed-content"></textarea>
+
+		</form>
+
+
+    </div>
+
+    <div class="g-ft g-ft-personal">
+		
+    </div>
+
+    <script src="js/rem.js"></script>  
+    <!-- 本地存储组件 -->
+    <script src="js/plugin/store.min.js"></script>
+    <script src="js/libs/zepto.min.js"></script>
+
+    <script>
+        // 默认载入
+            // 获取本地的token值
+            var user = store.get('user');
+            // console.log(user.token);
+        // 载入完成
+            $(function(){
+                // 评论交互js
+                    $(".u-score").click(function(){
+                        $(".m-score div").removeClass('act');
+                        // console.log($(this).index());    
+                        for(var i=0;i<$(this).index()+1;i++){
+                            $(".m-score div").eq(i).addClass('act');
+                        }
+                    })
+
+                // 点击发送
+                    $(".btn-send").click(function(){
+                        // var contents = $(".feed-content").val();
+                        // console.log($(".feed-content").val());
+                        console.log(user.token);
+                        $.ajax({
+                            type:"post",
+                            headers:{"x-access-token":user.token,"Content-Type":"application/json"},
+                            data: JSON.stringify({"content":$(".feed-content").val()}),
+                            url:"http://api.51yuchu.com/feedback/add",
+                            dateType:"json",
+                            success:function(data){
+                                // console.log(data);
+                                if(data.succeed){
+                                    $(".m-mask-modal").show();
+                                    $(".m-modal1").show();
+
+                                }
+                                
+                            }
+                        })
+                    })
+
+                // 反馈成功--确定
+                $(".modal-btn-ok").click(function(){
+                    $(".m-mask-modal").hide();
+                    $(".m-modal1").hide();
+                    // window.location.href = "personal.html";
+                })
+            })
+    </script>
+
+</body>
+
+</html>

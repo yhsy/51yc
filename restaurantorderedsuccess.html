@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html class="g-html2">
+<head>
+    <meta charset="UTF-8">
+    <title>预厨--点餐--下单成功</title>
+    <link rel="stylesheet" href="css/libs/m-reset.css">
+    <link rel="stylesheet" href="scss/global.css">
+    <link rel="stylesheet" href="scss/restaurant.css">
+</head>
+
+<body>
+    <div class="g-hd g-hd-restaurant">
+        <a href="javascript:;" class="icon-back"></a>
+        <p class="hd-tit">下单成功</p>
+    </div>
+
+    <div class="g-bd-restaurant g-reserved-success g-bd-ordered">	
+		<div class="m-reserved-wait1 m-reserved-success1">
+			<p>下单成功</p>
+		</div>
+
+		<div class="m-restaurant-ordered6">
+			<p>我们正在火热制作您的菜品,请及时到店消费</p>
+			<div class="ordered-info">	
+				<div class="info1">
+					<i class="icon-number"></i>
+					<span>订单编号:</span>
+					<em class="ordered-rnum">1264564659797</em>
+				</div>
+
+				<!-- <div class="info1">
+					<i class="icon-hours"></i>
+					<span>就餐时间:</span>
+					<em>2016年11月9日</em>
+					<em>20:20</em>
+				</div> -->				
+			</div>
+			
+		</div>
+		
+		<div class="m-reserved-success4">
+			<a href="javascript:;" class="btn-order-now" id="btn_pay_home">到店支付</a>
+			<a href="javascript:;" class="btn-reserved-cancel" id="btn_pay_now">在线支付</a>
+		</div>
+		
+    </div>
+
+    <div class="g-ft g-ft-ordered-success">
+			
+    </div>
+
+    <script src="js/rem.js"></script>
+    <!-- 本地存储组件 -->
+	<script src="js/plugin/store.min.js"></script>
+	<script src="js/libs/zepto.min.js"></script>
+	
+	<script>
+		// 默认载入
+			// 获得token
+			var token = store.get("wxToken");
+    		if(window.location.hash){
+    			var Urlhash = window.location.hash;  	
+		    	// #/3/2016-12-13/17:30/6
+		    	// console.log(Urlhash);
+		    	//以“/”进行分割并转换成数组
+		    	var hash = Urlhash.split('/'); 
+
+		    	// 根据hash值,判断跳转的页面
+		    		// console.log(hash);
+
+		    		if(hash[1] == "confirm"){
+		    			var rNumber = hash[3];
+		    			// 订单编号
+		    			$(".ordered-rnum").html(rNumber);
+
+		    			// 餐厅Id,rId 
+		    				rId = hash[2];
+		    			// 总金额sPrice
+		    			var sPrice = hash[4];
+
+		    			$("#btn_pay_now").click(function(){
+		    				// window.location.href = "wechat/restaurantpay.html#/success/"+ rId +"/"+ rNumber +"/"+sPrice;
+		    				window.location.href = "wechat/restaurantpay.html?path=success=&rId="+ rId +"=&rNumber="+ rNumber +"=&sPrice=" + sPrice;
+		    			})
+
+
+
+		    		}else if(hash[1] == "success"){
+		    			var getId = hash[2]; 		    			
+		    			// 改变详情页数据
+		    			OrderedDetailAjax(token,getId);
+		    			$("#btn_pay_now").click(function(){
+		    				// window.location.href = "wechat/restaurantpay.html#/success/"+ rId +"/"+ rNumber +"/"+sPrice;
+		    				// window.location.href = "wechat/restaurantpay.html";
+		    				window.location.href = "wechat/restaurantpay.html?path=success=&rId="+ rId +"=&rNumber="+ rNumber +"=&sPrice=" + sPrice;
+		    			})
+		    		}
+
+
+		    		// 详情页-预点订单~处理函数
+					function OrderedDetailAjax(token,id){
+						$.ajax({
+							type:"get",
+							headers:{'Content-Type':'application/json','x-access-token': token},
+							url:"http://api.51yuchu.com/dish/order/"+ id +"/load",
+							dataType:"json",
+							success:function(data){
+								// console.log(data.succeed);
+								// 已登录(succeed = ture)
+								var strList = "";
+								if(data.succeed){
+									var orderResponse = data.value.orderResponse;
+									var restaurant = data.value.restaurant;
+									var Items = data.value.items;
+
+									// 根据商家状态,改变状态对应的内容
+									if(orderResponse.payStatus == "STATUS_1"){
+										orderResponse["payStatus"] = "待支付";
+									}else if(orderResponse.payStatus == "STATUS_2"){
+										orderResponse["payStatus"] = "已支付";
+									}else if(orderResponse.payStatus == "STATUS_3"){
+										orderResponse["payStatus"] = "支付失败";
+									}
+
+									// 处理日期
+										// 年
+										// console.log(orderResponse.payTime.slice(0,4));
+										// 月
+										// console.log(orderResponse.payTime.slice(4,6));
+										// 日
+										// console.log(orderResponse.payTime.slice(6,8));
+
+									// 该页所需数据
+										// 订单编号,订单总价格,预订人,手机号码,
+										// 支付状态
+										// 餐厅图片,
+
+									// 逐条插入数据
+									// 订单编号:orderResponse.code 
+									// 餐厅图片:restaurant.previewUrl
+
+									// 预订菜单列表
+									// strItems = "";
+									// for(var j=0;j<Items.length;j++){
+									// 	strItems += '<li class="menu-items"><span>'+ data.value.items[j].orderItem.menuItemName +'</span> <em>￥'+ data.value.items[j].orderItem.discountPrice +'</em> <em>X'+ data.value.items[j].orderItem.discount +'</em></li>';
+									// }
+
+
+									// 总数据组合
+									// strList += '<div class="menu-list-success"><h2 class="restaurant-name">'+ restaurant.name +'</h2><ul class="menu-list">'+ strItems +'</ul><div class="menu-sum"><span>总计:</span> <em>￥'+ orderResponse.totPayAmount +'</em></div></div><div class="ordered-info"><div class="info1"><i class="icon-number"></i> <span>订单编号:</span> <em>'+ orderResponse.code +'</em></div><div class="info1"><i class="icon-hours"></i> <span>就餐时间:</span> <em>没数据:2016年11月9日</em> <em>没数据:20:20</em></div></div><p>我们正在火热制作您的菜品,请及时到店消费</p>';
+
+								}
+
+								// $('.m-restaurant-ordered6').html(strList);
+									
+							}
+						}) 
+					}
+
+
+    		}
+
+
+	</script>
+
+
+</body>
+
+</html>

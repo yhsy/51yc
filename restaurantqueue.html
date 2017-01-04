@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html class="g-html">
+
+<head>
+    <meta charset="UTF-8">
+    <title>预厨--排队</title>
+    <link rel="stylesheet" href="css/libs/m-reset.css">
+    <link rel="stylesheet" href="scss/global.css">
+    <link rel="stylesheet" href="scss/restaurant.css">
+</head>
+
+<body>
+    <div class="g-hd g-hd-restaurant">
+        <a href="restaurantdetails.html" class="icon-back"></a>
+        <div class="m-logos">
+            <img src="images/logos2.png" alt="">
+        </div>
+    </div>
+
+    <div class="g-bd-restaurant g-bd-queque">
+    	<div class="restaurant-banner">
+			<img src="images/business-img1-640.jpg" alt="">
+			<div class="icon-tags"></div>
+    	</div>
+    	<ul class="m-tnav f-cb">
+    		<li>
+	    		<a href="restaurantreserved.html">
+	    			<span>预定</span>
+	    			<i></i>
+	    		</a>
+    		</li>
+
+    		<li class="tnav-cur">
+    			<a href="restaurantqueue.html">
+	    			<span>排队</span>
+	    			<i></i>
+    			</a>
+    		</li>
+    		<li>
+	    		<a href="restaurantordered.html">
+	    			<span>点餐</span>
+	    			<i></i>
+	    		</a>
+    		</li>
+    	</ul>
+    	<div class="g-restaurant-con g-queque-con">
+			
+			<div class="m-queque-tables">
+				<table>
+					<tr>
+						<th>餐桌类型</th>
+						<th>等待桌数</th>
+						<th>预计等待</th>
+					</tr>
+					<tr>
+						<td>
+							<div class="tables-type">
+								<p>小桌</p>
+								<p class="p2">1-2人</p>
+							</div>	
+						</td>
+						<td>
+							<em class="queque-tables">0</em>桌
+						</td>
+						<td>
+							<em class="queque-times">0</em>分钟
+						</td>	
+					</tr>
+					<tr>
+						<td>
+							<div class="tables-type">
+								<p>中桌</p>
+								<p class="p2">3-4人</p>
+							</div>	
+						</td>
+						<td>
+							<em class="queque-tables">1</em>桌
+						</td>
+						<td>
+							<em class="queque-times">0</em>分钟
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="tables-type">
+								<p>大桌</p>
+								<p class="p2">5人以上</p>
+							</div>	
+						</td>
+						<td>
+							<em class="queque-tables">2</em>桌
+						</td>
+						<td>
+							<em class="queque-times">0</em>分钟
+						</td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="m-queque-distance">
+				<div class="distance-con f-cb">
+					<p>
+						<span>当前距离:</span>
+						<em>4.0KM</em>
+					</p>
+					<p>
+						<span>限制距离:</span>
+						<em>30.0KM</em>
+					</p>
+				</div>
+				<a href="javascript:;" class="btn-offer-number-now">立即取号</a>
+			</div>
+
+
+			<div class="m-restaurant2">
+				<ul class="restaurant-contact">
+					<li class="line2">
+					    <a href="javascript:;">
+					        <i class="icon-address"></i>
+					        <p>鹿城区南塘街200号</p>
+					        <i class="icon-arrow-right2"></i>
+					    </a>
+					</li>
+					<li>
+					    <a href="tel:13819415204">
+					        <i class="icon-tel"></i>
+					        <p>13819415204</p>
+					       	<i class="icon-arrow-right2"></i>
+					    </a>
+					</li>
+					<li>
+					    <a href="javascript:;">
+					        <i class="icon-hours"></i>
+					        <p>营业时间:8:00-21:00</p>
+					        <i class="icon-arrow-right2"></i>
+					    </a>
+					</li>
+				</ul>
+			</div>
+
+    	</div>
+		
+		<!-- 遮罩-选择就餐人数 -->
+    	<div class="m-mask-queque" id="mask_queque">
+
+    	</div>
+
+    	<div class="pnumber-box" id="pnumber_box">
+				<div class="pnumber-hd">请选择就餐人数</div>
+				<div class="pnumber-bd">
+					<ul>
+						<li><a href="javascript:;">1</a></li>
+						<li><a href="javascript:;">2</a></li>
+						<li><a href="javascript:;">3</a></li>
+						<li><a href="javascript:;">4</a></li>
+						<li><a href="javascript:;">5</a></li>
+						<li><a href="javascript:;">6</a></li>
+						<li><a href="javascript:;">7</a></li>
+						<li><a href="javascript:;">8</a></li>
+						<li><a href="javascript:;">9</a></li>
+						<li><a href="javascript:;">10</a></li>
+						<li><a href="javascript:;">11</a></li>
+						<li><a href="javascript:;" class="pnumber-more">更多</a></li>
+					</ul>
+				</div>
+				<div class="pnumber-ft">
+					<a href="javascript:;" class="btn-no">放弃取消</a>
+					<a href="restaurantqueuesuccess.html" class="btn-yes">确认取消</a>
+				</div>
+		</div>
+    </div>
+
+    <div class="g-ft">
+		
+		<nav class="g-bnav">
+			<ul class="m-bnav f-cb">
+				<li class="bnav-item f-fl">
+		   			<a href="javascript:;" id="bnav_comment">
+		   				<i class="icon-bnav-comment"></i>
+		   				<p>发布</p>
+		   			</a>
+		   		</li>
+		   		<li>
+		   			<a href="javascript:;" id="bnav_sign">
+		   				<i class="icon-bnav-sign"></i>
+		   				<p>签到</p>
+		   			</a>
+		   		</li>
+		   		<li>
+		   			<a href="javascript:;" id="bnav_collection">
+		   				<i class="icon-bnav-collection"></i>
+		   				<p>收藏</p>
+		   			</a>
+		   		</li>
+		   		<li class="act">
+		   			<a href="javascript:;" id="bnav_share">
+		   				<i class="icon-bnav-share"></i>
+		   				<p>分享</p>
+		   			</a>
+		   		</li>
+			</ul>
+		</nav>
+    </div>
+
+    <script src="js/rem.js"></script>
+
+    <script src="js/libs/zepto.min.js"></script>
+    <script>
+    	$(function(){
+    		// 点击取号选择人数
+    		$(".btn-offer-number-now").click(function(){
+    			$("#mask_queque").show();
+    			$("#pnumber_box").show();
+    		})
+
+    		$(".btn-no").click(function(){
+    			$("#mask_queque").hide();
+    			$("#pnumber_box").hide();
+    		})
+
+    		$(".btn-yes").click(function(){
+    			$("#mask_queque").hide();
+    			$("#pnumber_box").hide();
+    		})
+    	})
+    </script>
+</body>
+
+</html>

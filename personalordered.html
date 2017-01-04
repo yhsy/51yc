@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html class="g-html2">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心--点餐订单</title>
+    <link rel="stylesheet" href="css/libs/m-reset.css">
+    <link rel="stylesheet" href="scss/global.css">
+    <link rel="stylesheet" href="scss/personal.css">
+    
+</head>
+
+<body>
+    <div class="g-hd g-hd-personal-ordered">
+       <a href="personal.html" class="icon-back"></a>
+       <h2>点餐订单</h2>
+    </div>
+
+    <div class="g-bd g-bd-personal">	
+		<div class="g-personal3">
+			<ul class="m-tnav f-cb">
+				<li class="act"><a href="javascript:;" id="order_all">全部</a></li>
+				<li><a href="javascript:;" id="order_wait">待支付</a></li>
+				<li><a href="javascript:;" id="order_ok">已支付</a></li>
+				<li><a href="javascript:;" id="order_no">支付失败</a></li>
+			</ul>
+		</div>
+
+		<div class="g-personal4">
+			<p class="m-prompt-text">您还没有预约订单,赶紧去点餐吧！</p>
+			<ul class="personal-ordered-list g-ordered-list">
+				<li>
+					<div class="f-fl">
+						<a href="javascript:;" class="ordered-detail">
+							<div class="ordered-infos">
+								<span>订单编号:</span>
+								<strong class="ordered-number">1482391572365000000014</strong>
+							</div>
+							<div class="ordered-infos">
+								<span>总价:</span>
+								<strong class="ordered-price">0.01</strong>
+							</div>
+							<div class="ordered-infos">
+								<span class="ordered-name">用户名:</span>
+								<strong class="ordered-phone">15558889095</strong>
+							</div>
+							<div class="ordered-infos">
+								<em class="ordered-status">未支付</em>
+							</div>
+						</a>
+
+					</div>
+					<div class="f-fr">
+						<a href="javascript:;" class="ordered-detail">
+							<img src="http://resource.micropoint99.com/image/restaurant/wpj_yt_1.jpg" class="ordered-img"  alt="">
+						</a>
+					</div>
+				</li>
+				<li>
+					<div class="f-fl">
+						<a href="javascript:;" class="ordered-detail">
+							<div class="ordered-infos">
+								<span>订单编号:</span>
+								<strong class="ordered-number">1482391572365000000014</strong>
+							</div>
+							<div class="ordered-infos">
+								<span>总价:</span>
+								<strong class="ordered-price">0.01</strong>
+							</div>
+							<div class="ordered-infos">
+								<span class="ordered-name">用户名:</span>
+								<strong class="ordered-phone">15558889095</strong>
+							</div>
+							<div class="ordered-infos">
+								<em class="ordered-status">未支付</em>
+							</div>
+						</a>
+
+					</div>
+					<div class="f-fr">
+						<a href="javascript:;" class="ordered-detail">
+							<img src="http://resource.micropoint99.com/image/restaurant/wpj_yt_1.jpg" class="ordered-img"  alt="">
+						</a>
+					</div>
+				</li>
+				<li>
+					<div class="f-fl">
+						<a href="javascript:;" class="ordered-detail">
+							<div class="ordered-infos">
+								<span>订单编号:</span>
+								<strong class="ordered-number">1482391572365000000014</strong>
+							</div>
+							<div class="ordered-infos">
+								<span>总价:</span>
+								<strong class="ordered-price">0.01</strong>
+							</div>
+							<div class="ordered-infos">
+								<span class="ordered-name">用户名:</span>
+								<strong class="ordered-phone">15558889095</strong>
+							</div>
+							<div class="ordered-infos">
+								<em class="ordered-status">未支付</em>
+							</div>
+						</a>
+
+					</div>
+					<div class="f-fr">
+						<a href="javascript:;" class="ordered-detail">
+							<img src="http://resource.micropoint99.com/image/restaurant/wpj_yt_1.jpg" class="ordered-img"  alt="">
+						</a>
+					</div>
+				</li>			
+			</ul>
+		</div>
+
+    </div>
+
+    <div class="g-ft g-ft-personal">
+		
+    </div>
+
+    <script src="js/rem.js"></script>
+     <!-- 本地存储组件 -->
+	<script src="js/plugin/store.min.js"></script>
+    <!--引入zepto-->
+	<script src="js/libs/zepto.min.js"></script>
+
+	<script>
+		// 默认载入
+			// 首次登录,本地获取token(根据登录token来获取)
+			var token = store.get('wxToken');
+
+			// var url = "data/personal-reserved.json";
+			// var url = "http://api.51yuchu.com/vip/book/order/all/list";
+			var url = "all";
+			PersonalOrderedAjax(token,url);
+
+			// 预点订单~处理函数
+			function PersonalOrderedAjax(token,url){
+
+				$.ajax({
+					type:"get",
+					headers:{'Content-Type':'application/json','x-access-token': token},
+					// url:"http://api.51yuchu.com/vip/book/order/"+url+"/list",
+					url:"http://api.51yuchu.com/vip/dish/order/"+url+"/list",
+					// url:url,
+					// url:"data/personal-reserved.json",
+					dataType:"json",
+					success:function(data){
+						// console.log(data.succeed);
+						// 已登录(succeed = ture)
+						var strList = "";
+						if(data.succeed){
+							if(data.value.length == 0){
+								$(".m-prompt-text").show();
+							}else{
+								$(".m-prompt-text").hide();
+								for(var i=0;i<data.value.length;i++){
+									console.log(data);
+
+									var orderResponse = data.value[i].orderResponse;
+									var restaurant = data.value[i].restaurant;
+
+									// 根据商家状态,改变状态对应的内容
+									if(orderResponse.payStatus == "STATUS_1"){
+										orderResponse["payStatus"] = "待支付";
+										// 全部状态的索引
+										pUrl = "restaurantpaywait.html#/detail/"+ orderResponse.id +"/";
+										// console.log(orderResponse.handleStatus);
+									}else if(orderResponse.payStatus == "STATUS_2"){
+										orderResponse["payStatus"] = "已支付";
+										// 全部状态的索引
+										pUrl = "restaurantpaysuccess.html#/detail/"+ orderResponse.id +"/";
+
+									}else if(orderResponse.payStatus == "STATUS_3"){
+										orderResponse["payStatus"] = "支付失败";
+										pUrl = "javascript:;";
+									}
+
+									// 处理日期
+										// 年
+										// console.log(orderResponse.payTime.slice(0,4));
+										// 月
+										// console.log(orderResponse.payTime.slice(4,6));
+										// 日
+										// console.log(orderResponse.payTime.slice(6,8));
+
+									// 该页所需数据
+										// 订单编号,订单总价格,预订人,手机号码,
+										// 支付状态
+										// 餐厅图片,
+
+									// 逐条插入数据
+									strList += '<li><div class="f-fl"><a href="'+pUrl+'"><div class="ordered-infos"><span>订单编号:</span> <strong class="ordered-number">'+ orderResponse.code +'</strong></div><div class="ordered-infos"><span>总价:</span> <strong class="ordered-price">'+ orderResponse.totPayAmount +'</strong></div><div class="ordered-infos"><span class="ordered-name">'+ orderResponse.buyer +'</span> <strong class="ordered-phone">'+ orderResponse.phone +'</strong></div><div class="ordered-infos"><em class="ordered-status">'+ orderResponse.payStatus +'</em></div></a></div><div class="f-fr"><a href="'+pUrl+'"><img src="'+ restaurant.previewUrl +'" class="ordered-img" alt=""></a></div></li>';
+
+								}
+
+								$('.g-ordered-list').html(strList);
+							}
+						}
+					}
+				}) 
+			}
+
+		// 载入完成
+		$(function(){	 
+			// tab选中样式			
+			for(var i=0;i<$(".m-tnav li").length;i++){
+				$(".m-tnav li").click(function(){
+					$(".m-tnav li").removeClass('act');
+					$(this).addClass('act');
+				})
+				
+			}
+
+			// 全部
+			$('#order_all').click(function(){
+				// var url = "http://api.51yuchu.com/vip/book/order/all/list";
+				// var url = "data/personal-reserved.json";
+				url = "all";
+				PersonalOrderedAjax(token,url);
+			})
+
+			// 待确认订单
+			$('#order_wait').click(function(){
+				// var url = "http://api.51yuchu.com/vip/book/order/wait/confirmed/list";
+				url = "wait/pay";
+				// var url = "data/personal-reserved1.json";
+				PersonalOrderedAjax(token,url);
+			})
+
+			// 已确认订单
+			$('#order_ok').click(function(){
+				// var url = "data/personal-reserved2.json";
+				url = "payed";
+				// var url = "http://api.51yuchu.com/vip/book/order/confirmed/list";
+				PersonalOrderedAjax(token,url);
+				// console.log(222);
+			})
+
+			// 预约失败订单
+			$('#order_no').click(function(){
+				// var url = "data/personal-reserved3.json";
+				// PersonalOrderedAjax(url);
+				// console.log(333);
+			})
+			
+			// $(".icon-back").click(function(){
+			// 	window.location.href = "personal.html";
+			// })	
+
+		})	
+
+
+	</script>
+
+</body>
+
+</html>

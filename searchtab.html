@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>御厨-搜索餐厅、菜系、商圈</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/libs/m-reset.css"/>
+		<link rel="stylesheet" type="text/css" href="scss/changeCity.css"/>
+	</head>
+
+	<body>
+		<header class="g-hds">
+			<a class="btn-close" href="index.html"></a>
+			<div class="g-sch">
+				<div class="m-sch">
+					<i class="icon-sch"></i>
+					<input type="text" placeholder="搜索餐厅、菜系、商圈" id="search_ipt" />
+					<a href="javascript:;" class="btn-sch-close" id="btn_sch_close"><i class="icon-sch-close"></i></a>
+				</div>
+			</div>
+		</header>
+		
+		<div class="m-mask-bd">
+	    	<ul class="m-think-list" id="think_list">
+	    	</ul>
+	    </div>
+		<div class="mui-content g-bd g-bds">
+		    
+		    
+		    <ul class="m-country-tab2">
+		    	<li class="m-tab tab-active">
+		    		<a href="javascript:;" id="sch_restaurant">餐厅搜索</a>	    		
+		    	</li>
+		    	<li class="m-tab">
+		    		<a href="javascript:;" id="sch_cate">美食搜索</a>
+		    	</li>
+		    </ul>
+		    
+		    <div class="m-tab-con">
+				<div class="m-tab-con1">
+			    	<h2>热门搜索</h2>
+			    	<ul class="m-hot-list sch-hot-list" id="sch_hot_list">
+			    		<li><a href="javascript:;">金园小厨餐厅</a></li>
+			    		<li><a href="javascript:;">得尔乐大酒店</a></li>
+			    		<li><a href="javascript:;">万象城美食</a></li>
+			    		<li><a href="javascript:;">香格里拉大酒店</a></li>
+			    		<li><a href="javascript:;">万和豪生大酒店</a></li>
+			    		<li><a href="javascript:;">江蟹明海鲜城</a></li>
+			    	</ul>
+			    </div>
+			    
+			    <div class="m-tab-con2">
+			    	<h2>搜索历史</h2>
+			    	<ul class="m-hot-list sch-history-list" id="sch_history_list">
+			    		<li><a href="javascript:;">金园小厨餐厅</a></li>
+			    		<li><a href="javascript:;">得尔乐大酒店</a></li>
+			    		<li><a href="javascript:;">万象城美食</a></li>
+			    	</ul>
+			    </div>
+			</div>
+		    <!--搜索列表区-->
+		    <div class="g-restaurant">
+		    	<ul class="m-restaurant-list" id="restaurant_list">
+		    	
+		    	</ul>
+		    	
+		    </div>
+		    
+		    
+		
+		
+		<script src="js/rem.js"></script>
+		<!-- 本地存储组件 -->
+		<script src="js/plugin/store.min.js"></script>
+		<script src="js/libs/zepto.min.js"></script>
+
+		<script>
+			$(function(){
+				// 选中样式
+				for(var i=0;i<$('.m-country-tab2 li').length;i++){
+					$('.m-country-tab2 li').click(function(){
+
+						$('.m-country-tab2 li').removeClass("tab-active");
+						$(this).addClass('tab-active');
+					})
+				}
+				
+			})
+		</script>
+		<script src="js/sch-table.js"></script>
+		
+	</body>
+
+</html>

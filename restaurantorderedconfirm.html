@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html class="g-html">
+
+<head>
+    <meta charset="UTF-8">
+    <title>提交订单</title>
+    <link rel="stylesheet" href="css/libs/m-reset.css">
+    <link rel="stylesheet" href="scss/global.css">
+    <link rel="stylesheet" href="scss/restaurant.css">
+</head>
+
+<body>
+    <div class="g-hd g-hd-restaurant">
+        <a href="javascript:;" class="icon-back"></a>
+        <p class="hd-tit">提交订单</p>
+    </div>
+
+    <div class="g-bd-restaurant g-bd-ordered">
+    	<div class="m-restaurant-ordered4">
+			<h2 class="ordered-rname">顶龙意境粤菜(万象城店)</h2>
+			<ul class="menu-list">
+				<li>
+					<strong class="menu-name">酱汁小排</strong>
+					<div class="g-num">
+						<p class="n1">
+							<em>X</em>
+							<em class="menu-num">1</em>
+						</p>
+						<p class="n2">
+							<em>¥</em>
+							<em class="menu-price">15</em>
+						</p>
+						
+					</div>
+				</li>
+				<li>
+					<strong class="menu-name">蚝油生菜</strong>
+					<div class="g-num">
+						<p class="n1">
+							<em>X</em>
+							<em class="menu-num">1</em>
+						</p>
+						<p class="n2">
+							<em>¥</em>
+							<em class="menu-price">15</em>
+						</p>
+						
+					</div>
+				</li>
+			</ul>
+			<div class="div1">
+				<span>商品总计:</span>
+				<p>
+					<em>¥</em>
+					<em class="sum-price">35</em>
+				</p>
+			</div>
+			<div class="div1">
+				<strong>减</strong>
+				<span class="u-red">立减优惠</span>
+				<p>
+					<em class="u-red">-</em>
+					<em class="u-red">¥</em>
+					<em class="u-red minus-price">0</em>
+				</p>
+			</div>
+			<div class="div1 u-nline">
+				<span>实付款:</span>
+				<p>
+					<em>¥</em>
+					<em class="real-payment">20</em>
+				</p>
+			</div>
+
+    	</div>
+    	<div class="m-restaurant-ordered5">
+    		<div class="m-ordered-times">
+				<i class="icon-hours"></i>
+				<strong>预订时间:</strong>
+				
+				<!-- <div class="f-fr">
+					<em>尽快就餐</em>
+					<span>预计</span>
+					<span>10:06</span>
+					<i class="icon-arrow-right3"></i>
+				</div> -->
+
+				<div class="f-fr">
+					<em class="ordered-date">2016年12月27日</em>
+					<span class="ordered-time">10:06</span>
+					<i class="icon-arrow-right3"></i>
+				</div>
+    		</div>
+			<form class="m-ordered-form">
+				<i class="icon-msg"></i>
+				<label for="ipt-ordered-msg">买家留言:</label>
+				<input type="text" id="ipt-ordered-msg" placeholder="口味偏好等要求">
+			</form>
+    	</div>
+    	
+    </div>
+
+    <div class="g-ft g-ft-ordered">
+		<div class="m-ordered-carts">
+			<div class="ordered-cart-txt3">
+				<span>已优惠</span>	
+				<em class="u-red">¥</em>
+				<em class="u-red fav-price">0</em>
+				
+			</div>
+			<a href="javascript:;" class="btn-ordered-statements" id="btn_ordered_submit" >提交订单</a>
+			<div class="cart-count">
+				<em>还需付:</em>
+				<strong>¥</strong>
+				<strong class="real-payment">20</strong>
+				<em class="count-text">元</em>
+			</div>
+			
+
+		</div>
+    </div>
+
+    <script src="js/rem.js"></script>
+    <!-- 本地存储组件 -->
+	<script src="js/plugin/store.min.js"></script>	
+    <script src="js/libs/zepto.min.js"></script>
+
+    <script>
+    	/*默认载入--start*/ 
+		    // 根据餐厅id,显示餐厅的菜单(分类,菜品列表)
+		    if(window.location.hash){
+				// 获取餐厅详情页的hash值(既#餐厅Id)
+			    var Urlhash = window.location.hash;
+
+			    // 取得餐厅id
+			    // var rId = Urlhash.slice(1,Urlhash.length);
+
+			    var hash = Urlhash.split('/'); //以“/”进行分割并转换成数组
+			    // console.log(hash);
+			    // hash[0]是#号
+
+			    // 判断是哪个页提交的
+				var rPage = hash[1];
+
+				// 如果是点餐页
+				if(rPage=="ordered"){
+					// 餐厅Id
+			    	var rId = hash[2];	
+			    	// 订单总金额
+			    	var sPrice = hash[3];
+
+			    	// 微信token
+			    	var token = store.get('wxToken');
+
+			    	// 获取数据,展示数据
+			    	$.ajax({
+	    				type:"get",
+				    	headers:{"x-access-token":token,"Content-Type":"application/json"},
+				    	url:"http://api.51yuchu.com/cart/list?restaurantId="+rId+"&page=1&size=10",
+				    	// url:"data/menuList.json",
+				    	dataType:"json",
+				    	success:function(data){
+				    		if(data.succeed){
+					    		var cList = data.value.list;	    		
+					    		// 本页所需数据
+					    			// 餐厅名				    		
+					    			// 菜单列表数据
+						    		// 菜品名 	$(".menu-name");
+						    		// 菜品数量	$(".menu-num");
+						    		// 菜品单价	$(".menu-price");
+
+						    		// 商品总价 $(".sum-price")sPrice(上页传过来了);
+						    		// 立减优惠 $(".minus-price");
+
+						    		// 实付款	$(".real-payment");
+						    		// 实付款 = 商品总价 - 立减优惠价
+						    		// 预订时间: 
+						    		// 买家留言
+
+					    		/*获取数据-start*/
+					    			// 菜单列表数据 
+									var mList = "";
+									for(var i=0;i<cList.length;i++){
+										mList+='<li><strong class="menu-name">'+cList[i].menuItem.name+'</strong><div class="g-num"><p class="n1"><em>X</em> <em class="menu-num">'+cList[i].shopCart.quantity+'</em></p><p class="n2"><em>¥</em> <em class="menu-price">'+cList[i].menuItem.price+'</em></p></div></li>';
+									}
+
+									// 菜品数据
+									var ItemsList = [];
+						    		for(var i=0;i<cList.length;i++){
+						    			ItemsList.push({"id":cList[i].shopCart.id,"quantity":cList[i].shopCart.quantity});
+						    		}
+					    		/*获取数据-end*/
+
+					    		/*显示所有数据-start*/ 
+					    			// 餐厅名(通过ajax请求修改餐厅名称)
+					    				rName(rId);
+					    			// 订单列表
+					    				$('.menu-list').html(mList);
+					    			// 商品总价
+					    				$(".sum-price").html(sPrice);
+					    			// 立减优惠
+					    				$(".minus-price").text();
+					    			// 实付款
+					    				var payPrice = sPrice - parseFloat($(".minus-price").text());
+					    				$(".real-payment").html(payPrice);
+
+					    			// 修改预订日期/时间
+					    				rDate();
+
+					    		/*显示所有数据-end*/
+
+					    		/*提交数据-start*/
+					    			$("#btn_ordered_submit").click(function(){
+										CartSubmit(ItemsList);
+					    			})
+					    			// alert(typeof())
+					    		/*提交数据-end*/ 
+					    	}	
+				    		
+				    	}
+			    	})
+
+			    	/*默认载入函数*/
+			    		// 修改餐厅名称函数
+						    function rName(rId){
+						    	$.ajax({
+						    		type:"get",
+						    		url:"http://api.51yuchu.com/restaurant/"+rId+"/get",
+						    		dataType:"json",
+						    		success:function(data){
+						    			if(data.succeed){
+							    			var rName = data.value.restaurant.name;	
+							    			$(".ordered-rname").html(rName);
+					    				}
+						    		}
+						    	})
+						    }
+						// 修改预订时间
+							function rDate(){
+								var myDate = new Date();
+
+								myDate.getYear();        //获取当前年份(2位)      
+								myDate.getFullYear();    //获取完整的年份(4位,1970-????)      
+								myDate.getMonth();       //获取当前月份(0-11,0代表1月)      
+								myDate.getDate();        //获取当前日(1-31)      
+								myDate.getDay();         //获取当前星期X(0-6,0代表星期天)      
+								myDate.getTime();        //获取当前时间(从1970.1.1开始的毫秒数)      
+								myDate.getHours();       //获取当前小时数(0-23)      
+								myDate.getMinutes();     //获取当前分钟数(0-59)      
+								myDate.getSeconds();     //获取当前秒数(0-59)      
+								myDate.getMilliseconds();    //获取当前毫秒数(0-999)      
+								myDate.toLocaleDateString();     //获取当前日期      
+								var mytime=myDate.toLocaleTimeString();     //获取当前时间      
+								myDate.toLocaleString( );        //获取日期与时间
+
+								// 组合数据(预订日期) ;
+									var oDate = myDate.getFullYear() +"年"+ (myDate.getMonth()+1) +"月"+ myDate.getDate() +"日";
+								// 组合数据(预订时间)
+									if(myDate.getHours()<10){
+										oHours = "0" + myDate.getHours();
+								 	}else{
+								 		oHours = myDate.getHours();
+								 	}
+
+								 	// alert(myDate.getMinutes())
+									if(myDate.getMinutes()<10){
+										var oMinutes = "0" + myDate.getMinutes();
+									}else{
+										var oMinutes = myDate.getMinutes();
+									}
+
+									var oTime = oHours +":"+ oMinutes;
+								// 修改日期/时间
+								$(".ordered-date").html(oDate);
+			    				$(".ordered-time").html(oTime); 
+							}
+						
+						// 提交订单函数
+							function CartSubmit(list){
+								// transportType	物流方式（1：堂食， 2：外卖）
+				    			var tType = 1;
+				    			// 订单类型 1：外卖 2：预约 3：排队 4：点餐
+				    			var sType = 4;
+				    			// 总金额 
+				    			// var sPrice = $(".sum-price").html();
+				    			// platformId	IOS:1,安卓:2,微信:3,其他:4
+				    			var pId = 3;
+
+				    			// 通过函数取得items列表
+				    			// getCart();
+				    			// 将字符串转为对象
+				    			// var ItemsList = eval($("#btn_ordered_ok").attr("items"));
+				    			// alert(typeof(ItemsList));
+
+				    			var sData = {"order":{"transportType":tType, "restaurantId":rId, "type":sType, "totPayAmount":sPrice, "platformId":pId}, "items":list};
+				    			// {"order":{"transportType":"1", "restaurantId":9, "type":"4", "totPayAmount":79, "platformId":"1"}, "items":[{"id":3, "quantity":1}]}
+
+							    $.ajax({
+							    	type:"post",
+							    	headers:{"x-access-token":token,"Content-Type":"application/json"},
+							    	data:JSON.stringify(sData),
+							    	url:"http://api.51yuchu.com/dish/order/do?resubmitToken="+ token,
+							    	// url:"data/menuList.json",
+							    	dataType:"json",
+							    	success:function(data){
+							    		if(data.succeed){
+							    			console.log(data);
+							    			var cNumber = data.value.code;
+							    			window.location.href = "restaurantorderedsuccess.html#/confirm/" + rId +"/"+ cNumber +"/"+ sPrice;
+							    		}
+							    	}
+							    })
+							}
+
+			    	/*默认载入函数*/ 
+
+				}
+
+			    
+
+
+
+			    
+				/*交互函数--集合*/ 
+					
+
+					// 获取购物车数据-函数(提交订单用)
+					function getCart(){
+	    				$.ajax({
+		    				type:"get",
+		    				async:false,
+					    	headers:{"x-access-token":token,"Content-Type":"application/json"},
+					    	url:"http://api.51yuchu.com/cart/list?restaurantId="+rId+"&page=1&size=10",
+					    	// url:"data/menuList.json",
+					    	dataType:"json",
+					    	success:function(data){
+					    		var cList = data.value.list;
+					    		var itemsList = [];
+					    		for(var i=0;i<cList.length;i++){
+					    			// var items = {};
+					    			// var items = {"id":cList[i].shopCart.id,"quantity":cList[i].shopCart.quantity};
+					    			itemsList.push({"id":cList[i].shopCart.id,"quantity":cList[i].shopCart.quantity});
+					    		}
+					    		// console.log(itemsList);
+					    		$("#btn_ordered_ok").attr("items",JSON.stringify(itemsList));
+					    		// alert(itemsList);
+
+					    		// return itemsList;
+					    	}
+				    	})
+	    			}
+				/*交互函数--集合*/ 	
+
+			}   
+		/*默认载入--end*/ 
+
+		$(function(){
+			// 点击返回,跳转
+	    		$(".icon-back").click(function(){
+	    			window.location.href = "restaurantordered.html#" + rId;
+	    		});
+
+		})
+
+    </script>
+
+</body>
+
+</html>

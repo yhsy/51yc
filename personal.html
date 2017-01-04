@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="g-html2">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+    <link rel="stylesheet" href="css/libs/m-reset.css">
+    <link rel="stylesheet" href="scss/global.css">
+    <link rel="stylesheet" href="scss/personal.css">
+    
+</head>
+
+<body>
+    <div class="g-hd g-hd-personal">
+        <div class="m-logos"></div>
+        <a href="javascript:;" class="u-personal-avatar">
+			<!-- <img src="images/img-default-avatar.png" alt="" class="personal-img"> -->
+			<img src="" class="personal-img">
+        </a>
+    </div>
+
+    <div class="g-bd-personal">	
+		<div class="m-personal1">
+			<h2 class="personal-name"></h2>
+			<p>
+				<span>来自:</span>
+				<em>中国</em>
+				<span>,</span>
+				<em class="personal-city"></em>
+			</p>
+		</div>
+		<div class="g-personal2">
+			<ul class="m-menu-list">
+				<li><a href="personalreserved.html"><span>预约订单</span><i class="icon-arrow-right2"></i></a></li>
+				<!-- <li><a href="personalqueque.html"><span>排队订单</span><i class="icon-arrow-right2"></i></a></li> -->
+				<li><a href="personalordered.html"><span>预点订单</span><i class="icon-arrow-right2"></i></a></li>
+				<li><a href="personalcollections.html"><span>收藏订单</span><i class="icon-arrow-right2"></i></a></li>
+				<li><a href="personalsetting.html"><span>设置</span><i class="icon-arrow-right2"></i></a></li>
+			</ul>
+		</div>
+
+    </div>
+
+    <div class="g-ft g-ft-personal">
+		<nav class="g-nav">
+			<ul class="m-nav f-cb">
+				<li>
+		   			<a href="index.html" id="Home">
+		   				<i class="ico-nav-home"></i>
+		   				<span>首页</span>
+		   			</a>
+		   		</li>
+		   		<li>
+		   			<a href="ordered.html" id="Ordered">
+		   				<i class="ico-nav-ordered"></i>
+		   				<span>预约</span>
+		   			</a>
+		   		</li>
+		   		<li>
+		   			<a href="find.html" id="Search">
+		   				<i class="ico-nav-find"></i>
+		   				<span>发现</span>
+		   			</a>
+		   		</li>
+		   		<li class="act">
+		   			<a href="personal.html" id="My">
+		   				<i class="ico-nav-my"></i>
+		   				<span>我的</span>
+		   			</a>
+		   		</li>
+			</ul>
+		</nav>
+    </div>
+
+    <script src="js/rem.js"></script>
+	<!-- 微信公众接口 -->
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <!-- 本地存储组件 -->
+	<script src="js/plugin/store.min.js"></script>	
+    <!--引入zepto库及其他js插件-->
+	<script src="js/libs/zepto.min.js"></script>
+		
+
+	<script>
+		// 首次登录,载入获取会员数据(根据token来获取)
+			// 判断是否获取到了用户信息
+			if(window.location.search){
+				// alert(window.location.href);
+				// 获取返回的code值				
+				function uCode(){
+					// 获得微信返回的参数列表(获取返回的code值)
+					var urlSearch = window.location.search;
+					// 截取
+					var uSch = urlSearch.split("=");
+					// 再次截取
+					var uSchCode = uSch[1].split("&");
+					// 取得code值
+					var uCode = uSchCode[0];
+
+					return uCode;
+				}
+
+				// 获取的code值
+				var wxCode = uCode();
+
+				$.ajax({
+					type:"post",
+					contentType: 'application/json',
+					url:"http://api.51yuchu.com/login/fwh",
+					data:JSON.stringify({"code":wxCode}),
+					dataType:"json",
+					success:function(data){
+						// alert("返回成功!");
+						if(data.succeed){
+							var uToken = data.value;
+
+							// 把用户的token存到本地		
+							store.set('wxToken',uToken);
+							// var token = store.get('token');
+							// alert(token);
+
+							$.ajax({
+								type:"get",
+								// headers:{"x-access-token":user.token,"Content-Type":"application/json"},
+								headers:{"x-access-token":uToken},
+								url:"http://api.51yuchu.com/vip/get",
+								dataType:"json",
+								success:function(data){
+									if(data.succeed){
+										// 更新-用户名
+										$(".personal-name").html(data.value.name);
+										// 更新-用户头像
+										$(".personal-img").prop("src",data.value.headImageUrl);
+
+										// 更新-所在城市名称
+										var user = store.get('user');
+										$(".personal-city").html(user.cityName);
+									}
+								},
+								error:function(){
+									alert("返回token失败");
+								}
+							})	
+
+						}
+						
+					},
+					error:function(){
+						alert('返回失败');
+						// alert(window.location.href);
+					}
+				})
+				
+			}else{
+				// 获取本地的token值
+				var user = store.get('user');
+				// 注意:这里的url格式(http://test.51yuchu.com/)
+				var url = "http://"+window.location.host+"/";
+
+				
+				// 判断是否有token值
+				if(store.get('wxToken')){	
+					//如果有token值,那么更新页面内容 
+					// alert('我有token');
+					$.ajax({
+						type:"get",
+						// headers:{"x-access-token":user.token,"Content-Type":"application/json"},
+						headers:{"x-access-token":store.get('wxToken')},
+						url:"http://api.51yuchu.com/vip/get",
+						dataType:"json",
+						success:function(data){
+							if(data.succeed){
+								// 更新-用户名
+								$(".personal-name").html(data.value.name);
+								// 更新-用户头像
+								$(".personal-img").prop("src",data.value.headImageUrl);
+
+								// 更新-所在城市名称
+								var user = store.get('user');
+								$(".personal-city").html(user.cityName);
+							}
+						},
+						error:function(){
+							alert("返回token失败");
+						}
+					})	
+				}else{
+					// 通过微信api获取code,然后通过code获取token,再通过token获取用户信息
+					// alert('我没有token');
+					$.ajax({
+						type:"get",
+						url:"http://api.51yuchu.com/wechat/fwh/get/config?url="+url,
+						dataType:"json",
+						success:function(data){
+							if(data.succeed){
+								console.log(data);
+								var value = data.value;
+								// value.jsapiTicket
+
+								// 公众号ID
+								var wxAppid = value.appId;
+								// 签名时间戳
+								var wxTimestamp = value.timestamp;
+								// 签名的随机串
+								var wxNonceStr = value.nonceStr;
+								// 签名
+								var wxSignature = value.signature;
+								// JS接口列表
+								var wxJsApiList = ['checkJsApi','openLocation','getLocation'];
+
+								// 跳转url地址
+								var wxRedirect_uri = value.url + "personal.html";	
+								// 微信请求的方式
+								var wxScope = "snsapi_userinfo";
+								// alert(value.url);
+
+								// 微信token跳转
+								window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="+ wxAppid +"&redirect_uri="+ wxRedirect_uri +"&response_type=code&scope="+ wxScope +"#wechat_redirect";		
+
+											
+							}
+						}
+					})
+				}
+
+
+				
+			}
+
+			
+
+			
+
+		$(function(){	 	
+			// 更新会员数据
+			
+
+			
+		})	
+	</script>
+</body>
+
+</html>

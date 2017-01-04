@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>预厨--预定</title>
+    <link rel="stylesheet" href="css/libs/m-reset.css">
+    <!-- SUI CSS -->
+    <!-- <link rel="stylesheet" href="css/libs/sm.min.css"> -->
+    <link rel="stylesheet" href="scss/global.css">
+    <link rel="stylesheet" href="scss/restaurant.css">
+</head>
+
+<body>
+    <div class="g-hd g-hd-restaurant">
+        <a href="restaurantdetails.html" class="icon-back"></a>
+        <div class="m-logos">
+            <img src="images/logos2.png" alt="">
+        </div>
+    </div>
+
+    <div class="g-bd g-bd-restaurant">
+    	<div class="restaurant-banner">
+			<img src="images/business-img1-640.jpg" alt="">
+			<div class="icon-tags"></div>
+    	</div>
+    	<ul class="m-tnav f-cb">
+    		<li class="tnav-cur">
+	    		<a href="restaurantreserved.html">
+	    			<span>预定</span>
+	    			<i></i>
+	    		</a>
+    		</li>
+
+    		<!-- <li>
+    			<a href="restaurantqueue.html">
+	    			<span>排队</span>
+	    			<i></i>
+    			</a>
+    		</li> -->
+    		<li>
+	    		<a href="restaurantordered.html">
+	    			<span>点餐</span>
+	    			<i></i>
+	    		</a>
+    		</li>
+    	</ul>
+    	<!-- 支持预定 -->
+    	<div class="g-reserved-on">
+		
+			<div class="g-date f-cb">
+				<label for="reserved_date">日期:</label>
+				<input type="text" id="reserved_date" placeholder="请选择预定日期" readonly="readonly">
+				<i class="icon-arrow-right2"></i>
+			</div>
+			<p class="m-prompt" id="ipt_prompt_data">日期不能为空,请选择日期!</p>
+			<div class="g-date">
+				<label for="reserved_pnumber">人数:</label>
+				<input type="text" id="reserved_pnumber" placeholder="请选择就餐人数">
+				<i class="icon-arrow-right2"></i>
+			</div>
+			<p class="m-prompt" id="ipt_prompt_pnumber">人数不能为空,请选择人数！</p>
+			
+
+			<!-- <ul class="reserved-tables-list f-cb">
+				<li class="tables-items">
+					<a href="javascript:;">
+						<p>11:00-12:30</p>
+						<span>剩余2桌</span>
+					</a>
+				</li>
+				<li class="tables-items">
+					<a href="javascript:;">
+						<p>17:00-18:00</p>
+						<span>剩余2桌</span>
+					</a>
+				</li>
+				<li class="tables-items">
+					<a href="javascript:;">
+						<p>18:30-19:00</p>
+						<span>剩余2桌</span>
+					</a>
+				</li>
+			</ul> -->
+
+			
+			<div class="m-reserved-times">
+				<h2><a href="javascript:;" class="btn-reserved-start">立即预约</a></h2>
+				<ul class="reserved-times-list f-cb">
+					<li class="times-items"><a href="javascript:;">17:00</a></li>
+					<li class="times-items cur"><a href="javascript:;">17:30</a></li>
+					<li class="times-items"><a href="javascript:;">18:00</a></li>
+					<li class="times-items"><a href="javascript:;">18:30</a></li>
+					<li class="times-items"><a href="javascript:;">19:00</a></li>
+					<li class="times-items"><a href="javascript:;">19:30</a></li>
+					<li class="times-items"><a href="javascript:;">20:00</a></li>
+					<li class="times-items"><a href="javascript:;">20:30</a></li>
+					<li class="times-items"><a href="javascript:;">21:00</a></li>
+					<li class="times-items"><a href="javascript:;">21:30</a></li>
+				</ul>
+			</div>
+
+
+    	</div>
+    	<!-- 不支持预定 -->
+    	<div class="g-reserved-off">
+			<p>该商家暂时不支持预约</p>
+    	</div>
+
+    	<!-- 遮罩-选择就餐人数 -->
+    	<div class="m-mask-queque" id="mask_queque"></div>
+		
+		<!-- 就餐人数弹出层 -->
+    	<div class="pnumber-box" id="pnumber_box">
+				<div class="pnumber-hd">请选择就餐人数</div>
+				<div class="pnumber-bd">
+					<ul id="pnumber_list">
+						<li><a href="javascript:;">1</a></li>
+						<li><a href="javascript:;">2</a></li>
+						<li><a href="javascript:;">3</a></li>
+						<li><a href="javascript:;">4</a></li>
+						<li><a href="javascript:;">5</a></li>
+						<li><a href="javascript:;">6</a></li>
+						<li><a href="javascript:;">7</a></li>
+						<li><a href="javascript:;">8</a></li>
+						<li><a href="javascript:;">9</a></li>
+						<li><a href="javascript:;">10</a></li>
+						<li><a href="javascript:;">11</a></li>
+						<li><a href="javascript:;" class="pnumber-more">更多</a></li>
+					</ul>
+				</div>
+				<div class="pnumber-ft">
+					<a href="javascript:;" class="btn-no">放弃取消</a>
+					<a href="javascript:;" class="btn-yes">确认取消</a>
+				</div>
+		</div>
+
+
+    </div>
+
+    <div class="g-ft">
+		
+
+    </div>
+
+    <script src="js/rem.js"></script>
+	<script type='text/javascript' src='js/libs/zepto.min.js'></script>
+	<!-- 日历组件 -->
+	<link rel="stylesheet" href="scss/libs/zepto.mdater.css">
+	<script src="js/libs/mdater/zepto.mdater.min.js"></script>
+	
+	<script>
+		//	默认载入
+			// 1.获取餐厅id
+				 // 获取餐厅详情页传过来的hash值(既#餐厅Id)
+			    var Urlhash = window.location.hash;
+
+			    // 取得餐厅id
+			    var rId = Urlhash.slice(1,Urlhash.length);;
+
+		$(function(){
+			// 日历组件
+			$('#reserved_date').mdater({ 
+			    minDate : new Date(2015, 10, 1)
+			}); 
+
+			// 点击取号选择人数
+    		$("#reserved_pnumber").click(function(){
+    			$("#mask_queque").show();
+    			$("#pnumber_box").show();
+    		})
+
+    			// 获取选择的人数
+    			$('#pnumber_list li a').click(function(){
+    				pnumber = $(this).html();
+    			})
+
+    			// 点击取消
+				$(".btn-no").click(function(){
+	    			$("#mask_queque").hide();
+	    			$("#pnumber_box").hide();
+	    		})
+
+
+				// 点击确认
+	    		$(".btn-yes").click(function(){
+	    			// console.log(pnumber);
+	    			$("#mask_queque").hide();
+	    			$("#pnumber_box").hide();
+	    			$('#reserved_pnumber').val(pnumber);
+    			})
+
+    		// 点击时间选中效果
+    			$(".reserved-times-list li").click(function(){
+    				$(".reserved-times-list li").removeClass("cur");
+    				$(this).addClass("cur");
+    			})
+
+
+    		// 点击立即预约
+    			/*
+					1.首先校验数据(日期,人数不能为空)
+					2.提交时,把数据组合起来,通过地址栏&传递(预约信息页window.location.search)
+					restaurantreservedview.html
+
+    			*/ 
+
+    			$(".btn-reserved-start").click(function(){
+    				// 预约日期
+    				var iptDate = $("#reserved_date").val();
+    				// 预约人数
+    				var iptPnumber = $("#reserved_pnumber").val();
+    				// 预约时间
+    				var iptTime = $(".reserved-times-list .cur a").html();
+
+
+
+    				if(iptDate == ""){
+    					// 提示选择日期
+    					$("#ipt_prompt_data").show();
+    				}
+
+    				if(iptPnumber == ""){
+    					//提示选择人数
+    					$("#ipt_prompt_pnumber").show();
+    				}
+
+    				if(iptDate !== "" && iptPnumber !== ""){
+    					//	路由需要传的参数
+	    					//	rId:餐厅Id,
+	    					//	iptData:预约日期
+	    					//	iptTime:预约时间
+	    					//	iptPnumber:预约用餐人数
+    						window.location.href = "restaurantreservedview.html#/"+ rId +"/"+iptDate+"/"+iptTime+"/"+iptPnumber;
+    				}
+
+    			})
+
+		})
+	</script>
+	
+</body>
+
+</html>

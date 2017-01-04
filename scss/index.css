@@ -1,0 +1,257 @@
+@charset "UTF-8";
+/*rem转换函数()*/
+/*头部区域-start*/
+.i-hd {
+  width: 100%;
+  position: relative;
+  /*图片轮播区*/
+  /*头部地址栏*/
+  /*功能导航*/ }
+  .i-hd .i-hd1 {
+    width: 100%;
+    background: #ccc;
+    z-index: 11; }
+    .i-hd .i-hd1 .swiper-wrapper .swiper-slide a {
+      display: block;
+      /*height: torem(444px);*/ }
+      .i-hd .i-hd1 .swiper-wrapper .swiper-slide a img {
+        width: 100%;
+        height: 11.1rem; }
+  .i-hd .i-hd2 {
+    position: absolute;
+    z-index: 12;
+    top: 0;
+    width: 100%;
+    height: 1.9rem;
+    line-height: 1.9rem;
+    background: -webkit-linear-gradient(bottom, transparent 0%, black 100%); }
+    .i-hd .i-hd2 .u-text {
+      float: left;
+      font-size: 0.65rem;
+      color: #fff;
+      padding-left: 0.25rem;
+      padding-right: 0.25rem; }
+    .i-hd .i-hd2 .u-text .u-city {
+      display: inline-block; }
+    .i-hd .i-hd2 .u-text i {
+      display: inline-block;
+      width: 0.35rem;
+      height: 0.2rem;
+      background: url(../images/ico-arrow-down.png) no-repeat;
+      background-size: contain; }
+    .i-hd .i-hd2 .i-sch {
+      float: left;
+      margin-top: 0.25rem;
+      width: 10.9rem;
+      height: 1.3rem;
+      line-height: 1.3rem;
+      border: 2px solid #fff; }
+      .i-hd .i-hd2 .i-sch .icon-sch {
+        float: left;
+        width: 0.675rem;
+        height: 0.65rem;
+        background: url(../images/ico-search.png) no-repeat;
+        background-size: contain;
+        margin: 0.4rem 0 0 1.4rem; }
+      .i-hd .i-hd2 .i-sch .i-sch-text {
+        float: left;
+        font-size: 0.65rem;
+        line-height: 1.4rem;
+        text-indent: 0.5rem;
+        color: #fff; }
+    .i-hd .i-hd2 .u-nearby {
+      float: right; }
+      .i-hd .i-hd2 .u-nearby .ico-arrow-right {
+        display: inline-block;
+        width: 0.25rem;
+        height: 0.45rem;
+        background: url(../images/ico-arrow-right.png) no-repeat;
+        background-size: contain; }
+  .i-hd .i-hd3 {
+    position: absolute;
+    z-index: 13;
+    bottom: 0.4rem;
+    width: 100%; }
+  .i-hd .i-tnav {
+    width: 15rem;
+    margin: 0 auto;
+    overflow: hidden; }
+    .i-hd .i-tnav li {
+      float: left;
+      margin-right: 0.3rem; }
+      .i-hd .i-tnav li .i-tnav-btn {
+        float: left;
+        width: 4.8rem;
+        height: 1.75rem;
+        line-height: 1.75rem;
+        text-align: center;
+        font-size: 0.55rem;
+        background: #f2f2f2;
+        border-radius: 0.25rem;
+        font-family: "Microsoft YaHei",微软雅黑,Arial, Helvetica, sans-serif;
+        letter-spacing: 0.1rem;
+        box-shadow: 0 0.05rem 0.05rem 0 #666; }
+    .i-hd .i-tnav .i-tnav-none {
+      margin-right: 0; }
+
+/*头部区域-end*/
+/*内容区域*/
+.i-bd {
+  padding: 0.375rem 0.375rem 3.5rem 0.375rem;
+  background: #f2f2f2;
+  /*附近商家*/
+  /*精品推荐榜*/
+  /*聚餐场景*/
+  /*/end下划线*/ }
+  .i-bd .i-bd1 {
+    background: #fff;
+    padding: 0.5rem 0 0.3rem 0.5rem;
+    /*标题*/
+    /*商家轮播*/ }
+    .i-bd .i-bd1 .i-business-tit {
+      width: 100%;
+      overflow: hidden; }
+      .i-bd .i-bd1 .i-business-tit .ico-map {
+        float: left;
+        width: 0.725rem;
+        height: 0.725rem;
+        background: url(../images/ico-map.png) no-repeat;
+        background-size: contain; }
+      .i-bd .i-bd1 .i-business-tit span {
+        float: left;
+        text-indent: 0.25rem;
+        font-size: 0.65rem;
+        line-height: 0.75rem; }
+    .i-bd .i-bd1 .i-business-box {
+      overflow: hidden;
+      /*商家展示内容*/
+      /*轮播控制器*/ }
+      .i-bd .i-bd1 .i-business-box .i-business-list {
+        background: #fff;
+        position: relative; }
+        .i-bd .i-bd1 .i-business-box .i-business-list .swiper-slide {
+          /*描述文字*/
+          /*图片*/ }
+          .i-bd .i-bd1 .i-business-box .i-business-list .swiper-slide .i-business-text {
+            float: left;
+            width: 6.125rem;
+            margin-top: 1.25rem;
+            overflow: hidden; }
+            .i-bd .i-bd1 .i-business-box .i-business-list .swiper-slide .i-business-text strong {
+              display: block;
+              font-size: 0.85rem;
+              color: #8a8a8a;
+              height: 0.85rem;
+              overflow: hidden; }
+            .i-bd .i-bd1 .i-business-box .i-business-list .swiper-slide .i-business-text span {
+              display: block; }
+            .i-bd .i-bd1 .i-business-box .i-business-list .swiper-slide .i-business-text .i-business-explain {
+              margin: 0.3rem 0; }
+            .i-bd .i-bd1 .i-business-box .i-business-list .swiper-slide .i-business-text .i-business-distance {
+              font-size: 0.55rem; }
+              .i-bd .i-bd1 .i-business-box .i-business-list .swiper-slide .i-business-text .i-business-distance em {
+                font-style: normal; }
+          .i-bd .i-bd1 .i-business-box .i-business-list .swiper-slide .i-business-img {
+            float: right;
+            width: 7.625rem;
+            height: 6.075rem;
+            margin-right: 0.25rem; }
+            .i-bd .i-bd1 .i-business-box .i-business-list .swiper-slide .i-business-img img {
+              width: 7.625rem;
+              height: 6.075rem; }
+      .i-bd .i-bd1 .i-business-box .i-indicator-warp {
+        width: 100%; }
+      .i-bd .i-bd1 .i-business-box .i-slider-indicator {
+        margin: 0.3rem auto;
+        width: 1.5rem;
+        height: 0.4rem; }
+        .i-bd .i-bd1 .i-business-box .i-slider-indicator .i-indicator {
+          float: left;
+          width: 0.25rem;
+          height: 0.25rem;
+          border-radius: 0.125rem;
+          background: #aeaeae;
+          margin-right: 0.15rem; }
+        .i-bd .i-bd1 .i-business-box .i-slider-indicator .i-indicator-active {
+          border: 0.05rem solid #000;
+          margin-top: -0.05rem; }
+  .i-bd .i-bd2 {
+    margin: 0.5rem 0;
+    background: #fff;
+    overflow: hidden;
+    padding-bottom: 0.25rem;
+    /*推荐标题*/
+    /*推荐列表*/ }
+    .i-bd .i-bd2 .i-recommend-tit {
+      overflow: hidden;
+      height: 2rem;
+      line-height: 2rem; }
+      .i-bd .i-bd2 .i-recommend-tit span {
+        float: left;
+        text-indent: 0.6rem;
+        font-size: 0.8rem; }
+      .i-bd .i-bd2 .i-recommend-tit .u-more {
+        float: right;
+        margin-right: 0.35rem;
+        font-size: 0.65rem; }
+        .i-bd .i-bd2 .i-recommend-tit .u-more .ico-more {
+          display: inline-block;
+          width: 0.25rem;
+          height: 0.45rem;
+          background: url(../images/ico-more.png) no-repeat; }
+    .i-bd .i-bd2 .i-recommend-list {
+      padding: 0 0.125rem 0 0.275rem;
+      overflow: hidden; }
+      .i-bd .i-bd2 .i-recommend-list li {
+        float: left;
+        margin-right: 0.2rem; }
+        .i-bd .i-bd2 .i-recommend-list li a {
+          display: block; }
+        .i-bd .i-bd2 .i-recommend-list li img {
+          width: 4.75rem;
+          height: 4.75rem; }
+        .i-bd .i-bd2 .i-recommend-list li p {
+          width: 4.5rem;
+          height: 1rem;
+          line-height: 1rem;
+          text-align: center;
+          font-size: 0.6rem;
+          overflow: hidden; }
+  .i-bd .i-bd3 {
+    padding-top: 0.375rem;
+    background: #fff; }
+    .i-bd .i-bd3 .i-scene {
+      width: 100%;
+      height: 5.95rem;
+      margin-bottom: 0.3rem; }
+      .i-bd .i-bd3 .i-scene a {
+        display: block;
+        position: relative; }
+      .i-bd .i-bd3 .i-scene img {
+        width: 15.25rem;
+        height: 5.95rem; }
+      .i-bd .i-bd3 .i-scene .i-sence-tit {
+        position: absolute;
+        bottom: 0.3rem;
+        left: 0;
+        background: #c6a656;
+        width: 5.5rem;
+        padding-bottom: 0.25rem; }
+        .i-bd .i-bd3 .i-scene .i-sence-tit h3 {
+          height: 1.55rem;
+          line-height: 1.55rem;
+          font-size: 1.05rem;
+          color: #fffdff;
+          text-align: center; }
+        .i-bd .i-bd3 .i-scene .i-sence-tit p {
+          text-align: center;
+          font-size: 0.6rem;
+          height: 0.6rem;
+          line-height: 0.6rem;
+          color: #fff8ed; }
+  .i-bd .i-end {
+    color: #c7b161; }
+
+/*内容区域-end*/
+
+/*# sourceMappingURL=index.css.map */

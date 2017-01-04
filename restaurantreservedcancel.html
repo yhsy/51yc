@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html class="g-html">
+<head>
+    <meta charset="UTF-8">
+    <title>预厨--预约--取消预约</title>
+    <link rel="stylesheet" href="css/libs/m-reset.css">
+    <link rel="stylesheet" href="scss/global.css">
+    <link rel="stylesheet" href="scss/restaurant.css">
+</head>
+
+<body>
+    <div class="g-hd g-hd-restaurant">
+        <a href="restaurantreserved.html" class="icon-back"></a>
+        <p class="hd-tit">预约详情</p>
+    </div>
+
+    <div class="g-bd-restaurant g-reserved-cancel">		
+		<div class="m-cancel-box">
+			<div class="cancel-hd"></div>	
+			<div class="cancel-bd">
+				<div class="cancel-bd1">
+					<img src="images/img-cancel.png" alt="">
+					<p>请选择取消预约的原因</p>
+				</div>
+				<ul class="cancel-list">
+					<li>
+						<a href="javascript:;">
+							<i class="icon-radio-cur"></i>
+							<span>取消行程</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<i class="icon-radio"></i>
+							<span>改去其他餐厅</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<i class="icon-radio"></i>
+							<span>预约信息填写错误</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<i class="icon-radio"></i>
+							<span>行程有变</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<i class="icon-radio"></i>
+							<span>试试新功能</span>
+						</a>
+					</li>
+				</ul>
+
+			</div>
+			<div class="cancel-ft f-cb">
+				<a href="javascript:;" class="btn-cancel-no">放弃取消</a>
+				<a href="javascript:;" class="btn-cancel-yes">确认取消</a>
+			</div>
+
+		</div>			
+    </div>
+
+    <div class="g-ft">
+		<!-- <a href="javascript:;" class="btn-reserved-now">取消预约</a> -->
+    </div>
+
+    <script src="js/rem.js"></script>
+    <script src="js/libs/zepto.min.js"></script>
+    <script>
+    	$(function(){
+    		// 单选效果UI
+    		$('.cancel-list a').click(function(){
+    			$('.cancel-list a i').prop('class','icon-radio');
+    			$(this).children('i').removeClass('icon-radio');
+    			$(this).children('i').addClass('icon-radio-cur');
+    		})
+
+    		// 取消
+    		$('.btn-cancel-no').click(function(){
+    			window.location.href="restaurantreservedsuccess.html";
+    		})
+
+    		// 确定
+    		$('.btn-cancel-yes').click(function(){
+    			window.location.href="restaurantreserved.html";
+    		})
+    	})
+    		
+    	
+    </script>
+</body>
+
+</html>

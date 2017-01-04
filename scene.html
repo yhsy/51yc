@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html class="g-html2">
+<head>
+    <meta charset="UTF-8">
+    <title class="head-title">约会圣地榜</title>
+    <link rel="stylesheet" href="css/libs/m-reset.css">
+    <link rel="stylesheet" href="scss/global.css">
+    
+</head>
+
+<body>
+    <div class="g-hd">
+       <a href="index.html" class="icon-back"></a>
+       <h2 class="hd-tit">约会圣地榜</h2>
+    </div>
+
+    <div class="g-bd g-bd-scene">	
+		<ul class="m-restaurant-list2">
+			<li>				
+				<a href="restaurantdetails.html" class="rt-img">
+					<img src="images/img-sence-1.jpg" alt="">
+					<p>被这里的雅致环境所折,露天阳台超棒!</p>
+				</a>
+
+				<div class="rt-info">
+					<h3 class="rt-tit">老三国诸葛烤鱼</h3>
+
+					<p class="rt-cuisine">烤鱼</p>
+					<p class="rt-region">龙湾区</p>
+					<p class="rt-price">
+						<span>¥</span>
+						<em>200</em>
+						<span>-</span>
+						<span>¥</span>
+						<em>300</em>
+					</p>
+				</div>				
+				
+			</li>
+			<li>				
+				<a href="restaurantdetails.html" class="rt-img">
+					<img src="images/img-sence-1.jpg" alt="">
+					<p>被这里的雅致环境所折,露天阳台超棒!</p>
+				</a>
+
+				<div class="rt-info">
+					<h3 class="rt-tit">老三国诸葛烤鱼</h3>
+
+					<p class="rt-cuisine">烤鱼</p>
+					<p class="rt-region">龙湾区</p>
+					<p class="rt-price">
+						<span>¥</span>
+						<em>200</em>
+						<span>-</span>
+						<span>¥</span>
+						<em>300</em>
+					</p>
+				</div>				
+				
+			</li>
+		</ul>
+
+    </div>
+
+    <div class="g-ft">
+		
+    </div>
+
+    <script src="js/rem.js"></script>
+    <!-- 本地存储组件 -->
+	<script src="js/plugin/store.min.js"></script>
+	<script src="js/libs/zepto.min.js"></script>
+
+	<script>
+		// 页面默认载入时
+			// 根据hash判断是哪个主题,获取主题id
+			var Urlhash = window.location.hash;
+			console.log(Urlhash.length);
+			// 获取主题id
+			var themeId = Urlhash.slice(1,Urlhash.length);
+			
+			// 修改标题
+			if(themeId == 1){
+				$('.head-title').html('约会圣地榜');
+				$('.hd-tit').html('约会圣地榜');
+			}else if(themeId == 2){
+				$('.head-title').html('商务会餐榜');
+				$('.hd-tit').html('商务会餐榜');
+			}else if(themeId == 3){
+				$('.head-title').html('家庭聚餐榜');
+				$('.hd-tit').html('家庭聚餐榜');
+			}
+
+			// 获取该主题下的餐厅列表
+			sceneList(themeId);
+			// slice(hash(1,2));
+			// console.log(Urlhash.slice(1,2));
+
+
+		strList = "";
+
+
+		// 获取餐厅列表
+		// 根据城市Id,经度，维度,来获取默认的推荐餐厅列表
+		function sceneList(themeId){
+			$.ajax({
+				type:"get",
+				url:"http://api.51yuchu.com/restaurant/theme/"+themeId+"/item/list",
+				dataType:"json",
+				beforeSend:Loading,
+				success:function(data){
+					if(data.succeed){
+						for(var i=0;i<data.value.length;i++){
+							strList+='<li><a href="restaurantdetails.html" class="rt-img"><img src="'+ data.value[i].restaurant.previewUrl +'" alt=""><p>'+ data.value[i].restaurant.content +'</p></a><div class="rt-info"><h3 class="rt-tit">'+ data.value[i].restaurant.name +'</h3><p class="rt-cuisine">'+ data.value[i].restaurant.keyword +'</p><p class="rt-region">'+ data.value[i].restaurant.cityId +'</p><p class="rt-price"><span>¥</span> <em>'+ data.value[i].restaurant.startPrice +'</em> <span>-</span> <span>¥</span> <em>'+ data.value[i].restaurant.endPrice +'</em></p></div></li>';
+						}
+						
+					}
+					$(".m-restaurant-list2").html(strList);
+				}
+			})
+		}
+
+		// loading效果
+		function Loading(XMLHttpRequest){
+			$('.m-restaurant-list1').before("<div class='m-loading'><img src='images/loading.gif' /><div>");
+	 		$('m-restaurant-list1').hide();
+	
+	 		// loading 1秒后隐藏loading,显示列表
+	 		setTimeout(function(){
+	 			$('.m-loading').hide();
+	 			$('.m-restaurant-list1').show();
+	 		},500)
+		}
+		// 页面载入完成时
+
+	</script>	
+</body>
+
+</html>

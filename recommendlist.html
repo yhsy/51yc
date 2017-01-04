@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html class="g-html2">
+<head>
+    <meta charset="UTF-8">
+    <title>精品推荐榜</title>
+    <link rel="stylesheet" href="css/libs/m-reset.css">
+    <link rel="stylesheet" href="scss/global.css">
+    
+</head>
+
+<body>
+    <div class="g-hd">
+       <a href="index.html" class="icon-back"></a>
+       <h2 class="hd-tit">精品推荐榜</h2>
+    </div>
+
+    <div class="g-bd g-bd-recommed">	
+		<div class="g-banner">
+			<ul class="m-banner">
+				<li>
+					<a href="javascript:;">
+						<img src="images/img-recommed-1.jpg" alt="">
+					</a>
+				</li>
+			</ul>
+		</div>
+		
+		<ul class="m-restaurant-list1">
+			<li class="f-cb">				
+				<a href="javascript:;" class="rt-img f-fl">
+					<img src="images/img-recommed-2.jpg" alt="">
+				</a>
+				<div class="rt-info">
+					<p class="p1">亮点是牛仔骨和香蒜蟹肉面。有点小贵,但很适合特殊场合</p>
+
+					<p class="rt-cuisine">烤鱼</p>
+					<p class="rt-region">龙湾区</p>
+					<p class="rt-price">
+						<span>¥</span>
+						<em>200</em>
+						<span>-</span>
+						<span>¥</span>
+						<em>300</em>
+					</p>
+				</div>
+				
+				
+				<div class="rt-address">
+					<a href="javascript:;">					
+						<i class="icon-address"></i>
+						<p class="f-fl">
+							<em>老三国诸葛烤鱼</em>
+							<span>温州市鹿城区南塘街200号</span>
+						</p>
+						<i class="icon-arrow-right2"></i>
+					</a>
+				</div>
+				
+			</li>
+			<li class="li-items-l f-cb">				
+				<a href="javascript:;" class="rt-img f-fr">
+					<img src="images/img-recommed-3.jpg" alt="">
+				</a>
+				<div class="rt-info rt-info">
+					<p class="p1">食物好吃到哭。蔬菜很新鲜,薄薄鱼肉是最大的亮点令人难忘</p>
+
+					<p class="rt-cuisine">烤鱼</p>
+					<p class="rt-region">龙湾区</p>
+					<p class="rt-price">
+						<span>¥</span>
+						<em>200</em>
+						<span>-</span>
+						<span>¥</span>
+						<em>300</em>
+					</p>
+				</div>
+				
+				
+				<div class="rt-address">
+					<a href="javascript:;">					
+						<i class="icon-address"></i>
+						<p class="f-fl">
+							<em>老三国诸葛烤鱼</em>
+							<span>温州市鹿城区南塘街200号</span>
+						</p>
+						<i class="icon-arrow-right2"></i>
+					</a>
+				</div>
+				
+			</li>
+		</ul>
+
+    </div>
+
+    <div class="g-ft">
+		
+    </div>
+
+    <script src="js/rem.js"></script>
+    <!-- 本地存储组件 -->
+	<script src="js/plugin/store.min.js"></script>
+	<script src="js/libs/zepto.min.js"></script>
+
+	<script>
+		// 页面默认载入时
+		// 获取多个数据
+			// user是本地数据集合,由首页set到本地local
+		    var user = store.get('user');
+		    var strList = "";
+		    rList(user.cityId,user.lng,user.lat);
+		    // console.log(user.lng);
+
+		// 获取餐厅列表
+		// 根据城市Id,经度，维度,来获取默认的推荐餐厅列表
+		function rList(cityId,lng,lat){
+			$.ajax({
+				type:"get",
+				url:"http://api.51yuchu.com/index/recommend/list?cityId="+cityId+"&lng="+lng+"&lat="+lat,
+				dataType:"json",
+				beforeSend:Loading,
+				success:function(data){
+					if(data){
+						for(var i=0;i<data.value.length;i++){
+							if(i%2 == 0){
+								strList += '<li class="f-cb"><a href="javascript:;" class="rt-img f-fl"><img src="'+ data.value[i].restaurant.previewUrl +'" alt=""></a><div class="rt-info"><p class="p1">'+ data.value[i].restaurant.content +'</p><p class="rt-cuisine">'+ data.value[i].restaurant.keyword +'</p><p class="rt-region">'+ data.value[i].country.name +'</p><p class="rt-price"><span>¥</span> <em>'+ data.value[i].restaurant.startPrice +'</em> <span>-</span> <span>¥</span> <em>'+ data.value[i].restaurant.endPrice +'</em></p></div><div class="rt-address"><a href="javascript:;"><i class="icon-address"></i><p class="f-fl"><em>'+ data.value[i].restaurant.name +'</em> <span>'+ data.value[i].restaurant.address +'</span></p><i class="icon-arrow-right2"></i></a></div></li>';
+							}else{
+								strList += '<li class="li-items-l f-cb"><a href="javascript:;" class="rt-img f-fr"><img src="'+ data.value[i].restaurant.previewUrl +'" alt=""></a><div class="rt-info"><p class="p1">'+ data.value[i].restaurant.content +'</p><p class="rt-cuisine">'+ data.value[i].restaurant.keyword +'</p><p class="rt-region">'+ data.value[i].country.name +'</p><p class="rt-price"><span>¥</span> <em>'+ data.value[i].restaurant.startPrice +'</em> <span>-</span> <span>¥</span> <em>'+ data.value[i].restaurant.endPrice +'</em></p></div><div class="rt-address"><a href="javascript:;"><i class="icon-address"></i><p class="f-fl"><em>'+ data.value[i].restaurant.name +'</em> <span>'+ data.value[i].restaurant.address +'</span></p><i class="icon-arrow-right2"></i></a></div></li>';
+							}
+						}
+						$('.m-restaurant-list1').html(strList);
+					}
+				}
+			})
+		}
+
+		// loading效果
+		function Loading(XMLHttpRequest){
+			$('.m-restaurant-list1').before("<div class='m-loading'><img src='images/loading.gif' /><div>");
+	 		$('m-restaurant-list1').hide();
+	
+	 		// loading 1秒后隐藏loading,显示列表
+	 		setTimeout(function(){
+	 			$('.m-loading').hide();
+	 			$('.m-restaurant-list1').show();
+	 		},500)
+		}
+		// 页面载入完成时
+
+	</script>	
+</body>
+
+</html>

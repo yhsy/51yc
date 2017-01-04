@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>预厨--预约信息</title>
+    <link rel="stylesheet" href="css/libs/m-reset.css">
+     <link rel="stylesheet" href="scss/global.css">
+    <link rel="stylesheet" href="scss/restaurant.css">
+</head>
+
+<body>
+    <div class="g-hd g-hd-restaurant">
+        <a href="restaurantreserved.html" class="icon-back"></a>
+        <p class="hd-tit">预约信息</p>
+    </div>
+
+    <div class="g-bd-restaurant g-reserved-view">
+		<div class="m-reserved-view1">
+			<h2 class="f-cb">
+				<span>餐厅:</span>
+				<em class="reserved-name">顶龙意境粤菜(万象城店)</em>
+			</h2>
+			<p>
+				<span>人数:</span>
+				<em class="reserved-number">4</em>
+				<span>人</span>
+			</p>
+			<p>
+				<span>日期:</span>
+				<em class="reserved-date">10月21日</em>
+				<em class="reserved-time">17:15</em>
+			</p>
+		</div>
+
+		<div class="m-reserved-view2">
+			<p>
+				<span>我要定包房</span>
+				<a href="javascript:;" class="u-off">
+					<i class="u-btn"></i>
+				</a>
+			</p>
+		</div>		
+
+		<div class="m-reserved-view3">
+			<h3>顾客信息</h3>
+			<form action="" class="reservedform">
+				<p>
+					<label for="reserved_pname">您的尊称:</label>
+					<input type="text" id="reserved_pname" placeholder="请输入您的姓名" datatype="*" >
+					<!-- <em>用户名不能为空</em> -->
+				</p>
+
+				<p class="ipt-prompt-user">用户名不能为空</p>
+				<p class="p2">
+					<a href="javascript:;" class="ipt-radio-cur">
+						<i class="icon-radio"></i>
+						<span>先生</span>
+					</a>
+					<a href="javascript:;" class="ipt-radio">
+						<i class="icon-radio"></i>
+						<span>女士</span>
+					</a>
+					<!-- <input type="radio" name="sex" id="" vlaue="先生">
+					<input type="radio" name="sex" id="" vlaue="女士"> -->
+				</p>
+				<p>
+					<label for="reserved_contact">联系方式:</label>
+					<input type="text" id="reserved_contact" placeholder="请输入您的联系方式" datatype="m">
+					
+				</p>
+				<p class="ipt-prompt-contact">手机号码格式错误</p>
+				<div class="reserved-remark">
+					<h3>备注信息</h3>
+					<textarea name="" id="" cols="30" rows="10" placeholder="如果有特殊要求,请填写,餐厅会尽量满足" class="reserved-remark-con"></textarea>
+				</div>
+			</form>
+		</div>
+
+		<a href="javascript:;" class="btn-reserved-now">立即预约</a>
+    </div>
+
+    <div class="g-ft">
+		
+    </div>
+
+    <script src="js/rem.js"></script>
+    <!-- 本地存储组件 -->
+	<script src="js/plugin/store.min.js"></script>
+    <script src="js/libs/zepto.min.js"></script>
+    <!-- 校验插件 -->
+    <!-- <script src="js/libs/Validform_v5.3.2_min.js"></script> -->
+    <script>
+    	// 默认载入
+    		// 1.获取token
+			var user = store.get('user');
+		    // 用户 token值
+		    var token = user.token;
+
+		    // 获取餐厅详情页的hash值(既#餐厅Id)
+		    var Urlhash = window.location.hash;
+
+		    // 根据hash值,分割路由值
+		    // #/3/2016-12-13/17:30/6
+		    // console.log(Urlhash);
+		    var hash = Urlhash.split('/'); //以“/”进行分割并转换成数组
+
+		    // console.log(hash);
+		    // hash[0]是#号
+		    // 餐厅Id
+		    var rId = hash[1];
+		    // 预约日期
+		    var iptDate = hash[2];
+		    // 预约时间
+		    var iptTime = hash[3];
+		    // 预约人数
+		    var iptPnumber = hash[4];
+
+		    // 2.根据餐厅ID,获取餐厅名称
+			    // http://api.51yuchu.com/restaurant/{id}/get
+			    restaurantInfo(rId);
+
+			    function restaurantInfo(rId){
+			    	$.ajax({
+			    		type:"get",
+			    		url:"http://api.51yuchu.com/restaurant/"+rId+"/get",
+			    		dataType:"json",
+			    		success:function(data){
+			    			if(data.succeed){
+			    				// console.log(data);
+			    				if(data.succeed){
+			    					// console.log(data.value.restaurant.name)
+			    					// 获取餐厅数据
+				    					// 餐厅-名称
+				    					var rName = data.value.restaurant.name;
+
+				    					// 更新预约信息的数据
+				    					// 餐厅名称
+				    						$(".reserved-name").html(rName);
+			    						// 预约人数
+				    						$(".reserved-number").html(iptPnumber);
+				    					// 预约日期
+				    						$(".reserved-date").html(iptDate);
+				    					// 预约时间
+				    						$(".reserved-time").html(iptTime);		
+			    				}
+			    			}
+			    		}
+			    	})
+			    }
+
+    	$(function(){
+    		// $(".reservedform").Validform();
+    		// 我要定包房UI
+    		$('.m-reserved-view2 p a').click(function(){
+    			if($(this).prop('class') == "u-off"){
+    				$(this).removeClass('u-off');	
+    				$(this).addClass('u-on');
+
+    			}else{
+    				$(this).removeClass('u-on');	
+    				$(this).addClass('u-off');
+    			}
+    		})
+
+    		// 单选效果UI
+    		$('.m-reserved-view3 .p2 a').click(function(){
+    			$('.m-reserved-view3 .p2 a').prop('class','ipt-radio');
+    			$(this).removeClass('ipt-radio');
+    			$(this).addClass('ipt-radio-cur');
+    		})
+
+    		// 用户名校验
+    			/*
+					校验规则:
+						您的尊称:不能为空
+						联系方式:手机号码(11位数字,手机号)
+    			*/ 
+    			/*
+					两种校验方式
+					1.离开输入框焦点时,判断
+					2.点击"立即预约"后,判断 
+    			*/ 
+
+    			// 用户名校验
+    			$('#reserved_pname').blur(function(){
+    				// console.log($(this).val());
+    				if($(this).val() == ""){
+    					// console.log("请输入您的姓名");
+    					// $(this).append("<em>尊称不能为空</em>");
+    					$(".ipt-prompt-user").show();
+    				}else{
+    					$(".ipt-prompt-user").hide();
+    				}
+    			})
+
+    			// 手机号码校验
+    			 $("#reserved_contact").blur(function(){
+    			 	vailPhone();
+    			 })
+
+    			 // 手机号校验函数
+    			function vailPhone(){
+			       	var phone = $("#reserved_contact").val();
+			       	var flag = false;
+		       		var message = "";
+		       		var myreg = /^(((13[0-9]{1})|(14[0-9]{1})|(17[0]{1})|(15[0-3]{1})|(15[5-9]{1})|(18[0-9]{1}))+\d{8})$/;       
+		       		if(phone == ''){
+		         		message = "手机号码不能为空！";
+		       		}else if(phone.length !=11){
+		         		message = "请输入有效的手机号码！";
+		       		}else if(!myreg.test(phone)){
+		         		message = "请输入有效的手机号码！";
+			       		// }else if(checkPhoneIsExist()){
+			       		//   message = "该手机号码已经被绑定！";
+	       			}else{
+			           flag = true;
+		       		}
+		       		if(!flag){
+			      		//提示错误效果
+			      		// console.log('错误');
+			      		$(".ipt-prompt-contact").show();
+		       		}else{
+			            //提示正确效果
+		            	// console.log('正确');
+		            	$(".ipt-prompt-contact").hide();
+		       		}
+		       		return flag;
+		     	}
+
+		     	// restaurantreservedwait.html
+
+		     	$('.btn-reserved-now').click(function(){
+		     		// 用户名校验
+
+					// console.log($(this).val());
+					if($('#reserved_pname').val() == ""){
+						// console.log("请输入您的姓名");
+						// $(this).append("<em>尊称不能为空</em>");
+						$(".ipt-prompt-user").show();
+					}else{
+						$(".ipt-prompt-user").hide();
+					}
+	    			
+
+	    			// 手机号码校验
+	    			 	vailPhone();
+
+	    			 	// console.log(vailPhone());
+
+    			 	// 判断是否包厢
+    			 	var onOff = $(".m-reserved-view2 a");
+    			 	// 默认是不用包厢,状态为false
+    			 	var box = false;
+    			 	if(onOff.prop('class') == "u-on"){
+    			 		box = true;
+    			 	}
+
+
+
+	    			 if($('#reserved_pname').val() == "" || vailPhone() == false){
+	    			 	// console.log('错误');
+	    			 }else{
+	    			 	// console.log('正确');
+	    			 	// window.location.href="restaurantreservedwait.html";
+
+	    			 	// 提交数据格式
+	    			 	// {"restaurantId":"9", "number":3, "box":false, "mealTime":"20161101", "hour":18, "minute":0, "name":"郑克", "mobile":"13738308481", "remark":"靠窗", “platformId”:1}
+	    			 	
+	    			 	// 把日期转成数字格式
+
+	    			 	function mDate(date){
+	    			 		// 截取日期并转换成数组
+	    			 		var sDate = date.split("-");
+	    			 		// 存放日期变量
+	    			 		var tDate = "";
+	    			 		// 循环出日期的值存入变量
+	    			 		for(var i=0;i<sDate.length;i++){
+		    			 		var tDate = tDate+sDate[i];
+		    			 	}
+		    			 	// 返回转换好的日期值
+		    			 	return tDate;
+	    			 	}
+
+	    			 	// 截取时间
+		    			 	var sTime = iptTime.split(":");
+		    			 	// 小时
+		    			 	var sHour = sTime[0];
+		    			 	// 分钟
+		    			 	var sMin = sTime[1];
+
+		    			 	// console.log(sHour,sMin);	
+
+		    			 // 提交数据组合成json
+	    			 	var rData = {"restaurantId":rId,"number":iptPnumber,"box":box,"mealTime":mDate(iptDate), "hour":sHour, "minute":sMin, "name":$('#reserved_pname').val(), "mobile":vailPhone(), "remark":$(".reserved-remark-con").val(), "platformId":3};
+
+	    			 	// console.log(rData);
+	    			 	$.ajax({
+	    			 		type:"post",
+	    			 		headers:{"x-access-token":token,"Content-Type":"application/json"},
+	    			 		url:"http://api.51yuchu.com/book/order/do?resubmitToken="+token,
+	    			 		data:JSON.stringify(rData),
+	    			 		dataType:"json",
+	    			 		success:function(data){
+	    			 			console.log(data);
+	    			 		}
+	    			 	})
+
+
+	    			 }
+	    			 
+		     	})
+
+
+    	})
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1809 @@
+@charset "UTF-8";
+/*rem转换函数*/
+/*头部*/
+.g-hd-restaurant {
+  width: 100%;
+  background: #1a1a1a;
+  border-bottom: 2px solid #7b7877;
+  position: relative; }
+  .g-hd-restaurant .icon-back {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.9rem; }
+  .g-hd-restaurant .m-logos {
+    width: 3.4rem;
+    padding: 0.225rem 0;
+    margin: 0 auto; }
+    .g-hd-restaurant .m-logos img {
+      width: 3.4rem;
+      height: 1.35rem; }
+  .g-hd-restaurant p {
+    font-size: 0.75rem;
+    color: #fff;
+    line-height: 1.35rem;
+    text-align: center; }
+
+/*内容区*/
+/*通用*/
+.g-bd-restaurant {
+  /*默认详情页*/
+  /*预约页*/
+  /*能预约*/
+  /*不能预约*/
+  /*通用*/ }
+  .g-bd-restaurant .restaurant-banner {
+    position: relative; }
+    .g-bd-restaurant .restaurant-banner img {
+      width: 16rem;
+      height: 7.15rem;
+      background-size: contain; }
+    .g-bd-restaurant .restaurant-banner .icon-tags {
+      position: absolute;
+      width: 2.6rem;
+      height: 0.95rem;
+      top: 0.3rem;
+      left: 0;
+      background: url(../images/icon-tags.png) no-repeat;
+      background-size: contain;
+      /*font-size: torem(20px);*/ }
+  .g-bd-restaurant .m-tnav {
+    padding: 0 1.25rem;
+    background: #1a1a1a; }
+    .g-bd-restaurant .m-tnav li {
+      float: left; }
+    .g-bd-restaurant .m-tnav a {
+      float: left;
+      width: 2.25rem;
+      padding: 0 2.25rem;
+      /*width: 50%;*/
+      /*text-align: center;*/ }
+      .g-bd-restaurant .m-tnav a span {
+        float: left;
+        line-height: 1.3rem;
+        font-size: 0.8rem;
+        text-align: center;
+        color: #fff; }
+      .g-bd-restaurant .m-tnav a i {
+        float: left;
+        margin-top: 0.55rem;
+        margin-left: 0.3rem;
+        width: 0.35rem;
+        height: 0.2rem;
+        background: url(../images/icon-arrow-down.png) no-repeat;
+        background-size: contain; }
+    .g-bd-restaurant .m-tnav .tnav-cur a {
+      border-bottom: 4px solid #c8a05a; }
+      .g-bd-restaurant .m-tnav .tnav-cur a span {
+        color: #c8a05a; }
+      .g-bd-restaurant .m-tnav .tnav-cur a i {
+        background: url(../images/icon-arrow-down2.png) no-repeat;
+        background-size: contain; }
+  .g-bd-restaurant .g-restaurant-con {
+    padding-bottom: 2rem; }
+  .g-bd-restaurant .m-restaurant1 {
+    padding: 0.4rem 1rem; }
+    .g-bd-restaurant .m-restaurant1 .g-restaurant1-l {
+      float: left; }
+    .g-bd-restaurant .m-restaurant1 .g-restaurant1-r {
+      float: right; }
+    .g-bd-restaurant .m-restaurant1 .restaurant-name {
+      font-size: 0.8rem;
+      font-weight: bold;
+      line-height: 1.3rem; }
+    .g-bd-restaurant .m-restaurant1 p {
+      font-size: 0.75rem;
+      line-height: 0.9rem; }
+    .g-bd-restaurant .m-restaurant1 .p3 {
+      font-size: 0.6rem; }
+    .g-bd-restaurant .m-restaurant1 .m-reviews {
+      width: 4.1rem;
+      height: 4.1rem;
+      background: url(../images/bg-pie.png) no-repeat;
+      background-size: contain; }
+      .g-bd-restaurant .m-restaurant1 .m-reviews h1 {
+        margin: 0;
+        padding-top: 0.85rem;
+        font-size: 1rem;
+        line-height: 56px;
+        text-align: center; }
+      .g-bd-restaurant .m-restaurant1 .m-reviews p {
+        line-height: 0.9rem;
+        font-size: 0.5rem;
+        text-align: center; }
+  .g-bd-restaurant .m-restaurant2 {
+    padding: 0.2rem 0;
+    background: #fff;
+    margin-bottom: 0.35rem; }
+    .g-bd-restaurant .m-restaurant2 .restaurant-contact {
+      padding: 0 0.4rem; }
+      .g-bd-restaurant .m-restaurant2 .restaurant-contact li {
+        padding: 0.35rem 0;
+        border-bottom: 1px solid #ccc; }
+      .g-bd-restaurant .m-restaurant2 .restaurant-contact li.line2 {
+        border-top: 1px solid #ccc; }
+      .g-bd-restaurant .m-restaurant2 .restaurant-contact a {
+        display: block;
+        overflow: hidden; }
+      .g-bd-restaurant .m-restaurant2 .restaurant-contact i {
+        float: left;
+        margin-left: 0.2rem;
+        margin-right: 0.25rem;
+        width: 0.8rem; }
+      .g-bd-restaurant .m-restaurant2 .restaurant-contact .icon-address {
+        margin-left: 0.3rem;
+        margin-right: 0.5rem;
+        width: 0.55rem;
+        height: 1.05rem;
+        background: url(../images/icon-address.png) no-repeat;
+        background-size: contain; }
+      .g-bd-restaurant .m-restaurant2 .restaurant-contact .icon-tel {
+        margin-top: 0.075rem;
+        height: 0.9rem;
+        background: url(../images/icon-tel.png) no-repeat;
+        background-size: contain; }
+      .g-bd-restaurant .m-restaurant2 .restaurant-contact .icon-hours {
+        margin-top: 0.125rem;
+        height: 0.8rem;
+        background: url(../images/icon-hours.png) no-repeat;
+        background-size: contain; }
+      .g-bd-restaurant .m-restaurant2 .restaurant-contact p {
+        float: left;
+        overflow: hidden;
+        font-size: 0.6rem;
+        line-height: 1.05rem; }
+      .g-bd-restaurant .m-restaurant2 .restaurant-contact .icon-arrow-right2 {
+        float: right;
+        margin-top: 0.275rem;
+        margin-right: 0.6rem;
+        width: 0.3rem;
+        height: 0.5rem;
+        background: url(../images/icon-arrow-right2.png) no-repeat;
+        background-size: contain; }
+  .g-bd-restaurant .m-restaurant3 {
+    padding: 0.2rem 0.4rem;
+    background: #fff;
+    margin-bottom: 0.55rem; }
+    .g-bd-restaurant .m-restaurant3 .m-commment-tit {
+      border: 1px solid #ccc;
+      border-left: none;
+      border-right: none;
+      margin-bottom: 0.25rem; }
+      .g-bd-restaurant .m-restaurant3 .m-commment-tit a {
+        display: block; }
+      .g-bd-restaurant .m-restaurant3 .m-commment-tit p {
+        float: left;
+        text-indent: 0.5rem;
+        font-size: 0.6rem;
+        line-height: 1.3rem; }
+      .g-bd-restaurant .m-restaurant3 .m-commment-tit i {
+        float: right;
+        margin-top: 0.4rem;
+        margin-right: 0.6rem;
+        width: 0.3rem;
+        height: 0.5rem;
+        background: url(../images/icon-arrow-right2.png) no-repeat;
+        background-size: contain; }
+    .g-bd-restaurant .m-restaurant3 .m-comment-list .comment-item {
+      overflow: hidden;
+      padding-top: 0.25rem; }
+    .g-bd-restaurant .m-restaurant3 .g-comment-l {
+      width: 2.95rem;
+      position: relative; }
+    .g-bd-restaurant .m-restaurant3 .g-comment-r {
+      width: 12.25rem; }
+    .g-bd-restaurant .m-restaurant3 .comment-avatar {
+      margin: 0 0.35rem;
+      width: 2.25rem;
+      height: 2.25rem;
+      background: #000;
+      border-radius: 1.125rem; }
+    .g-bd-restaurant .m-restaurant3 .comment-level {
+      position: absolute;
+      top: 2rem;
+      left: 1.4rem;
+      width: 1.1rem;
+      height: 0.55rem;
+      line-height: 0.55rem;
+      font-size: 0.4rem;
+      text-align: center;
+      background: #c8a05a;
+      border: none;
+      border-radius: 0.55rem; }
+    .g-bd-restaurant .m-restaurant3 .comment-username span {
+      float: left;
+      font-size: 0.65rem;
+      line-height: 1.25rem; }
+    .g-bd-restaurant .m-restaurant3 .comment-username .comment-date {
+      font-size: 0.5rem;
+      color: #ccc; }
+    .g-bd-restaurant .m-restaurant3 .g-comment-number {
+      height: 34px;
+      line-height: 0.85rem; }
+      .g-bd-restaurant .m-restaurant3 .g-comment-number span {
+        float: left;
+        font-size: 0.6rem; }
+      .g-bd-restaurant .m-restaurant3 .g-comment-number .comment-number {
+        float: left;
+        margin: 0 0.25rem; }
+      .g-bd-restaurant .m-restaurant3 .g-comment-number .icon-score {
+        float: left;
+        margin-top: 0.125rem;
+        width: 0.55rem;
+        height: 0.55rem;
+        background: url(../images/icon-score.png) no-repeat;
+        background-size: contain; }
+    .g-bd-restaurant .m-restaurant3 .comment-text {
+      width: 11.75rem;
+      margin-right: 0.5rem;
+      overflow: hidden;
+      font-size: 0.6rem;
+      line-height: 0.95rem; }
+    .g-bd-restaurant .m-restaurant3 .comment-imglist {
+      width: 11.25rem; }
+      .g-bd-restaurant .m-restaurant3 .comment-imglist li {
+        float: left;
+        margin-right: 0.25rem; }
+      .g-bd-restaurant .m-restaurant3 .comment-imglist a {
+        display: block; }
+      .g-bd-restaurant .m-restaurant3 .comment-imglist img {
+        width: 3.5rem;
+        height: 3.5rem;
+        background: #000; }
+    .g-bd-restaurant .m-restaurant3 .g-comment-ft {
+      margin-top: 0.55rem; }
+      .g-bd-restaurant .m-restaurant3 .g-comment-ft p {
+        float: left;
+        margin-right: 0.35rem;
+        line-height: 1.25rem;
+        font-size: 0.6rem; }
+      .g-bd-restaurant .m-restaurant3 .g-comment-ft a {
+        float: left;
+        padding: 0.225rem 0.55rem;
+        border: 0.05rem solid #c8a05a;
+        border-radius: 0.625rem;
+        margin-right: 0.25rem; }
+      .g-bd-restaurant .m-restaurant3 .g-comment-ft .icon-love2 {
+        float: left;
+        width: 0.75rem;
+        height: 0.7rem;
+        background: url(../images/icon-love2.png) no-repeat;
+        background-size: contain; }
+      .g-bd-restaurant .m-restaurant3 .g-comment-ft .icon-note {
+        float: left;
+        margin-right: 0.25rem;
+        height: 0.7rem;
+        width: 0.5rem;
+        background: url(../images/icon-note.png) no-repeat;
+        background-size: contain; }
+      .g-bd-restaurant .m-restaurant3 .g-comment-ft em {
+        float: left;
+        width: 1rem;
+        text-align: center;
+        font-size: 0.5rem;
+        line-height: 0.7rem; }
+  .g-bd-restaurant .g-reserved-on {
+    /*display: none;*/
+    background: #f2f2f2;
+    padding-top: 0.35rem; }
+    .g-bd-restaurant .g-reserved-on .reserved-a {
+      display: block;
+      font-size: 0.6rem;
+      padding: 0.6rem 1rem;
+      margin-bottom: 0.35rem;
+      background: #fff; }
+      .g-bd-restaurant .g-reserved-on .reserved-a span {
+        float: left; }
+      .g-bd-restaurant .g-reserved-on .reserved-a p {
+        float: right;
+        height: 0.6rem;
+        line-height: 0.6rem; }
+        .g-bd-restaurant .g-reserved-on .reserved-a p em {
+          float: left;
+          margin-right: 0.3rem; }
+        .g-bd-restaurant .g-reserved-on .reserved-a p .icon-arrow-right2 {
+          float: left;
+          margin-top: 0.05rem;
+          width: 0.3rem;
+          height: 0.5rem;
+          background: url(../images/icon-arrow-right2.png) no-repeat;
+          background-size: contain; }
+    .g-bd-restaurant .g-reserved-on .reserved-tables-list {
+      padding: 0.25rem 0.6rem;
+      background: #fff; }
+      .g-bd-restaurant .g-reserved-on .reserved-tables-list .tables-items {
+        float: left; }
+        .g-bd-restaurant .g-reserved-on .reserved-tables-list .tables-items a {
+          float: left; }
+        .g-bd-restaurant .g-reserved-on .reserved-tables-list .tables-items p {
+          display: block;
+          width: 4.4rem;
+          margin-right: 0.4rem;
+          font-size: 0.6rem;
+          margin-bottom: 0.25rem;
+          text-align: center; }
+        .g-bd-restaurant .g-reserved-on .reserved-tables-list .tables-items span {
+          display: block;
+          width: 2.65rem;
+          margin: 0 auto;
+          font-size: 0.6rem;
+          line-height: 0.6rem;
+          padding-bottom: 0.1rem;
+          border-bottom: 0.15rem solid #000;
+          text-align: center; }
+    .g-bd-restaurant .g-reserved-on .m-reserved-times {
+      padding: 0 0.6rem 2.5rem; }
+      .g-bd-restaurant .g-reserved-on .m-reserved-times h2 {
+        margin: 0.25rem 0.15rem 0.55rem; }
+        .g-bd-restaurant .g-reserved-on .m-reserved-times h2 .btn-reserved-start {
+          display: inline-block;
+          width: 14.5rem;
+          height: 1.75rem;
+          background: #c8a05a;
+          font-size: 0.9rem;
+          line-height: 1.75rem;
+          border-radius: 0.25rem;
+          text-align: center;
+          color: #fff; }
+      .g-bd-restaurant .g-reserved-on .m-reserved-times .reserved-times-list .times-items {
+        float: left; }
+      .g-bd-restaurant .g-reserved-on .m-reserved-times .reserved-times-list li.cur a {
+        background: #c8a05a;
+        color: #fff; }
+      .g-bd-restaurant .g-reserved-on .m-reserved-times .reserved-times-list a {
+        float: left;
+        width: 3.4rem;
+        height: 2.15rem;
+        background: #fff;
+        font-size: 0.65rem;
+        line-height: 2.15rem;
+        text-align: center;
+        margin: 0 0.15rem 0.35rem;
+        border-radius: 0.15rem; }
+  .g-bd-restaurant .g-reserved-off {
+    background: #f2f2f2;
+    display: none; }
+    .g-bd-restaurant .g-reserved-off p {
+      margin-top: 0.35rem;
+      font-size: 0.65rem;
+      line-height: 1.75rem;
+      text-align: center;
+      color: #ccc;
+      background: #fff; }
+  .g-bd-restaurant .btn-reserved-now {
+    display: block;
+    width: 100%;
+    padding: 0.7rem 0;
+    background: #1a1a1a;
+    font-size: 0.75rem;
+    color: #fff;
+    text-align: center; }
+  .g-bd-restaurant .m-reserved-wait1 {
+    padding: 0.85rem 0.5rem;
+    background: #fff;
+    overflow: hidden; }
+    .g-bd-restaurant .m-reserved-wait1 p {
+      font-size: 0.65rem;
+      line-height: 0.8rem;
+      height: 0.8rem; }
+    .g-bd-restaurant .m-reserved-wait1 p:before {
+      content: "";
+      float: left;
+      width: 0.8rem;
+      height: 0.8rem;
+      background: url(../images/icon-wait.png) no-repeat;
+      background-size: contain;
+      margin-right: 0.45rem; }
+  .g-bd-restaurant .m-reserved-wait2 {
+    margin: 0.5rem 0 0.75rem 0;
+    padding: 0 0.45rem;
+    background: #fff; }
+    .g-bd-restaurant .m-reserved-wait2 .reserved-name {
+      display: block;
+      border-bottom: 0.05rem solid #000;
+      overflow: hidden; }
+      .g-bd-restaurant .m-reserved-wait2 .reserved-name span {
+        float: left;
+        text-indent: 0.3rem;
+        font-size: 0.65rem;
+        line-height: 1.8rem; }
+      .g-bd-restaurant .m-reserved-wait2 .reserved-name i {
+        float: right;
+        margin-top: 0.65rem;
+        margin-right: 0.5rem;
+        width: 0.3rem;
+        height: 0.5rem;
+        background: url(../images/icon-arrow-right3.png) no-repeat;
+        background-size: contain; }
+    .g-bd-restaurant .m-reserved-wait2 ul {
+      padding: 0.35rem 0.25rem; }
+    .g-bd-restaurant .m-reserved-wait2 li {
+      padding-left: 0.4rem;
+      line-height: 1.25rem;
+      font-size: 0.6rem; }
+
+.m-mask-queque {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.8;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1000; }
+
+.pnumber-box {
+  display: none;
+  position: absolute;
+  top: 30%;
+  left: 1.5rem;
+  width: 13rem;
+  z-index: 1001; }
+  .pnumber-box .pnumber-hd {
+    height: 1.85rem;
+    font-size: 0.65rem;
+    text-align: center;
+    line-height: 1.85rem;
+    background: #e6e6e6;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem; }
+  .pnumber-box .pnumber-bd {
+    padding: 0.65rem 0.7rem 0 0.7rem;
+    background: #fff;
+    border: none; }
+    .pnumber-box .pnumber-bd ul {
+      overflow: hidden; }
+    .pnumber-box .pnumber-bd li {
+      float: left; }
+    .pnumber-box .pnumber-bd a {
+      float: left;
+      width: 2.65rem;
+      height: 1.95rem;
+      border: 0.025rem solid #ccc;
+      border-radius: 0.25rem;
+      background: #f2f2f2;
+      margin: 0.1rem;
+      text-align: center;
+      line-height: 2rem; }
+  .pnumber-box .pnumber-ft {
+    background: #fff;
+    padding: 0.65rem 0.8rem;
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    overflow: hidden;
+    border: none; }
+    .pnumber-box .pnumber-ft a {
+      float: left;
+      width: 5.35rem;
+      height: 1.45rem;
+      background: #f2f2f2;
+      font-size: 0.65rem;
+      line-height: 1.45rem;
+      text-align: center;
+      border: 1px solid #ccc;
+      border-radius: 0.25rem; }
+    .pnumber-box .pnumber-ft .btn-yes {
+      border: none;
+      margin-left: 0.6rem;
+      width: 5.4rem;
+      height: 1.5rem;
+      background: #c8c8c8;
+      color: #fff; }
+
+.m-mask-modal {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.8;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000; }
+
+.m-modal1 {
+  display: none;
+  width: 12rem;
+  background: #fff;
+  position: fixed;
+  top: 40%;
+  left: 2rem;
+  z-index: 1001;
+  /*border-radius: torem(20px);*/ }
+  .m-modal1 .modal1-hd h2 {
+    line-height: 1.25rem;
+    text-align: center;
+    font-size: 0.7rem;
+    color: #222; }
+  .m-modal1 .modal1-bd p {
+    text-align: center;
+    line-height: 0.75rem;
+    color: #333;
+    font-size: 0.5rem;
+    padding: 0.5rem; }
+  .m-modal1 .modal1-ft {
+    border-top: 0.025rem solid #ccc; }
+    .m-modal1 .modal1-ft span {
+      display: block;
+      text-align: center;
+      color: #0e90d2;
+      line-height: 1.25rem;
+      font-size: 0.6rem; }
+    .m-modal1 .modal1-ft span:hover {
+      background: #ccc; }
+
+.m-modal-cancel {
+  display: none;
+  /*background:#fff;*/
+  position: fixed;
+  top: 16%;
+  left: 1.75rem;
+  z-index: 1001; }
+
+.m-cancel-box {
+  /*padding: torem(70px);*/ }
+  .m-cancel-box .cancel-hd {
+    height: 1.4rem;
+    background: #ccc;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem; }
+  .m-cancel-box .cancel-bd {
+    position: relative;
+    background: #fff; }
+    .m-cancel-box .cancel-bd .cancel-bd1 {
+      margin-bottom: 1.25rem; }
+      .m-cancel-box .cancel-bd .cancel-bd1 img {
+        position: absolute;
+        top: -34px;
+        left: 32px;
+        width: 3rem;
+        height: 3.05rem;
+        background-size: contain; }
+      .m-cancel-box .cancel-bd .cancel-bd1 p {
+        text-indent: 2.5rem;
+        font-size: 0.75rem;
+        line-height: 2.2rem;
+        text-align: center; }
+    .m-cancel-box .cancel-bd .cancel-list {
+      padding: 0 1rem;
+      border-bottom: 0.05rem solid #ccc; }
+      .m-cancel-box .cancel-bd .cancel-list li {
+        margin-bottom: 1.1rem; }
+      .m-cancel-box .cancel-bd .cancel-list a {
+        display: block;
+        overflow: hidden; }
+      .m-cancel-box .cancel-bd .cancel-list i {
+        float: left; }
+      .m-cancel-box .cancel-bd .cancel-list .icon-radio {
+        width: 0.8rem;
+        height: 0.8rem;
+        border-radius: 0.45rem;
+        background-color: #fff;
+        border: 0.05rem solid #000; }
+      .m-cancel-box .cancel-bd .cancel-list .icon-radio-cur {
+        /*background:$btncolorcur;*/
+        width: 0.9rem;
+        height: 0.9rem;
+        background: url(../images/icon-radio-cur.png) no-repeat;
+        background-size: contain; }
+      .m-cancel-box .cancel-bd .cancel-list span {
+        float: left;
+        text-indent: 0.4rem;
+        font-size: 0.75rem;
+        line-height: 0.95rem; }
+  .m-cancel-box .cancel-ft {
+    padding: 0.4rem 0.6rem 1.25rem 0.6rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    background: #fff; }
+    .m-cancel-box .cancel-ft a {
+      float: left;
+      width: 5.3rem;
+      height: 1.4rem;
+      border: 0.05rem solid #ccc;
+      background: #f2f2f2;
+      font-size: 0.65rem;
+      line-height: 1.5rem;
+      border-radius: 0.25rem;
+      text-align: center; }
+    .m-cancel-box .cancel-ft .btn-cancel-yes {
+      margin-left: 0.6rem;
+      height: 1.5rem;
+      border: none;
+      background: #ccc;
+      color: #fff; }
+
+.m-modal2 {
+  display: none;
+  /*width: torem(480px);*/
+  background: #f2f2f2;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1001; }
+  .m-modal2 .m-score {
+    width: 11rem;
+    margin: 0 auto;
+    padding: 0.7rem 2.5rem;
+    overflow: hidden; }
+    .m-modal2 .m-score .u-score {
+      float: left;
+      width: 1.5rem;
+      height: 1.45rem;
+      margin: 0 0.35rem;
+      background: url(../images/icon-score-no.png) no-repeat;
+      background-size: contain; }
+    .m-modal2 .m-score .act {
+      background: url(../images/icon-score-yes.png) no-repeat;
+      background-size: contain; }
+  .m-modal2 #comment_content {
+    background: #fff;
+    width: 15rem;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    resize: none; }
+  .m-modal2 .m-photo-list {
+    background: #fff;
+    padding: 0.625rem 0.8rem;
+    margin: 0.4rem 0;
+    overflow: hidden; }
+  .m-modal2 .btn-add-photo {
+    float: left;
+    padding: 1.1rem 1rem;
+    background-color: #f2f2f2; }
+  .m-modal2 .icon-photo {
+    float: left;
+    width: 1.3rem;
+    height: 1.05rem;
+    background: url(../images/icon-photo.png) no-repeat;
+    background-size: contain; }
+  .m-modal2 .btn-send {
+    margin-left: 0.7rem;
+    display: inline-block;
+    width: 14.6rem;
+    height: 1.75rem;
+    border-radius: 0.25rem;
+    background: #c8a05a;
+    text-align: center;
+    line-height: 1.75rem;
+    color: #1a1a1a;
+    font-size: 0.85rem; }
+
+/*智能点餐*/
+.m-mask-ordered {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.8;
+  /*position: absolute;*/
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000; }
+
+.m-menu-con {
+  display: none;
+  position: absolute;
+  top: 2.75rem;
+  top: 20%;
+  left: 1rem;
+  /*width:torem(520px);					*/
+  z-index: 1001;
+  /*padding: torem(110px) torem(40px);*/ }
+  .m-menu-con .menu-hd {
+    position: relative; }
+  .m-menu-con img {
+    width: 14rem;
+    height: 13rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem; }
+  .m-menu-con .btn-close {
+    position: absolute;
+    top: 0.65rem;
+    right: 0.65rem;
+    width: 1rem;
+    height: 1rem;
+    border: 0.05rem solid #fff;
+    border-radius: 0.55rem;
+    color: #fff;
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 1rem; }
+  .m-menu-con .menu-bd {
+    border: 0.025rem solid #ccc;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    padding-bottom: 1.3rem;
+    background: #fff; }
+  .m-menu-con h3 {
+    line-height: 1.95rem;
+    text-align: center; }
+    .m-menu-con h3 span {
+      font-size: 0.75rem; }
+  .m-menu-con p {
+    padding-left: 1.5rem;
+    padding-right: 0.85rem;
+    overflow: hidden;
+    line-height: 1.3rem; }
+    .m-menu-con p em {
+      float: left;
+      font-size: 0.8rem; }
+    .m-menu-con p a {
+      float: right;
+      width: 0.95rem;
+      height: 0.95rem;
+      margin-top: 0.15rem;
+      font-size: 1rem;
+      line-height: 1rem;
+      text-align: center;
+      border: 0.025rem solid #000;
+      border-radius: 0.5rem; }
+    .m-menu-con p strong {
+      float: right;
+      margin: 0 0.5rem;
+      font-weight: normal; }
+    .m-menu-con p .btn-minus {
+      line-height: 0.75rem; }
+
+.btn-reserved-cancel {
+  border: none;
+  width: 100%;
+  height: 2.15rem;
+  font-size: 0.75rem;
+  line-height: 2.15rem;
+  color: #fff;
+  background: #1a1a1a;
+  text-align: center; }
+
+.btn-reserved-radius {
+  border: none;
+  width: 14.5rem;
+  height: 1.75rem;
+  background: #c8a05a;
+  font-size: 1rem;
+  line-height: 1.75rem;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  border-radius: 0.375rem; }
+
+.btn-reserved-cancel-ok {
+  background: #ccc; }
+
+/*预约*/
+/*预约--信息提交页*/
+.g-reserved-view {
+  background: #f2f2f2;
+  padding-top: 0.4rem; }
+  .g-reserved-view .m-reserved-view1 {
+    background: #fff;
+    margin-bottom: 0.5rem;
+    padding: 0.75rem 1rem; }
+    .g-reserved-view .m-reserved-view1 h2 {
+      font-size: 0.65rem; }
+      .g-reserved-view .m-reserved-view1 h2 span {
+        float: left; }
+      .g-reserved-view .m-reserved-view1 h2 em {
+        float: left;
+        margin-left: 0.25rem; }
+    .g-reserved-view .m-reserved-view1 p {
+      font-size: 0.55rem;
+      padding-top: 1rem;
+      overflow: hidden; }
+      .g-reserved-view .m-reserved-view1 p span {
+        float: left; }
+      .g-reserved-view .m-reserved-view1 p em {
+        float: left;
+        margin-left: 0.25rem; }
+  .g-reserved-view .m-reserved-view2 p {
+    padding: 0.575rem 1rem;
+    overflow: hidden;
+    background: #fff; }
+    .g-reserved-view .m-reserved-view2 p span {
+      float: left;
+      font-size: 0.6rem;
+      line-height: 1.25rem; }
+    .g-reserved-view .m-reserved-view2 p a {
+      float: right;
+      width: 2.25rem;
+      height: 1.25rem;
+      border-radius: 0.625rem;
+      position: relative; }
+      .g-reserved-view .m-reserved-view2 p a i {
+        position: absolute;
+        left: 0.125rem;
+        top: 0.125rem;
+        width: 1rem;
+        height: 1rem;
+        background: #fff;
+        border-radius: 0.5rem; }
+    .g-reserved-view .m-reserved-view2 p .u-off {
+      background: #ccc; }
+      .g-reserved-view .m-reserved-view2 p .u-off i {
+        left: 0.125rem; }
+    .g-reserved-view .m-reserved-view2 p .u-on {
+      background: #53c123; }
+      .g-reserved-view .m-reserved-view2 p .u-on i {
+        left: 1.125rem; }
+  .g-reserved-view .m-reserved-view3 {
+    background: #fff; }
+    .g-reserved-view .m-reserved-view3 h3 {
+      padding: 0.6rem 1rem;
+      font-size: 0.6rem;
+      background: #f2f2f2; }
+    .g-reserved-view .m-reserved-view3 p {
+      padding: 0.5rem 1rem;
+      overflow: hidden; }
+      .g-reserved-view .m-reserved-view3 p label {
+        float: left;
+        font-size: 0.65rem;
+        margin-right: 0.5rem;
+        line-height: 1.25rem; }
+      .g-reserved-view .m-reserved-view3 p input {
+        float: left;
+        text-indent: 0.5rem;
+        border: 0.025rem solid #ccc;
+        line-height: 1.25rem; }
+    .g-reserved-view .m-reserved-view3 .ipt-prompt-user, .g-reserved-view .m-reserved-view3 .ipt-prompt-contact {
+      display: none;
+      padding: 0 1rem;
+      color: #f00;
+      font-size: 0.5rem; }
+    .g-reserved-view .m-reserved-view3 .p2 {
+      width: 14rem;
+      padding: 0.5rem 0;
+      margin: 0 auto;
+      border-top: 0.025rem solid #ccc;
+      border-bottom: 0.025rem solid #ccc; }
+    .g-reserved-view .m-reserved-view3 a {
+      float: left;
+      margin-right: 1rem; }
+      .g-reserved-view .m-reserved-view3 a i {
+        float: left; }
+      .g-reserved-view .m-reserved-view3 a span {
+        float: left;
+        margin-left: 0.4rem;
+        line-height: 0.95rem; }
+    .g-reserved-view .m-reserved-view3 .ipt-radio .icon-radio {
+      width: 0.8rem;
+      height: 0.8rem;
+      border-radius: 0.45rem;
+      background-color: #fff;
+      border: 0.05rem solid #000; }
+    .g-reserved-view .m-reserved-view3 .ipt-radio-cur .icon-radio {
+      /*background:$btncolorcur;*/
+      width: 0.9rem;
+      height: 0.9rem;
+      background: url(../images/icon-radio-cur.png) no-repeat;
+      background-size: contain; }
+    .g-reserved-view .m-reserved-view3 .reserved-remark {
+      background: #f2f2f2; }
+      .g-reserved-view .m-reserved-view3 .reserved-remark textarea {
+        width: 14rem;
+        padding: 0.75rem 1rem;
+        border: none;
+        background: #fff;
+        margin-bottom: 1.45rem; }
+
+/*预约--等待状态页*/
+.g-reserved-wait {
+  background: #f2f2f2;
+  padding-top: 0.4rem; }
+  .g-reserved-wait .m-reserved-wait2 li {
+    color: #ccc; }
+  .g-reserved-wait .m-reserved-wait3 .reserved-wait3-hd {
+    padding: 0.95rem 0;
+    height: 1.9rem;
+    text-align: center;
+    background: #fff; }
+    .g-reserved-wait .m-reserved-wait3 .reserved-wait3-hd p {
+      font-size: 0.75rem;
+      margin-bottom: 10px;
+      text-align: center; }
+    .g-reserved-wait .m-reserved-wait3 .reserved-wait3-hd span {
+      display: block;
+      font-size: 0.6rem;
+      text-align: center;
+      color: #ccc; }
+  .g-reserved-wait .m-reserved-wait3 .reserved-wait3-bd {
+    padding: 0.9rem 5rem;
+    overflow: hidden; }
+    .g-reserved-wait .m-reserved-wait3 .reserved-wait3-bd img {
+      float: left;
+      margin-right: 0.25rem;
+      width: 0.7rem;
+      height: 3.3rem;
+      background-size: contain; }
+    .g-reserved-wait .m-reserved-wait3 .reserved-wait3-bd .wait-msg-list {
+      float: left; }
+      .g-reserved-wait .m-reserved-wait3 .reserved-wait3-bd .wait-msg-list li {
+        margin-bottom: 0.9rem; }
+      .g-reserved-wait .m-reserved-wait3 .reserved-wait3-bd .wait-msg-list p {
+        margin-bottom: 0.35rem;
+        font-size: 0.6rem; }
+
+/*预约--预约成功页*/
+.g-reserved-success {
+  background: #f2f2f2;
+  padding-top: 0.5rem;
+  padding-bottom: 2.5rem; }
+  .g-reserved-success .m-reserved-success1 {
+    font-size: 0.8rem; }
+    .g-reserved-success .m-reserved-success1 p:before {
+      background: url(../images/icon-success.png) no-repeat;
+      background-size: contain; }
+  .g-reserved-success .m-reserved-success2 .reserved-name {
+    border-bottom: 0.025rem solid #ccc; }
+    .g-reserved-success .m-reserved-success2 .reserved-name i {
+      background: url(../images/icon-arrow-right2.png) no-repeat; }
+  .g-reserved-success .m-reserved-success3 {
+    padding: 1.25rem 0.75rem;
+    background: #fff; }
+    .g-reserved-success .m-reserved-success3 em {
+      float: left;
+      width: 0.6rem;
+      height: 0.8rem;
+      background: url(../images/icon-map2.png) no-repeat;
+      background-size: contain;
+      margin-right: 0.6rem; }
+    .g-reserved-success .m-reserved-success3 span {
+      float: left;
+      width: 13rem;
+      font-size: 0.6rem;
+      line-height: 0.8rem; }
+    .g-reserved-success .m-reserved-success3 i {
+      float: right;
+      width: 0.3rem;
+      height: 0.5rem;
+      background: url(../images/icon-arrow-right2.png) no-repeat;
+      background-size: contain;
+      margin-top: 0.15rem; }
+  .g-reserved-success .m-reserved-success4 {
+    padding: 0.5rem 0.75rem; }
+    .g-reserved-success .m-reserved-success4 a {
+      display: block;
+      width: 14.5rem;
+      height: 1.75rem;
+      background: #c8a05a;
+      font-size: 1rem;
+      line-height: 1.75rem;
+      text-align: center;
+      color: #fff;
+      margin-bottom: 0.5rem;
+      border-radius: 0.375rem; }
+
+/*预约--取消预约*/
+.g-reserved-cancel .m-cancel-box {
+  padding: 1.75rem; }
+  .g-reserved-cancel .m-cancel-box .cancel-hd {
+    height: 1.4rem;
+    background: #ccc;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem; }
+  .g-reserved-cancel .m-cancel-box .cancel-bd {
+    position: relative;
+    background: #fff; }
+    .g-reserved-cancel .m-cancel-box .cancel-bd .cancel-bd1 {
+      margin-bottom: 1.25rem; }
+      .g-reserved-cancel .m-cancel-box .cancel-bd .cancel-bd1 img {
+        position: absolute;
+        top: -34px;
+        left: 32px;
+        width: 3rem;
+        height: 3.05rem;
+        background-size: contain; }
+      .g-reserved-cancel .m-cancel-box .cancel-bd .cancel-bd1 p {
+        text-indent: 2.5rem;
+        font-size: 0.75rem;
+        line-height: 2.2rem;
+        text-align: center; }
+    .g-reserved-cancel .m-cancel-box .cancel-bd .cancel-list {
+      padding: 0 1rem;
+      border-bottom: 0.05rem solid #ccc; }
+      .g-reserved-cancel .m-cancel-box .cancel-bd .cancel-list li {
+        margin-bottom: 1.1rem; }
+      .g-reserved-cancel .m-cancel-box .cancel-bd .cancel-list a {
+        display: block;
+        overflow: hidden; }
+      .g-reserved-cancel .m-cancel-box .cancel-bd .cancel-list i {
+        float: left; }
+      .g-reserved-cancel .m-cancel-box .cancel-bd .cancel-list .icon-radio {
+        width: 0.8rem;
+        height: 0.8rem;
+        border-radius: 0.45rem;
+        background-color: #fff;
+        border: 0.05rem solid #000; }
+      .g-reserved-cancel .m-cancel-box .cancel-bd .cancel-list .icon-radio-cur {
+        /*background:$btncolorcur;*/
+        width: 0.9rem;
+        height: 0.9rem;
+        background: url(../images/icon-radio-cur.png) no-repeat;
+        background-size: contain; }
+      .g-reserved-cancel .m-cancel-box .cancel-bd .cancel-list span {
+        float: left;
+        text-indent: 0.4rem;
+        font-size: 0.75rem;
+        line-height: 0.95rem; }
+  .g-reserved-cancel .m-cancel-box .cancel-ft {
+    padding: 0.4rem 0.6rem 1.25rem 0.6rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    background: #fff; }
+    .g-reserved-cancel .m-cancel-box .cancel-ft a {
+      float: left;
+      width: 5.3rem;
+      height: 1.4rem;
+      border: 0.05rem solid #ccc;
+      background: #f2f2f2;
+      font-size: 0.65rem;
+      line-height: 1.5rem;
+      border-radius: 0.25rem;
+      text-align: center; }
+    .g-reserved-cancel .m-cancel-box .cancel-ft .btn-cancel-yes {
+      margin-left: 0.6rem;
+      height: 1.5rem;
+      border: none;
+      background: #ccc;
+      color: #fff; }
+
+/*排队*/
+.g-bd-queque .m-queque-tables {
+  padding: 0.25rem 0.5rem;
+  background: #fff; }
+  .g-bd-queque .m-queque-tables table {
+    border-top: 0.05rem solid #999; }
+  .g-bd-queque .m-queque-tables tr {
+    border-bottom: 0.05rem solid #999; }
+  .g-bd-queque .m-queque-tables th, .g-bd-queque .m-queque-tables td {
+    width: 5rem;
+    text-align: center;
+    height: 44px;
+    line-height: 1.1rem;
+    padding: 0.15rem 0; }
+  .g-bd-queque .m-queque-tables th {
+    font-size: 0.65rem; }
+  .g-bd-queque .m-queque-tables td {
+    font-size: 0.6rem;
+    position: relative; }
+  .g-bd-queque .m-queque-tables .tables-type {
+    position: absolute;
+    top: 0.025rem;
+    left: 0;
+    width: 5rem;
+    height: 1.1rem;
+    line-height: 1.1rem;
+    padding: 0.15rem 0;
+    text-align: center; }
+  .g-bd-queque .m-queque-tables p {
+    line-height: 0.6rem; }
+  .g-bd-queque .m-queque-tables .p2 {
+    font-size: 0.3rem;
+    line-height: 20px; }
+.g-bd-queque .m-queque-distance {
+  padding: 0.575rem 1.25rem;
+  overflow: hidden;
+  background: #fff; }
+  .g-bd-queque .m-queque-distance .distance-con {
+    float: left;
+    padding: 0.125rem 1.65rem 0.125rem 0;
+    border-right: 0.05rem solid #999;
+    margin-right: 1.65rem; }
+  .g-bd-queque .m-queque-distance p {
+    font-size: 0.6rem;
+    line-height: 0.85rem; }
+  .g-bd-queque .m-queque-distance span {
+    color: #ccc; }
+  .g-bd-queque .m-queque-distance em {
+    text-indent: 0.4rem; }
+  .g-bd-queque .m-queque-distance .btn-offer-number-now {
+    float: left;
+    width: 4.75rem;
+    height: 1.75rem;
+    line-height: 1.75rem;
+    font-size: 0.65rem;
+    text-align: center;
+    color: #fff;
+    background: #c8a05a;
+    border-radius: 0.25rem; }
+
+/*取号成功*/
+.queque-info {
+  overflow: hidden; }
+  .queque-info ul {
+    float: left; }
+  .queque-info .table-numbers {
+    float: right;
+    padding-top: 0.75rem;
+    padding-right: 0.6rem; }
+    .queque-info .table-numbers h2 {
+      font-size: 1.05rem;
+      font-weight: bold;
+      color: #f00;
+      line-height: 1.6rem; }
+    .queque-info .table-numbers p {
+      font-size: 0.6rem; }
+
+.m-queque-success1 {
+  margin: 0.45rem 0;
+  font-size: 0.6rem;
+  text-indent: 0.85rem;
+  line-height: 1.25rem;
+  background: #c8a05a; }
+
+.m-queque-success2 {
+  background: #fff;
+  margin-bottom: 0.5rem;
+  padding: 0.65rem;
+  overflow: hidden;
+  /*a{
+  	display: block;
+  	padding:torem(26px);
+  }*/ }
+  .m-queque-success2 i {
+    float: left;
+    width: 0.7rem;
+    height: 0.7rem;
+    background: url(../images/icon-save.png) no-repeat;
+    background-size: contain; }
+  .m-queque-success2 em {
+    float: left;
+    text-indent: 0.5rem;
+    font-size: 0.6rem;
+    line-height: 0.7rem; }
+  .m-queque-success2 .btn-save {
+    float: right;
+    font-size: 0.6rem;
+    line-height: 0.65rem;
+    color: #f00;
+    font-weight: bold; }
+
+/*点餐*/
+.g-box-cart {
+  display: none; }
+
+.g-bd-ordered, .g-bd-cart {
+  /*订单提交*/
+  /*下单成功*/ }
+  .g-bd-ordered .m-tnavs, .g-bd-cart .m-tnavs {
+    position: relative;
+    /*padding:0 torem(50px);*/
+    height: 1.25rem;
+    line-height: 1.25rem;
+    /*.swiper-slide-active{
+    	background:#f00;
+    }
+    .swiper-slide-active a{
+    	color:#fff;
+    }*/ }
+    .g-bd-ordered .m-tnavs .btn-prev, .g-bd-ordered .m-tnavs .btn-next, .g-bd-cart .m-tnavs .btn-prev, .g-bd-cart .m-tnavs .btn-next {
+      /*position: absolute;*/
+      width: 1.25rem;
+      height: 1.25rem;
+      /*top:torem(30px);*/ }
+    .g-bd-ordered .m-tnavs .btn-prev, .g-bd-cart .m-tnavs .btn-prev {
+      /*left:torem(32px);*/
+      float: left;
+      background: url(../images/icon-arrow-l.png) no-repeat;
+      background-size: contain; }
+    .g-bd-ordered .m-tnavs .btn-next, .g-bd-cart .m-tnavs .btn-next {
+      float: right;
+      /*right:torem(32px);*/
+      background: url(../images/icon-arrow-r.png) no-repeat;
+      background-size: contain; }
+    .g-bd-ordered .m-tnavs .tnavs-list, .g-bd-cart .m-tnavs .tnavs-list {
+      width: 13.5rem;
+      height: 2rem;
+      overflow: hidden; }
+    .g-bd-ordered .m-tnavs .tnavs-list li, .g-bd-cart .m-tnavs .tnavs-list li {
+      float: left; }
+      .g-bd-ordered .m-tnavs .tnavs-list li a, .g-bd-cart .m-tnavs .tnavs-list li a {
+        float: left;
+        width: 3rem;
+        padding: 0 0.7rem;
+        line-height: 2rem;
+        font-size: 0.75rem;
+        text-align: center; }
+    .g-bd-ordered .m-tnavs .tnavs-list .act, .g-bd-cart .m-tnavs .tnavs-list .act {
+      background: red; }
+    .g-bd-ordered .m-tnavs .tnavs-list li:after, .g-bd-cart .m-tnavs .tnavs-list li:after {
+      content: "";
+      float: left;
+      margin-top: 0.6rem;
+      height: 0.75rem;
+      border-right: 0.05rem solid #000; }
+    .g-bd-ordered .m-tnavs .swiper-slide a, .g-bd-cart .m-tnavs .swiper-slide a {
+      display: block;
+      text-align: center; }
+    .g-bd-ordered .m-tnavs .cur, .g-bd-cart .m-tnavs .cur {
+      background: #f00; }
+    .g-bd-ordered .m-tnavs .cur a, .g-bd-cart .m-tnavs .cur a {
+      color: #fff; }
+  .g-bd-ordered .m-restaurant-ordered2, .g-bd-cart .m-restaurant-ordered2 {
+    background: #c8a05a; }
+    .g-bd-ordered .m-restaurant-ordered2 p, .g-bd-cart .m-restaurant-ordered2 p {
+      text-align: center; }
+    .g-bd-ordered .m-restaurant-ordered2 strong, .g-bd-ordered .m-restaurant-ordered2 span, .g-bd-ordered .m-restaurant-ordered2 em, .g-bd-cart .m-restaurant-ordered2 strong, .g-bd-cart .m-restaurant-ordered2 span, .g-bd-cart .m-restaurant-ordered2 em {
+      display: inline-block;
+      line-height: 1.75rem; }
+    .g-bd-ordered .m-restaurant-ordered2 strong, .g-bd-cart .m-restaurant-ordered2 strong {
+      font-size: 0.8rem;
+      color: #fff; }
+    .g-bd-ordered .m-restaurant-ordered2 span, .g-bd-cart .m-restaurant-ordered2 span {
+      font-size: 0.5rem; }
+    .g-bd-ordered .m-restaurant-ordered2 em, .g-bd-cart .m-restaurant-ordered2 em {
+      font-size: 0.5rem; }
+  .g-bd-ordered .m-restaurant-ordered3, .g-bd-cart .m-restaurant-ordered3 {
+    padding-bottom: 2.5rem;
+    /*点餐首页*/
+    /*智能点餐*/ }
+    .g-bd-ordered .m-restaurant-ordered3 .m-menu-list, .g-bd-cart .m-restaurant-ordered3 .m-menu-list {
+      padding: 0.3rem 0.4rem; }
+    .g-bd-ordered .m-restaurant-ordered3 .menu-items, .g-bd-cart .m-restaurant-ordered3 .menu-items {
+      overflow: hidden;
+      padding: 0.25rem;
+      background: #fff; }
+      .g-bd-ordered .m-restaurant-ordered3 .menu-items img, .g-bd-cart .m-restaurant-ordered3 .menu-items img {
+        float: left;
+        width: 4.05rem;
+        height: 4.05rem;
+        background-size: contain;
+        border: 0.025rem solid #bbb; }
+      .g-bd-ordered .m-restaurant-ordered3 .menu-items h3, .g-bd-ordered .m-restaurant-ordered3 .menu-items p, .g-bd-cart .m-restaurant-ordered3 .menu-items h3, .g-bd-cart .m-restaurant-ordered3 .menu-items p {
+        float: left;
+        width: 9.4rem;
+        margin: 0 0.6rem; }
+      .g-bd-ordered .m-restaurant-ordered3 .menu-items h3, .g-bd-cart .m-restaurant-ordered3 .menu-items h3 {
+        height: 1.8rem;
+        line-height: 1.8rem;
+        border-bottom: 0.05rem solid #ccc; }
+        .g-bd-ordered .m-restaurant-ordered3 .menu-items h3 span, .g-bd-cart .m-restaurant-ordered3 .menu-items h3 span {
+          float: left;
+          font-size: 0.75rem; }
+        .g-bd-ordered .m-restaurant-ordered3 .menu-items h3 i, .g-bd-cart .m-restaurant-ordered3 .menu-items h3 i {
+          float: right;
+          margin-right: 0.15rem;
+          text-indent: 0.1rem; }
+        .g-bd-ordered .m-restaurant-ordered3 .menu-items h3 i:after, .g-bd-cart .m-restaurant-ordered3 .menu-items h3 i:after {
+          content: "";
+          float: left;
+          margin-top: 0.6rem;
+          width: 0.65rem;
+          height: 0.6rem;
+          background: url(../images/icon-love.png) no-repeat;
+          background-size: contain; }
+      .g-bd-ordered .m-restaurant-ordered3 .menu-items p, .g-bd-cart .m-restaurant-ordered3 .menu-items p {
+        height: 2.25rem;
+        line-height: 2.25rem; }
+        .g-bd-ordered .m-restaurant-ordered3 .menu-items p em, .g-bd-cart .m-restaurant-ordered3 .menu-items p em {
+          float: left;
+          font-size: 0.8rem; }
+        .g-bd-ordered .m-restaurant-ordered3 .menu-items p a, .g-bd-cart .m-restaurant-ordered3 .menu-items p a {
+          float: right;
+          margin-top: 0.75rem;
+          width: 0.7rem;
+          height: 0.7rem;
+          line-height: 0.7rem;
+          border: 1px solid #000;
+          font-size: 0.7rem;
+          text-align: center; }
+        .g-bd-ordered .m-restaurant-ordered3 .menu-items p strong, .g-bd-cart .m-restaurant-ordered3 .menu-items p strong {
+          float: right;
+          margin: 0.05rem 0.6rem;
+          font-size: 0.6rem;
+          font-weight: bold; }
+        .g-bd-ordered .m-restaurant-ordered3 .menu-items p .btn-minus, .g-bd-cart .m-restaurant-ordered3 .menu-items p .btn-minus {
+          line-height: 0.75rem; }
+    .g-bd-ordered .m-restaurant-ordered3 .m-menu-con, .g-bd-cart .m-restaurant-ordered3 .m-menu-con {
+      padding: 2.75rem 1rem; }
+      .g-bd-ordered .m-restaurant-ordered3 .m-menu-con .menu-hd, .g-bd-cart .m-restaurant-ordered3 .m-menu-con .menu-hd {
+        position: relative; }
+      .g-bd-ordered .m-restaurant-ordered3 .m-menu-con img, .g-bd-cart .m-restaurant-ordered3 .m-menu-con img {
+        width: 14rem;
+        height: 13rem;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem; }
+      .g-bd-ordered .m-restaurant-ordered3 .m-menu-con .btn-close, .g-bd-cart .m-restaurant-ordered3 .m-menu-con .btn-close {
+        position: absolute;
+        top: 0.65rem;
+        right: 0.65rem;
+        width: 1rem;
+        height: 1rem;
+        border: 0.05rem solid #fff;
+        border-radius: 0.55rem;
+        color: #fff;
+        font-size: 0.8rem;
+        text-align: center;
+        line-height: 1rem; }
+      .g-bd-ordered .m-restaurant-ordered3 .m-menu-con .menu-bd, .g-bd-cart .m-restaurant-ordered3 .m-menu-con .menu-bd {
+        border: 0.025rem solid #ccc;
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+        padding-bottom: 1.3rem; }
+      .g-bd-ordered .m-restaurant-ordered3 .m-menu-con h3, .g-bd-cart .m-restaurant-ordered3 .m-menu-con h3 {
+        line-height: 1.95rem;
+        text-align: center; }
+        .g-bd-ordered .m-restaurant-ordered3 .m-menu-con h3 span, .g-bd-cart .m-restaurant-ordered3 .m-menu-con h3 span {
+          font-size: 0.75rem; }
+      .g-bd-ordered .m-restaurant-ordered3 .m-menu-con p, .g-bd-cart .m-restaurant-ordered3 .m-menu-con p {
+        padding-left: 1.5rem;
+        padding-right: 0.85rem;
+        overflow: hidden;
+        line-height: 1.3rem; }
+        .g-bd-ordered .m-restaurant-ordered3 .m-menu-con p em, .g-bd-cart .m-restaurant-ordered3 .m-menu-con p em {
+          float: left;
+          font-size: 0.8rem; }
+        .g-bd-ordered .m-restaurant-ordered3 .m-menu-con p a, .g-bd-cart .m-restaurant-ordered3 .m-menu-con p a {
+          float: right;
+          width: 0.95rem;
+          height: 0.95rem;
+          margin-top: 0.15rem;
+          font-size: 1rem;
+          line-height: 1rem;
+          text-align: center;
+          border: 0.025rem solid #000;
+          border-radius: 0.5rem; }
+        .g-bd-ordered .m-restaurant-ordered3 .m-menu-con p strong, .g-bd-cart .m-restaurant-ordered3 .m-menu-con p strong {
+          float: right;
+          margin: 0 0.5rem;
+          font-weight: normal; }
+        .g-bd-ordered .m-restaurant-ordered3 .m-menu-con p .btn-minus, .g-bd-cart .m-restaurant-ordered3 .m-menu-con p .btn-minus {
+          line-height: 0.75rem; }
+  .g-bd-ordered .m-restaurant-ordered4, .g-bd-cart .m-restaurant-ordered4 {
+    margin-top: 0.8rem;
+    padding: 0 0.45rem;
+    background: #fff; }
+    .g-bd-ordered .m-restaurant-ordered4 h2, .g-bd-ordered .m-restaurant-ordered4 .menu-list, .g-bd-ordered .m-restaurant-ordered4 .div1, .g-bd-cart .m-restaurant-ordered4 h2, .g-bd-cart .m-restaurant-ordered4 .menu-list, .g-bd-cart .m-restaurant-ordered4 .div1 {
+      border-bottom: 0.025rem solid #ccc; }
+    .g-bd-ordered .m-restaurant-ordered4 h2, .g-bd-cart .m-restaurant-ordered4 h2 {
+      font-size: 0.8rem;
+      line-height: 2.25rem;
+      text-indent: 0.45rem; }
+    .g-bd-ordered .m-restaurant-ordered4 .menu-list, .g-bd-cart .m-restaurant-ordered4 .menu-list {
+      padding: 0.5rem; }
+      .g-bd-ordered .m-restaurant-ordered4 .menu-list li, .g-bd-cart .m-restaurant-ordered4 .menu-list li {
+        overflow: hidden; }
+      .g-bd-ordered .m-restaurant-ordered4 .menu-list .g-num, .g-bd-cart .m-restaurant-ordered4 .menu-list .g-num {
+        float: right;
+        height: 1.25rem;
+        line-height: 1.25rem; }
+        .g-bd-ordered .m-restaurant-ordered4 .menu-list .g-num .n1, .g-bd-ordered .m-restaurant-ordered4 .menu-list .g-num .n2, .g-bd-cart .m-restaurant-ordered4 .menu-list .g-num .n1, .g-bd-cart .m-restaurant-ordered4 .menu-list .g-num .n2 {
+          display: inline-block; }
+        .g-bd-ordered .m-restaurant-ordered4 .menu-list .g-num .n2, .g-bd-cart .m-restaurant-ordered4 .menu-list .g-num .n2 {
+          margin-left: 1.25rem; }
+        .g-bd-ordered .m-restaurant-ordered4 .menu-list .g-num em, .g-bd-cart .m-restaurant-ordered4 .menu-list .g-num em {
+          display: inline-block;
+          color: #ccc;
+          font-size: 0.65rem; }
+      .g-bd-ordered .m-restaurant-ordered4 .menu-list strong, .g-bd-cart .m-restaurant-ordered4 .menu-list strong {
+        float: left;
+        font-weight: normal;
+        line-height: 1.25rem; }
+    .g-bd-ordered .m-restaurant-ordered4 .div1, .g-bd-cart .m-restaurant-ordered4 .div1 {
+      overflow: hidden;
+      line-height: 1.25rem;
+      padding: 0 0.5rem;
+      line-height: 2.25rem; }
+      .g-bd-ordered .m-restaurant-ordered4 .div1 span, .g-bd-cart .m-restaurant-ordered4 .div1 span {
+        float: left;
+        font-size: 0.75rem; }
+      .g-bd-ordered .m-restaurant-ordered4 .div1 strong, .g-bd-cart .m-restaurant-ordered4 .div1 strong {
+        float: left;
+        margin-top: 0.5rem;
+        width: 1.25rem;
+        height: 1.25rem;
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+        color: #fff;
+        text-align: center;
+        background: #f00;
+        border-radius: 0.625rem;
+        margin-right: 0.25rem; }
+      .g-bd-ordered .m-restaurant-ordered4 .div1 p, .g-bd-cart .m-restaurant-ordered4 .div1 p {
+        float: right; }
+      .g-bd-ordered .m-restaurant-ordered4 .div1 .u-red, .g-bd-cart .m-restaurant-ordered4 .div1 .u-red {
+        color: #f00;
+        font-weight: bold; }
+      .g-bd-ordered .m-restaurant-ordered4 .div1 em, .g-bd-cart .m-restaurant-ordered4 .div1 em {
+        font-size: 0.65rem; }
+    .g-bd-ordered .m-restaurant-ordered4 .u-nline, .g-bd-cart .m-restaurant-ordered4 .u-nline {
+      border: none; }
+      .g-bd-ordered .m-restaurant-ordered4 .u-nline em, .g-bd-cart .m-restaurant-ordered4 .u-nline em {
+        font-size: 1rem; }
+  .g-bd-ordered .m-restaurant-ordered5, .g-bd-cart .m-restaurant-ordered5 {
+    margin-top: 0.75rem;
+    padding: 0 0.5rem;
+    background: #fff; }
+    .g-bd-ordered .m-restaurant-ordered5 .m-ordered-times, .g-bd-ordered .m-restaurant-ordered5 .m-ordered-form, .g-bd-cart .m-restaurant-ordered5 .m-ordered-times, .g-bd-cart .m-restaurant-ordered5 .m-ordered-form {
+      line-height: 0.85rem;
+      padding: 0.7rem 0; }
+    .g-bd-ordered .m-restaurant-ordered5 .icon-hours, .g-bd-ordered .m-restaurant-ordered5 .icon-msg, .g-bd-cart .m-restaurant-ordered5 .icon-hours, .g-bd-cart .m-restaurant-ordered5 .icon-msg {
+      float: left;
+      margin-left: 0.3rem;
+      background-size: contain; }
+    .g-bd-ordered .m-restaurant-ordered5 .icon-hours, .g-bd-cart .m-restaurant-ordered5 .icon-hours {
+      margin-top: 0.025rem;
+      margin-left: 0.4rem;
+      width: 0.8rem;
+      height: 0.8rem;
+      background: url(../images/icon-hours.png) no-repeat; }
+    .g-bd-ordered .m-restaurant-ordered5 .icon-msg, .g-bd-cart .m-restaurant-ordered5 .icon-msg {
+      margin-top: 0.35rem;
+      width: 0.9rem;
+      height: 0.65rem;
+      background: url(../images/icon-msg.png) no-repeat; }
+    .g-bd-ordered .m-restaurant-ordered5 .m-ordered-times, .g-bd-cart .m-restaurant-ordered5 .m-ordered-times {
+      border-bottom: 0.025rem solid #ccc;
+      overflow: hidden; }
+      .g-bd-ordered .m-restaurant-ordered5 .m-ordered-times strong, .g-bd-cart .m-restaurant-ordered5 .m-ordered-times strong {
+        font-weight: normal;
+        text-indent: 0.25rem; }
+      .g-bd-ordered .m-restaurant-ordered5 .m-ordered-times strong, .g-bd-ordered .m-restaurant-ordered5 .m-ordered-times em, .g-bd-ordered .m-restaurant-ordered5 .m-ordered-times span, .g-bd-ordered .m-restaurant-ordered5 .m-ordered-times i, .g-bd-cart .m-restaurant-ordered5 .m-ordered-times strong, .g-bd-cart .m-restaurant-ordered5 .m-ordered-times em, .g-bd-cart .m-restaurant-ordered5 .m-ordered-times span, .g-bd-cart .m-restaurant-ordered5 .m-ordered-times i {
+        float: left;
+        font-size: 0.75rem; }
+      .g-bd-ordered .m-restaurant-ordered5 .m-ordered-times em, .g-bd-cart .m-restaurant-ordered5 .m-ordered-times em {
+        padding-right: 0.25rem;
+        border-right: 0.1rem solid #000;
+        margin-right: 0.25rem; }
+      .g-bd-ordered .m-restaurant-ordered5 .m-ordered-times .icon-arrow-right3, .g-bd-cart .m-restaurant-ordered5 .m-ordered-times .icon-arrow-right3 {
+        margin-top: 0.175rem;
+        margin-left: 0.25rem;
+        margin-right: 0.25rem;
+        width: 0.3rem;
+        height: 0.5rem;
+        background: url(../images/icon-arrow-right3.png) no-repeat;
+        background-size: contain; }
+    .g-bd-ordered .m-restaurant-ordered5 .m-ordered-form label, .g-bd-cart .m-restaurant-ordered5 .m-ordered-form label {
+      float: left;
+      margin-top: 10px;
+      text-indent: 0.25rem;
+      font-size: 0.75rem;
+      margin-right: 0.6rem; }
+    .g-bd-ordered .m-restaurant-ordered5 .m-ordered-form input, .g-bd-cart .m-restaurant-ordered5 .m-ordered-form input {
+      padding-left: 0.25rem;
+      height: 1.25rem;
+      line-height: 0.85rem;
+      font-size: 0.75rem;
+      border: 0.025rem solid #ccc; }
+  .g-bd-ordered .m-restaurant-ordered6, .g-bd-cart .m-restaurant-ordered6 {
+    background: #fff;
+    padding: 0 0.45rem;
+    margin-top: 0.5rem; }
+    .g-bd-ordered .m-restaurant-ordered6 .menu-list-success, .g-bd-cart .m-restaurant-ordered6 .menu-list-success {
+      padding: 0 0.5rem; }
+      .g-bd-ordered .m-restaurant-ordered6 .menu-list-success .restaurant-name, .g-bd-cart .m-restaurant-ordered6 .menu-list-success .restaurant-name {
+        font-size: 0.75rem;
+        border-bottom: 0.025rem dashed #1a1a1a; }
+      .g-bd-ordered .m-restaurant-ordered6 .menu-list-success .menu-list, .g-bd-cart .m-restaurant-ordered6 .menu-list-success .menu-list {
+        /*padding: torem(20px) 0;*/ }
+      .g-bd-ordered .m-restaurant-ordered6 .menu-list-success .menu-items, .g-bd-ordered .m-restaurant-ordered6 .menu-list-success .menu-sum, .g-bd-cart .m-restaurant-ordered6 .menu-list-success .menu-items, .g-bd-cart .m-restaurant-ordered6 .menu-list-success .menu-sum {
+        padding-left: 0.75rem;
+        height: 1.25rem;
+        line-height: 1.25rem;
+        border-bottom: 0.025rem dashed #1a1a1a;
+        overflow: hidden; }
+        .g-bd-ordered .m-restaurant-ordered6 .menu-list-success .menu-items span, .g-bd-ordered .m-restaurant-ordered6 .menu-list-success .menu-sum span, .g-bd-cart .m-restaurant-ordered6 .menu-list-success .menu-items span, .g-bd-cart .m-restaurant-ordered6 .menu-list-success .menu-sum span {
+          float: left; }
+        .g-bd-ordered .m-restaurant-ordered6 .menu-list-success .menu-items em, .g-bd-ordered .m-restaurant-ordered6 .menu-list-success .menu-sum em, .g-bd-cart .m-restaurant-ordered6 .menu-list-success .menu-items em, .g-bd-cart .m-restaurant-ordered6 .menu-list-success .menu-sum em {
+          float: right;
+          margin-left: 1.25rem; }
+      .g-bd-ordered .m-restaurant-ordered6 .menu-list-success .menu-items em, .g-bd-cart .m-restaurant-ordered6 .menu-list-success .menu-items em {
+        color: #ccc; }
+    .g-bd-ordered .m-restaurant-ordered6 p, .g-bd-cart .m-restaurant-ordered6 p {
+      padding: 0.5rem 0;
+      margin-left: 0.5rem;
+      font-size: 0.85rem;
+      line-height: 1rem;
+      border-bottom: 0.025rem solid #ccc; }
+    .g-bd-ordered .m-restaurant-ordered6 .ordered-info, .g-bd-cart .m-restaurant-ordered6 .ordered-info {
+      padding: 0.7rem 0.5rem; }
+    .g-bd-ordered .m-restaurant-ordered6 .info1, .g-bd-cart .m-restaurant-ordered6 .info1 {
+      line-height: 1rem;
+      overflow: hidden;
+      margin-bottom: 0.5rem; }
+      .g-bd-ordered .m-restaurant-ordered6 .info1 i, .g-bd-cart .m-restaurant-ordered6 .info1 i {
+        float: left;
+        background-size: contain; }
+      .g-bd-ordered .m-restaurant-ordered6 .info1 i, .g-bd-ordered .m-restaurant-ordered6 .info1 span, .g-bd-ordered .m-restaurant-ordered6 .info1 em, .g-bd-cart .m-restaurant-ordered6 .info1 i, .g-bd-cart .m-restaurant-ordered6 .info1 span, .g-bd-cart .m-restaurant-ordered6 .info1 em {
+        float: left;
+        color: #aaa; }
+      .g-bd-ordered .m-restaurant-ordered6 .info1 .icon-number, .g-bd-cart .m-restaurant-ordered6 .info1 .icon-number {
+        width: 0.8rem;
+        height: 1rem;
+        background: url(../images/icon-number.png) no-repeat;
+        background-size: contain; }
+      .g-bd-ordered .m-restaurant-ordered6 .info1 .icon-hours, .g-bd-cart .m-restaurant-ordered6 .info1 .icon-hours {
+        margin-top: 0.1rem;
+        width: 0.8rem;
+        height: 0.8rem;
+        background: url(../images/icon-hours.png) no-repeat;
+        background-size: contain; }
+      .g-bd-ordered .m-restaurant-ordered6 .info1 span, .g-bd-cart .m-restaurant-ordered6 .info1 span {
+        text-indent: 0.25rem; }
+      .g-bd-ordered .m-restaurant-ordered6 .info1 em, .g-bd-cart .m-restaurant-ordered6 .info1 em {
+        text-indent: 0.6rem; }
+
+/*支付*/
+.g-bd-pay .m-restaurant-pay1 {
+  margin: 0.5rem 0;
+  padding: 0.7rem 0.9rem;
+  background: #fff; }
+  .g-bd-pay .m-restaurant-pay1 p {
+    line-height: 1.25rem; }
+  .g-bd-pay .m-restaurant-pay1 span {
+    display: inline-block;
+    font-size: 0.75rem; }
+  .g-bd-pay .m-restaurant-pay1 em {
+    text-indent: 0.6rem;
+    display: inline-block;
+    font-size: 0.65rem;
+    color: #c8a05a; }
+  .g-bd-pay .m-restaurant-pay1 .u-fzc {
+    color: #c8a05a; }
+.g-bd-pay .m-restaurant-pay2 {
+  background: #fff; }
+  .g-bd-pay .m-restaurant-pay2 .pay-items {
+    padding: 1rem; }
+  .g-bd-pay .m-restaurant-pay2 a {
+    overflow: hidden;
+    display: block; }
+  .g-bd-pay .m-restaurant-pay2 img {
+    float: left;
+    width: 2.9rem;
+    height: 2.9rem;
+    background-size: contain; }
+  .g-bd-pay .m-restaurant-pay2 .pay-info {
+    text-indent: 0.6rem;
+    float: left; }
+    .g-bd-pay .m-restaurant-pay2 .pay-info h2 {
+      font-size: 0.75rem;
+      line-height: 1.75rem; }
+    .g-bd-pay .m-restaurant-pay2 .pay-info p {
+      font-size: 0.5rem; }
+  .g-bd-pay .m-restaurant-pay2 span {
+    float: right;
+    margin-top: 1.1rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    border: 0.05rem solid #c8a05a;
+    border-radius: 0.45rem;
+    background: #fff;
+    margin-right: 0.6rem; }
+  .g-bd-pay .m-restaurant-pay2 .pay-radio-cur {
+    width: 0.9rem;
+    height: 0.9rem;
+    border: none;
+    background: url(../images/icon-radio-cur.png) no-repeat;
+    background-size: contain;
+    /*background:$btncolorcur;*/
+    /*background:$mcolor;*/ }
+.g-bd-pay .m-restaurant-pay3 {
+  padding: 0.75rem;
+  /*span,strong,em{
+  	display: inline-block;
+  }*/ }
+  .g-bd-pay .m-restaurant-pay3 .btn-pay-ok {
+    display: block;
+    height: 2.75rem;
+    line-height: 2.75rem;
+    font-size: 1rem;
+    background: #c8a05a;
+    border-radius: 0.4rem;
+    text-align: center;
+    color: #fff; }
+  .g-bd-pay .m-restaurant-pay3 span {
+    margin-right: 0.5rem; }
+
+/*底部主导航*/
+.g-ft {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0; }
+  .g-ft .btn-reserved-now {
+    display: block;
+    height: 2.15rem;
+    font-size: 0.75rem;
+    line-height: 2.15rem;
+    color: #fff;
+    background: #1a1a1a;
+    text-align: center; }
+  .g-ft .m-ordered-carts {
+    padding: 0.5rem 0;
+    background: #1a1a1a;
+    position: relative;
+    overflow: hidden; }
+    .g-ft .m-ordered-carts i {
+      float: left;
+      background-size: contain; }
+    .g-ft .m-ordered-carts .ordered-cart-txt1 {
+      /*.icon-cart{
+      	margin-left: torem(36px);
+      	width: torem(56px);
+      	height: torem(46px);
+      	background:url(../images/icon-cart.png) no-repeat;	
+      }*/ }
+      .g-ft .m-ordered-carts .ordered-cart-txt1 .sum-num {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 1rem;
+        /*width: torem(28px);*/
+        /*height: torem(28px);*/
+        padding: 0.05rem;
+        background: #f00;
+        font-size: 0.45rem;
+        line-height: 0.7rem;
+        border-radius: 0.35rem;
+        color: #fff;
+        text-align: center; }
+      .g-ft .m-ordered-carts .ordered-cart-txt1 .btn-cart {
+        float: left;
+        margin-left: 0.75rem;
+        padding-right: 0.35rem;
+        width: 1.4rem;
+        height: 1.15rem;
+        background: url(../images/icon-cart.png) no-repeat;
+        position: relative;
+        background-size: contain; }
+      .g-ft .m-ordered-carts .ordered-cart-txt1 span, .g-ft .m-ordered-carts .ordered-cart-txt1 strong {
+        float: left;
+        color: #c8a05a;
+        line-height: 1.15rem; }
+      .g-ft .m-ordered-carts .ordered-cart-txt1 span {
+        font-size: 0.75rem;
+        margin-left: 0.75rem; }
+      .g-ft .m-ordered-carts .ordered-cart-txt1 strong {
+        font-size: 1.075rem; }
+    .g-ft .m-ordered-carts .ordered-cart-txt2 {
+      float: left;
+      color: #fff;
+      padding-left: 0.75rem;
+      line-height: 1.15rem; }
+      .g-ft .m-ordered-carts .ordered-cart-txt2 .btn-cart-sels {
+        float: left;
+        overflow: hidden;
+        /*background:#f00;*/ }
+      .g-ft .m-ordered-carts .ordered-cart-txt2 i {
+        margin-top: 0.1rem;
+        margin-right: 0.25rem; }
+      .g-ft .m-ordered-carts .ordered-cart-txt2 .icon-radio {
+        width: 0.9rem;
+        height: 0.9rem;
+        border-radius: 0.45rem;
+        background: #fff;
+        /*background:url(../images/icon-radio.png) no-repeat;*/ }
+      .g-ft .m-ordered-carts .ordered-cart-txt2 .icon-radio-cur {
+        width: 0.9rem;
+        height: 0.9rem;
+        background: url(../images/icon-radio-cur.png) no-repeat;
+        background-size: contain; }
+      .g-ft .m-ordered-carts .ordered-cart-txt2 span {
+        float: left;
+        color: #fff; }
+      .g-ft .m-ordered-carts .ordered-cart-txt2 strong {
+        float: left;
+        color: #c8a05a;
+        font-size: 0.9rem;
+        margin-left: 0.45rem;
+        margin-right: 0.25rem; }
+      .g-ft .m-ordered-carts .ordered-cart-txt2 em {
+        float: left;
+        font-size: 0.6rem; }
+    .g-ft .m-ordered-carts .ordered-cart-txt3 {
+      float: left;
+      color: #fff;
+      padding-left: 1rem;
+      font-size: 0.65rem;
+      line-height: 1.15rem; }
+      .g-ft .m-ordered-carts .ordered-cart-txt3 .u-red {
+        color: #f00; }
+    .g-ft .m-ordered-carts .cart-count {
+      float: right;
+      color: #fff;
+      margin-right: 0.25rem;
+      line-height: 1.15rem; }
+      .g-ft .m-ordered-carts .cart-count strong {
+        float: left;
+        color: #c8a05a;
+        font-size: 0.9rem; }
+      .g-ft .m-ordered-carts .cart-count em {
+        float: left;
+        font-size: 0.6rem;
+        margin-right: 0.3rem; }
+      .g-ft .m-ordered-carts .cart-count .count-text {
+        margin: 0;
+        margin-left: 0.3rem; }
+    .g-ft .m-ordered-carts .btn-ordered-wisdom, .g-ft .m-ordered-carts .btn-ordered-statements {
+      float: right;
+      width: 4.05rem;
+      height: 1.15rem;
+      font-size: 0.8rem;
+      text-align: center;
+      line-height: 1.15rem;
+      color: #fff;
+      border-radius: 0.25rem;
+      background: #c8a05a;
+      margin-right: 0.4rem; }
+    .g-ft .m-ordered-carts #btn_ordered_ok {
+      display: none; }
+  .g-ft .m-ordered-cart2 .icon-radio {
+    float: left;
+    width: 0.95rem;
+    height: 0.95rem;
+    background: url(../images/icon-radio.png) no-repeat;
+    text-indent: -249.975rem; }
+  .g-ft .m-ordered-cart2 .icon-radio-cur {
+    width: 0.9rem;
+    height: 0.9rem;
+    background: url(../images/icon-radio-cur.png) no-repeat;
+    background-size: contain; }
+
+.m-bnav {
+  padding: 0.25rem 0.6rem 0 0.6rem;
+  background: #1a1a1a; }
+  .m-bnav li {
+    float: left; }
+  .m-bnav a {
+    float: left;
+    width: 3.7rem;
+    text-align: center; }
+  .m-bnav i {
+    display: block;
+    background-size: contain;
+    margin: 0 auto; }
+  .m-bnav .icon-bnav-comment {
+    margin-top: 0.125rem;
+    width: 1.1rem;
+    height: 0.75rem;
+    background: url(../images/icon-bnav-comment.png) no-repeat;
+    background-size: contain; }
+  .m-bnav .icon-bnav-sign {
+    width: 1rem;
+    height: 1rem;
+    background: url(../images/icon-bnav-sign.png) no-repeat;
+    background-size: contain; }
+  .m-bnav .icon-bnav-collection {
+    margin-top: 0.025rem;
+    width: 1rem;
+    height: 0.95rem;
+    background: url(../images/icon-bnav-collection.png) no-repeat;
+    background-size: contain; }
+  .m-bnav .icon-bnav-share {
+    margin-top: 0.1rem;
+    width: 0.85rem;
+    height: 0.8rem;
+    background: url(../images/icon-bnav-share.png) no-repeat;
+    background-size: contain; }
+  .m-bnav .icon-nav-home {
+    width: 0.9rem;
+    height: 1rem;
+    background: url(../images/icon-nav-home.png) no-repeat;
+    background-size: contain; }
+  .m-bnav .icon-nav-ordered {
+    width: 1.1rem;
+    height: 1rem;
+    background: url(../images/icon-nav-ordered.png) no-repeat;
+    background-size: contain; }
+  .m-bnav .icon-nav-find {
+    width: 0.95rem;
+    height: 1rem;
+    background: url(../images/icon-nav-find.png) no-repeat;
+    background-size: contain; }
+  .m-bnav .icon-nav-my {
+    width: 1rem;
+    height: 1rem;
+    background: url(../images/icon-nav-my.png) no-repeat;
+    background-size: contain; }
+  .m-bnav p {
+    line-height: 0.95rem;
+    font-size: 0.45rem;
+    color: #c8a05a; }
+
+.g-ft-ordered-success p {
+  color: #fff; }
+
+/*# sourceMappingURL=restaurant.css.map */

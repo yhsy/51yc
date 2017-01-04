@@ -1,0 +1,359 @@
+@charset "utf-8";
+
+/*rem转换函数()*/
+@function torem($px){
+    @return $px / 40px * 1rem;
+}
+
+    
+/*头部区域-start*/
+    .i-hd{
+        width: 100%; 
+        position: relative;
+        /*图片轮播区*/
+        .i-hd1{
+            width: 100%; 
+            background:#ccc; 
+            z-index:11;    
+            .swiper-wrapper{
+                .swiper-slide{
+                    
+                    a{
+                        display: block;
+                        /*height: torem(444px);*/
+                        img{
+                            width: 100%;
+                            height: torem(444px); 
+                        }
+                    }
+                }
+            }            
+        }
+        
+        /*头部地址栏*/
+        .i-hd2{
+            $i-hd2-height:torem(76px);
+            position: absolute;
+            z-index:12;
+            top:0;
+            width: 100%;
+            height: $i-hd2-height;
+            line-height: $i-hd2-height;
+            background:-webkit-linear-gradient(bottom,rgba(0,0, 0, 0) 0%, rgba(0,0, 0, 1) 100%);
+            
+            .u-text{
+                float: left;
+                font-size: torem(26px);
+                color:#fff;
+                padding-left: torem(10px);
+                padding-right: torem(10px);
+            }
+            .u-text .u-city{
+                display: inline-block;
+            }
+            .u-text i{
+                display: inline-block;
+                width: torem(14px) ;
+                height: torem(8px);
+                background:url(../images/ico-arrow-down.png) no-repeat;
+                background-size: contain;
+            }
+            
+            .i-sch{
+                float: left;
+                margin-top: torem(10px);
+                width: torem(436px);
+                height: torem(52px);
+                line-height: torem(52px);
+                border: 2px solid #fff;          
+                .icon-sch{
+                   float: left;
+                   width:torem(27px);
+                   height: torem(26px);
+                   background:url(../images/ico-search.png) no-repeat;
+                   background-size: contain;
+                   margin: torem(16px) 0 0 torem(56px);  
+                }
+                .i-sch-text{
+                    float: left;
+                    font-size: torem(26px);
+                    line-height: torem(56px);
+                    text-indent: torem(20px);
+                    color:#fff;  
+                }
+                
+            }
+            
+            .u-nearby{
+                float: right;
+                
+                .ico-arrow-right{
+                    display: inline-block;
+                    width:torem(10px);
+                    height: torem(18px);
+                    background: url(../images/ico-arrow-right.png) no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+        
+        /*功能导航*/
+        .i-hd3{
+            position: absolute;
+            z-index:13;
+            bottom: torem(16px);
+            width: 100%;
+        }  
+        .i-tnav{
+            width: torem(600px); 
+            margin: 0 auto; 
+            overflow: hidden;    
+            li{
+                float: left;
+                margin-right: torem(12px);
+                .i-tnav-btn{
+                    float: left;
+                    width: torem(192px);
+                    height: torem(70px);
+                    line-height: torem(70px);
+                    
+                    text-align: center;
+                    font-size: torem(22px);
+                    background:#f2f2f2;
+                    border-radius:torem(10px);
+                    font-family: "Microsoft YaHei",微软雅黑,Arial, Helvetica, sans-serif;
+                    letter-spacing: torem(4px);
+                    box-shadow: 0 torem(2px) torem(2px) 0 #666;
+                }
+            }
+            .i-tnav-none{
+                margin-right: 0;
+            }
+        }
+    }
+/*头部区域-end*/
+
+/*内容区域*/
+.i-bd{
+    padding:torem(15px) torem(15px) torem(140px) torem(15px);
+    background:#f2f2f2;
+    /*附近商家*/
+    .i-bd1{
+        background:#fff;
+        padding:torem(20px) 0 torem(12px) torem(20px);
+        /*标题*/
+        .i-business-tit{
+            width: 100%;
+            overflow: hidden;
+           .ico-map{
+               float: left;
+               width: torem(29px);
+               height: torem(29px);
+               background:url(../images/ico-map.png) no-repeat;
+               background-size: contain;
+           }
+           span{
+               float: left;
+               text-indent: torem(10px);
+               font-size: torem(26px);
+               line-height: torem(30px);
+           }
+        }
+        /*商家轮播*/
+        .i-business-box{
+            overflow: hidden;
+            /*商家展示内容*/
+            .i-business-list{
+                background:#fff;
+                position: relative;
+                .swiper-slide{                
+                    /*描述文字*/
+                    .i-business-text{
+                        float: left; 
+                        width: torem(245px);
+                        margin-top: torem(50px);
+                        overflow: hidden;
+                        
+                        strong{
+                            display: block;
+                            font-size: torem(34px);
+                            color:#8a8a8a;
+                            height: torem(34px);
+                            overflow: hidden;
+                        }    
+                        span{
+                            display: block;
+                        }
+                        .i-business-explain{
+                            margin: torem(12px) 0;
+                        }
+                        .i-business-distance{
+                            font-size: torem(22px);
+                            
+                            em{
+                                font-style: normal;
+                            }
+                        }
+                                                        
+                    }
+                    
+                    /*图片*/
+                    .i-business-img{
+                        float: right;
+                        width: torem(305px);
+                        height: torem(243px);
+                        margin-right: torem(10px);
+                        img{
+                            width: torem(305px);
+                            height: torem(243px);
+                        }               
+                    }
+                }
+            }
+            
+            /*轮播控制器*/
+            .i-indicator-warp{
+                width: 100%;
+            }
+            
+            .i-slider-indicator{
+                margin: torem(12px) auto;
+                width: torem(60px);
+                height: torem(16px);
+                .i-indicator{
+                    float: left;
+                    width: torem(10px);
+                    height: torem(10px);
+                    border-radius: torem(5px);
+                    background:#aeaeae;
+                    margin-right: torem(6px);                
+                }
+                
+                .i-indicator-active{
+                    border: torem(2px) solid #000;
+                    margin-top: torem(-2px);
+                }
+            }
+            
+            
+        }
+        
+        
+        
+    }
+    
+    
+    /*精品推荐榜*/
+    .i-bd2{
+        margin: torem(20px) 0;
+        background:#fff;
+        overflow: hidden;
+        padding-bottom:torem(10px);
+        /*推荐标题*/
+        .i-recommend-tit{
+            overflow: hidden;
+            height: torem(80px);
+            line-height: torem(80px);
+            span{
+                float: left;
+                text-indent: torem(24px);
+                font-size: torem(32px);
+            }
+            .u-more{
+                float: right;
+                margin-right: torem(14px);
+                font-size: torem(26px);
+                .ico-more{
+                    display: inline-block;
+                    width: torem(10px);
+                    height: torem(18px);
+                    background:url(../images/ico-more.png) no-repeat;
+                }
+            }
+        }
+        /*推荐列表*/
+        .i-recommend-list{
+            padding: 0 torem(5px) 0 torem(11px);
+            overflow: hidden;
+            li{
+                float: left;
+                margin-right: torem(8px);              
+                a{
+                    display: block;  
+                }
+                img{
+                    width: torem(190px);
+                    height: torem(190px);
+                }                  
+                p{
+                    width: torem(180px);
+                    height:torem(40px) ;
+                    line-height: torem(40px);      
+                    text-align: center;
+                    font-size: torem(24px);
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+    
+    /*聚餐场景*/
+    .i-bd3{
+        padding-top: torem(15px);
+        background: #fff;
+        .i-scene-list{
+            
+        }
+        .i-scene{
+            width:100%;
+            height:torem(238px);
+            margin-bottom: torem(12px);       
+            a{
+                display: block;
+                position: relative;               
+            }
+            
+            img{
+                width: torem(610px);
+                height: torem(238px);
+            }
+            
+            .i-sence-tit{
+                position: absolute;
+                bottom:torem(12px);
+                left:0;
+                background:#c6a656;
+                width: torem(220px);
+                padding-bottom: torem(10px);
+                h3{               
+                    height: torem(62px);
+                    line-height: torem(62px);
+                    font-size: torem(42px);
+                    color:#fffdff;
+                    text-align: center;
+                }
+                
+                p{
+                    text-align: center;
+                    font-size: torem(24px);
+                    height: torem(24px);
+                    line-height: torem(24px);
+                    color:#fff8ed;
+                }
+            }
+            
+            
+            
+        }
+        
+    }
+    
+    /*/end下划线*/
+    .i-end{
+        color:#c7b161;
+    }
+}
+/*内容区域-end*/
+
+
+    

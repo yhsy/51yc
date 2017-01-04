@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html class="g-html2">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心--设置</title>
+    <link rel="stylesheet" href="css/libs/m-reset.css">
+    <link rel="stylesheet" href="scss/global.css">
+    <link rel="stylesheet" href="scss/personal.css">
+    
+</head>
+
+<body class="g-body">
+    <div class="g-hd">
+       <a href="personal.html" class="icon-back"></a>
+       <h2>设置</h2>
+    </div>
+    
+    <div class="m-mask-modal"></div>
+
+    <div class="m-modal1">
+        <div class="modal1-hd">
+            <h2>温馨提示</h2>
+        </div>
+        <div class="modal1-bd">
+            <p>您真的要退出当前账号吗？</p>
+        </div>
+        <div class="modal1-ft">
+            <span class="modal-btn-ok">确定</span>
+            <span class="modal-btn-cancel">取消</span>
+        </div>
+     </div>
+
+    <div class="g-bd g-bd-personal-setting">	
+		<div class="g-personal2">
+			<ul class="m-menu-list">
+				<li><a href="personalsettingfeedback.html"><span>意见反馈</span><i class="icon-arrow-right2"></i></a></li>
+				<!-- <li class="li-help"><a href="javascript:;"><span>用户帮助</span><i class="icon-arrow-right2"></i></a></li> -->
+				<li class="li-about"><a href="personalsettingabout.html"><span>软件关于</span><i class="icon-arrow-right2"></i></a></li>
+				<!-- <li><a href="javascript:;" id="btn_clear" ><span>清除缓存</span><i class="icon-arrow-right2"></i></a></li> -->
+				<li><a href="javascript:;" id="btn_contact"><span>联系我们</span><i class="icon-arrow-right2"></i></a></li>
+			</ul>
+		</div>
+
+		<a href="javascript:;" class="btn-exit">退出账号</a>
+
+
+    </div>
+    <div class="m-mask-setting" id="mask_setting">
+        <div id="contact-box">
+            <h2>联系我们</h2>
+            <a href="tel:4008166477" id="btn_contact_tel">4008166477</a>
+            <a href="javascript:;" id="btn_contact_cancel">取消</a>
+        </div>
+
+
+        <div id="clear-box">
+            <h2>确定要清空缓存的数据</h2>
+            <a href="javascript:;" id="btn_clear_ok">确定</a>
+            <a href="javascript:;" id="btn_clear_cancel">取消</a>
+        </div>   
+  
+    </div>
+
+   
+         
+
+    <div class="g-ft g-ft-personal">
+		
+    </div>
+
+    <script src="js/rem.js"></script>
+     <!-- 本地存储组件 -->
+    <script src="js/plugin/store.min.js"></script>  
+    <!--引入zepto库及其他js插件-->
+    <script src="js/libs/zepto.min.js"></script>
+    <script>
+        $(function(){
+            // 联系我们
+                $("#btn_contact").click(function(){
+                    $("#mask_setting").show();
+                    $("#contact-box").show();
+                    // console.log('111');
+                })
+                $("#btn_contact_cancel").click(function(){
+                    $("#mask_setting").hide();
+                    $("#contact-box").hide();                
+                })
+
+
+            // 退出账号
+                // 1.显示遮罩和提示框(确定和取消)
+                    // 取消时,隐藏提示框和遮罩
+                // 2.确定时,清除本地token,跳转页面到首页
+                // 
+
+                $(".btn-exit").click(function(){
+                    $(".m-mask-modal").show();
+                    $(".m-modal1").show();
+                })
+
+                // 取消
+                $(".modal-btn-cancel").click(function(){
+                    $(".m-mask-modal").hide();
+                    $(".m-modal1").hide();
+                })
+
+                // 确定
+                $(".modal-btn-ok").click(function(){
+                    $(".m-mask-modal").hide();
+                    $(".m-modal1").hide();
+
+                    // 清除本地缓存
+                    // store.clear()
+                    // 删除本地token
+                    store.remove('wxToken');
+
+                    // 跳转到首页
+                    window.location.href = "index.html";
+                })
+                
+        })
+    </script>
+</body>
+
+</html>

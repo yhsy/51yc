@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html class="g-html2">
+<head>
+    <meta charset="UTF-8">
+    <title>附近餐厅</title>
+    <link rel="stylesheet" href="css/libs/m-reset.css">
+    <link rel="stylesheet" href="scss/global.css">
+    
+</head>
+
+<body class="g-body">
+    <div class="g-hd">
+       <a href="index.html" class="icon-back"></a>
+       <h2 class="hd-tit">附近餐厅</h2>
+    </div>
+    <div class="m-mask-modal"></div>
+
+
+    <div class="g-bd g-bd-scene">	
+		<ul class="m-restaurant-list2">
+			<!-- 
+				<li>				
+					<a href="restaurantdetails.html" class="rt-img">
+						<img src="images/img-sence-1.jpg" alt="">
+						<p>被这里的雅致环境所折,露天阳台超棒!</p>
+					</a>
+
+					<div class="rt-info">
+						<h3 class="rt-tit">老三国诸葛烤鱼</h3>
+
+						<p class="rt-cuisine">烤鱼</p>
+						<p class="rt-region">龙湾区</p>
+						<p class="rt-price">
+							<span>¥</span>
+							<em>200</em>
+							<span>-</span>
+							<span>¥</span>
+							<em>300</em>
+						</p>
+					</div>				
+					
+				</li>
+				<li>				
+					<a href="restaurantdetails.html" class="rt-img">
+						<img src="images/img-sence-1.jpg" alt="">
+						<p>被这里的雅致环境所折,露天阳台超棒!</p>
+					</a>
+
+					<div class="rt-info">
+						<h3 class="rt-tit">老三国诸葛烤鱼</h3>
+
+						<p class="rt-cuisine">烤鱼</p>
+						<p class="rt-region">龙湾区</p>
+						<p class="rt-price">
+							<span>¥</span>
+							<em>200</em>
+							<span>-</span>
+							<span>¥</span>
+							<em>300</em>
+						</p>
+					</div>				
+					
+				</li> 
+			-->
+		</ul>
+		<button class="btn-loading-more">加载更多</button>
+		
+
+    </div>
+
+    <div class="g-ft">
+		
+    </div>
+
+    <script src="js/rem.js"></script>
+    <!--引入zepto库及其他js插件-->
+	<script src="js/libs/zepto.min.js"></script>
+	<!--轮播图组件-->
+	<script src="js/plugin/jquery-swiper.min.js"></script>	
+	<!-- 本地存储组件 -->
+	<script src="js/plugin/store.min.js"></script>	
+
+	<script>
+		// 默认载入时
+			// 获取本地默认数据
+			var user = store.get('user');
+			var cityId = user.cityId;
+			var lng = user.lng;
+			var lat = user.lat;
+			// 附近餐厅的默认页数及
+			var Npage = 1;
+			// 默认显示的餐厅个数
+			var Nsize = 5;
+
+			// m-restaurant-list2
+			// 定义默认的变量
+
+			var restaurant = {};
+			var strNearby = "";
+
+			nearbyList(Npage,Nsize);
+
+			// 附近餐厅列表 - 函数
+			function nearbyList(page,size){
+				$.ajax({
+					type:"get",
+					url:"http://api.51yuchu.com/index/nearby/list?cityId="+ cityId +"&radii=3000&lng="+ lng +"&lat="+ lat +"&page="+ page +"&size="+size,
+					// url:"data/nearby.json",
+					dataType:"json",
+					beforeSend:Loading,
+					success:function(data){
+						// console.log(size);
+						// console.log(data.value.length);
+						if(data.succeed){
+							// 显示隐藏加载更多按钮							
+							if(data.value.length>=size){
+								$(".btn-loading-more").show();
+							}else{
+								$(".btn-loading-more").html('没有更多数据了！');
+								$(".btn-loading-more").prop('disabled',true);
+								$(".btn-loading-more").addClass('dis');
+								// $(".btn-loading-more").hide();
+							}
+
+							// var sum = page*size - (page-1)*size;
+
+							for(var i=0;i<data.value.length;i++){
+								restaurant = data.value[i].restaurant;
+								strNearby+='<li><a href="restaurantdetails.html" class="rt-img"><img src="'+ restaurant.previewUrl +'" alt=""><p>'+ restaurant.content +'</p></a><div class="rt-info"><h3 class="rt-tit">'+ restaurant.name +'</h3><p class="rt-cuisine">'+ restaurant.keyword +'</p><p class="rt-region">'+ restaurant.cityId +'</p><p class="rt-price"><span>¥</span> <em>'+ restaurant.startPrice +'</em> <span>-</span> <span>¥</span> <em>'+ restaurant.endPrice +'</em></p></div></li>';
+							}
+
+							// 插入数据到dom
+							$(".m-restaurant-list2").html(strNearby);
+
+						}
+						
+					}
+				})
+			}
+
+			// loading效果
+			function Loading(XMLHttpRequest){
+				$(".m-loading").remove();
+				$('.m-mask-modal').after("<div class='m-loading'><img src='images/loading.gif' /><div>");
+				$('.m-mask-modal').show();
+		 		$('m-restaurant-list2').hide();
+		
+		 		// loading 0.5秒后隐藏loading,显示列表
+		 		setTimeout(function(){
+		 			$('.m-loading').hide();
+		 			$('.m-mask-modal').hide();
+		 			$('.m-restaurant-list2').show();
+		 		},500)
+			}
+		// 载入完成时
+		$(function(){
+			$(".btn-loading-more").click(function(){
+				Npage ++;
+				// 原来的列表高度
+				var hdTop = $(".g-hd").height();
+				var bdTop = $(".g-bd").height();
+				var liTop = $(".m-restaurant-list2 li").height();
+				var ulTop = $(".m-restaurant-list2").height();
+				var mTop = ulTop - (bdTop-ulTop) - hdTop;
+				// 需要滚波的距离
+				var scTop = Npage*Nsize*liTop-mTop;
+				// 获取更多列表数据
+				nearbyList(Npage,Nsize);
+				// console.log($("body").height());	
+				// 跳转到指定位置
+				// window.location.hash = "#btn_loading";
+				scroll(scTop,300);
+			})
+
+			// scroll 滚动函数
+			function scroll(scrollTo, time) {
+                var scrollFrom = parseInt(document.body.scrollTop),
+                        i = 0,
+                        runEvery = 5; // run every 5ms
+
+                scrollTo = parseInt(scrollTo);
+                time /= runEvery;
+
+                var interval = setInterval(function () {
+                    i++;
+
+                    document.body.scrollTop = (scrollTo - scrollFrom) / time * i + scrollFrom;
+
+                    if (i >= time) {
+                        clearInterval(interval);
+                    }
+                }, runEvery);
+            }
+
+
+		})
+	</script>
+</body>
+
+</html>

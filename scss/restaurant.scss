@@ -1,0 +1,2443 @@
+@charset "utf-8";
+
+/*rem转换函数*/
+@function torem($px){
+	@return $px / 40px * 1rem;
+}
+$mcolor:#c8a05a;
+$bgcolor:#1a1a1a;
+$btncolorcur:#53c123;
+
+/*头部*/
+	.g-hd-restaurant{
+		width: 100%;
+		background:#1a1a1a;
+		border-bottom: 2px solid #7b7877;
+		position: relative;				
+		.icon-back{
+			position: absolute;
+			top:torem(20px);
+			left:torem(36px);
+		}
+		.m-logos{
+			width: torem(136px);
+			padding: torem(9px) 0;
+			margin: 0 auto;
+			img{
+				width: torem(136px);
+				height: torem(54px);
+			}
+		}
+		p{
+			font-size:torem(30px) ;
+			color:#fff;
+			line-height: torem(54px);
+			text-align: center;
+		}
+
+
+	}
+
+/*内容区*/
+	/*通用*/
+	.g-bd-restaurant{
+		/*默认详情页*/
+			.restaurant-banner{
+				position: relative;
+				img{
+					width: torem(640px);
+					height: torem(286px);
+					background-size: contain;
+				}
+				.icon-tags{
+					position: absolute;
+					width: torem(104px);
+					height: torem(38px);
+					top:torem(12px);
+					left:0;
+					background:url(../images/icon-tags.png) no-repeat;
+					background-size: contain;
+					/*font-size: torem(20px);*/
+				}
+			}
+
+			.m-tnav{
+				padding: 0 torem(50px);	
+				background:#1a1a1a;
+				li{
+					float: left;
+				}
+				a{
+					float: left;
+					width: torem(90px);
+					padding: 0 torem(90px);
+					/*width: 50%;*/
+					/*text-align: center;*/
+					span{
+						float: left;
+						line-height: torem(52px);
+						font-size: torem(32px);
+						text-align: center;
+						color:#fff;
+					}
+					i{
+						float: left;
+						margin-top:torem(22px);
+						margin-left: torem(12px);
+						width: torem(14px);
+						height: torem(8px);
+						background:url(../images/icon-arrow-down.png) no-repeat;
+						background-size: contain;
+					}
+				}
+				.tnav-cur a{				
+					span{
+						color:#c8a05a;
+					}
+					border-bottom: 4px solid #c8a05a;
+					i{
+						background:url(../images/icon-arrow-down2.png) no-repeat;
+						background-size: contain;
+					}
+				}
+				
+			}
+			
+			.g-restaurant-con{
+				padding-bottom: torem(80px);
+			}
+
+			.m-restaurant1{
+				padding: torem(16px) torem(40px);	
+				.g-restaurant1-l{
+					float: left;
+				}
+				.g-restaurant1-r{
+					float: right;
+				}
+
+				.restaurant-name{
+					font-size: torem(32px);
+					font-weight: bold;
+					line-height: torem(52px);
+				}
+				p{
+					font-size: torem(30px);
+					line-height: torem(36px);
+				}
+				.p3{
+					font-size: torem(24px);
+				}
+				.m-reviews{
+					width: torem(164px);
+					height: torem(164px);
+					background:url(../images/bg-pie.png) no-repeat;
+					background-size: contain;
+
+					h1{
+						margin: 0;
+						padding-top: torem(34px);
+						font-size: torem(40px);
+						line-height: 56px;
+						text-align: center;
+					}
+					p{
+						line-height: torem(36px);
+						font-size: torem(20px);
+						text-align: center;
+					}
+					
+				}
+			}
+
+			.m-restaurant2{
+				padding: torem(8px) 0;
+				background:#fff;
+				margin-bottom: torem(14px);
+				.restaurant-contact{
+					padding: 0 torem(16px);
+					li{
+						padding:torem(14px) 0;
+						border-bottom: 1px solid #ccc;
+					}
+					li.line2{
+						border-top: 1px solid #ccc;
+					}
+
+					a{		
+						display: block;	
+						overflow: hidden;
+					}
+					i{
+						float: left;
+						margin-left: torem(8px);
+						margin-right: torem(10px);
+						width: torem(32px);
+					}
+					.icon-address{
+						margin-left: torem(12px);
+						margin-right: torem(20px);
+						width: torem(22px);
+						height: torem(42px);
+						background:url(../images/icon-address.png) no-repeat;
+						background-size: contain;
+					}
+					.icon-tel{
+						margin-top: torem(3px);
+						height: torem(36px);
+						background:url(../images/icon-tel.png) no-repeat;
+						background-size: contain;
+					}
+					.icon-hours{
+						margin-top: torem(5px);
+						height: torem(32px);
+						background: url(../images/icon-hours.png) no-repeat;
+						background-size: contain;
+					}			
+
+					p{
+						float: left;
+						overflow: hidden;
+						font-size: torem(24px);
+						line-height: torem(42px);
+					}
+					
+					.icon-arrow-right2{
+						float: right;
+						margin-top: torem(11px);
+						margin-right: torem(24px);
+						width: torem(12px);
+						height: torem(20px);
+						background:url(../images/icon-arrow-right2.png) no-repeat;
+						background-size: contain;			
+					}
+				}
+			}
+
+			.m-restaurant3{			
+				padding: torem(8px) torem(16px);
+				background:#fff;
+				margin-bottom: torem(22px);
+				.m-commment-tit{
+					border: 1px solid #ccc;
+					border-left: none;
+					border-right: none;
+					margin-bottom: torem(10px);
+					a{
+						display: block;
+					}
+					p{
+						float: left;
+						text-indent: torem(20px);
+						font-size: torem(24px);
+						line-height: torem(52px);
+						
+					}
+					
+					i{
+						float: right;
+						margin-top: torem(16px);
+						margin-right: torem(24px);
+						width:torem(12px) ;
+						height: torem(20px);
+						background:url(../images/icon-arrow-right2.png) no-repeat;
+						background-size: contain;
+					}
+
+				}
+
+				.m-comment-list{
+					.comment-item{
+						overflow: hidden;
+						padding-top: torem(10px);
+					}
+				}
+				
+				.g-comment-l{
+					width: torem(118px);
+					position: relative;
+				}
+				.g-comment-r{
+					width: torem(490px);
+				}
+
+				.comment-avatar{
+					margin: 0 torem(14px);
+					width: torem(90px);
+					height: torem(90px);
+					background:#000;
+					border-radius: torem(45px);
+				}
+				.comment-level{
+					position: absolute;
+					top:torem(80px);
+					left:torem(56px);
+					width: torem(44px);
+					height: torem(22px);
+					line-height: torem(22px);
+					font-size: torem(16px);
+					text-align: center;
+					background:#c8a05a;
+					border: none;
+					border-radius: torem(22px);
+				}
+				.comment-username{				
+					span{
+						float: left;
+						font-size: torem(26px);
+						line-height: torem(50px);
+					}
+
+					.comment-date{
+						font-size: torem(20px);
+						color:#ccc;
+					}
+				}
+				
+
+				.g-comment-number{
+					height: 34px;
+					line-height: torem(34px);
+					span{
+						float: left;
+						font-size: torem(24px);
+					}
+					.comment-number{
+						float: left;
+						margin: 0 torem(10px);
+					}
+					.icon-score{
+						float: left;
+						margin-top: torem(5px);
+						width: torem(22px);
+						height: torem(22px);
+						background:url(../images/icon-score.png) no-repeat;
+						background-size: contain;
+					}
+				}			
+
+				.comment-text{
+					width: torem(470px);
+					margin-right: torem(20px);
+					overflow: hidden;
+					font-size: torem(24px);
+					line-height: torem(38px);
+				}
+
+				.comment-imglist{
+					width: torem(450px);
+					
+					li{
+						float: left;
+						margin-right: torem(10px);
+					}
+					a{
+						display: block;
+					}
+					img{
+						width: torem(140px);
+						height: torem(140px);
+						background:#000;
+					}
+				}
+
+				.g-comment-ft{
+					margin-top: torem(22px);
+					p{
+						float: left;
+						margin-right: torem(14px);
+						line-height: torem(50px);
+						font-size: torem(24px);	
+					}
+					
+					a{
+						float: left;
+						padding: torem(9px) torem(22px);
+						border: torem(2px) solid #c8a05a;
+						border-radius: torem(25px);
+						margin-right: torem(10px);
+					}
+					.icon-love2{
+						float: left;
+						width: torem(30px);
+						height: torem(28px);
+						background:url(../images/icon-love2.png) no-repeat;
+						background-size: contain;		
+					}
+					.icon-note{
+						float: left;
+						margin-right: torem(10px);
+						height: torem(28px);
+						width: torem(20px);
+						background:url(../images/icon-note.png) no-repeat;
+						background-size: contain;	
+					}
+					em{
+						float: left;
+						width: torem(40px);
+						text-align: center;
+						font-size: torem(20px);
+						line-height: torem(28px);
+					}
+				}
+
+					
+			}
+	
+
+		/*预约页*/
+			/*能预约*/
+			.g-reserved-on{
+				/*display: none;*/
+				background: #f2f2f2;
+				padding-top: torem(14px);
+				.reserved-a{
+					display: block;
+					font-size: torem(24px);
+					padding: torem(24px) torem(40px);
+					margin-bottom: torem(14px);
+					background:#fff;
+					span{
+						float: left;
+					}
+					p{
+						float: right;
+						height: torem(24px);		
+						line-height: torem(24px);
+						em{
+							float: left;
+							margin-right: torem(12px);
+						}
+						.icon-arrow-right2{
+							float: left;
+							margin-top: torem(2px);
+							width: torem(12px);
+							height: torem(20px);
+							background:url(../images/icon-arrow-right2.png) no-repeat;
+							background-size: contain;
+						}
+					}
+					
+				}
+				
+				.reserved-tables-list{
+					padding: torem(10px) torem(24px);
+					background:#fff;
+					.tables-items{
+						float: left;
+						a{
+							float: left;
+						}
+
+						p{
+							display: block;
+							width: torem(176px);
+							margin-right: torem(16px);
+							font-size: torem(24px);
+							margin-bottom: torem(10px);
+							text-align: center;
+						}
+
+						span{
+							display: block;
+							width: torem(106px);
+							margin: 0 auto;
+							font-size: torem(24px);
+							line-height: torem(24px);
+							padding-bottom: torem(4px);
+							border-bottom: torem(6px) solid #000;
+							text-align: center;
+						}
+					}
+				}
+
+				.m-reserved-times{
+					padding: 0 torem(24px) torem(100px);
+					h2{
+						margin:torem(10px) torem(6px) torem(22px);
+						.btn-reserved-start{
+							display: inline-block;
+							width: torem(580px);
+							height: torem(70px);
+							background:#c8a05a;
+							font-size: torem(36px);
+							line-height: torem(70px);
+							border-radius: torem(10px);
+							text-align: center;
+							color:#fff;
+						}
+					}
+
+					.reserved-times-list{
+
+						.times-items{
+							float: left;
+						}
+						li.cur{
+							a{
+								background:#c8a05a;
+								color:#fff;
+							}
+						}
+						a{
+							float: left;
+							width: torem(136px);
+							height: torem(86px);
+							background:#fff;
+							font-size: torem(26px);
+							line-height: torem(86px);
+							text-align: center;
+							margin:0 torem(6px) torem(14px);
+							border-radius: torem(6px);
+						}
+
+					}
+
+				}
+			}
+			
+			/*不能预约*/
+			.g-reserved-off{
+				background:#f2f2f2;
+				display: none;
+				p{
+					margin-top: torem(14px);
+					font-size: torem(26px);
+					line-height: torem(70px);
+					text-align: center;
+					color:#ccc;
+					background:#fff;
+				}
+			}
+		
+		/*通用*/
+			.btn-reserved-now{
+				display: block;
+				width: 100%;
+				padding: torem(28px) 0;
+				background:#1a1a1a;
+				font-size: torem(30px);
+				color:#fff;
+				text-align: center;
+			}
+			
+
+
+			.m-reserved-wait1{
+				padding: torem(34px) torem(20px);
+				background:#fff;
+				overflow: hidden;
+				p{
+					font-size: torem(26px);
+					line-height: torem(32px);
+					height: torem(32px);
+				}
+				p:before{
+					content:"";
+					float: left;
+					width: torem(32px);
+					height: torem(32px);
+					background:url(../images/icon-wait.png) no-repeat;
+					background-size: contain;
+					margin-right: torem(18px);
+				}
+
+			}
+
+			.m-reserved-wait2{
+				margin: torem(20px) 0 torem(30px) 0;
+				padding: 0 torem(18px);
+				background:#fff;
+				.reserved-name{
+					display: block;
+					border-bottom: torem(2px) solid #000;
+					overflow: hidden;
+					span{
+						float: left;
+						text-indent: torem(12px);
+						font-size: torem(26px);
+						line-height: torem(72px);
+					}
+					i{
+						float: right;
+						margin-top: torem(26px);
+						margin-right: torem(20px);
+						width: torem(12px);
+						height: torem(20px);
+						background:url(../images/icon-arrow-right3.png) no-repeat;
+						background-size: contain;
+					}			
+				}
+				ul{
+					padding: torem(14px) torem(10px);
+				}
+				li{
+					padding-left: torem(16px);
+					line-height: torem(50px);
+					font-size: torem(24px);				
+				}
+
+			}
+		
+	}
+
+	.m-mask-queque{
+		display: none;
+		width: 100%;
+		height: 100%;
+		background:#000;
+		opacity: 0.8;
+		position: absolute;
+		left:0;
+		top:0;	
+		z-index:1000;		
+	}
+	.pnumber-box{
+			display: none;
+			position: absolute;
+			top:30%;
+			left:torem(60px);
+			width:torem(520px);					
+			z-index:1001;					
+			.pnumber-hd{
+				height: torem(74px);
+				font-size: torem(26px);
+				text-align: center;
+				line-height: torem(74px);
+				background:#e6e6e6;
+				border-top-left-radius: torem(10px);
+				border-top-right-radius: torem(10px);
+			}
+			.pnumber-bd{
+				padding: torem(26px) torem(28px) 0 torem(28px);
+				background:#fff;
+				border: none;	
+				ul{
+					overflow: hidden;
+				}
+				li{
+					float: left;
+				}
+				a{
+					float: left;
+					width: torem(106px);
+					height: torem(78px);
+					border: torem(1px) solid #ccc;
+					border-radius: torem(10px);
+					background:#f2f2f2;
+					margin: torem(4px);
+					text-align: center;
+					line-height: torem(80px);
+				}
+				.pnumber-more{}
+			}
+			.pnumber-ft{
+				background:#fff;
+				padding: torem(26px) torem(32px);
+				border-bottom-left-radius: torem(10px);
+				border-bottom-right-radius: torem(10px);
+				overflow: hidden;
+				border: none;
+				a{
+					float: left;
+					width: torem(214px);
+					height: torem(58px);	
+					background: #f2f2f2;
+					font-size: torem(26px);
+					line-height: torem(58px);
+					text-align: center;
+					border: 1px solid #ccc;
+					border-radius: torem(10px);
+				}
+				.btn-yes{
+					border: none;
+					margin-left: torem(24px);
+					width: torem(216px);
+					height: torem(60px);
+					background:#c8c8c8;
+					color:#fff;
+				}
+				
+			}
+
+	}
+
+	.m-mask-modal{
+		display: none;
+		width: 100%;
+		height: 100%;
+		background:#000;
+		opacity: 0.8;
+		position: fixed;
+		left:0;
+		top:0;	
+		z-index:1000;	
+	}
+	.m-modal1{
+		display: none;
+		width: torem(480px);
+		background:#fff;
+		position: fixed;
+		top:40%;
+		left:torem(80px);
+		z-index:1001;
+		/*border-radius: torem(20px);*/
+		.modal1-hd{
+			
+			h2{
+				line-height: torem(50px);
+				text-align: center;
+				font-size: torem(28px);
+				color:#222;
+			}
+		}
+		.modal1-bd{
+
+			p{
+				text-align: center;
+				line-height: torem(30px);
+				color:#333;
+				font-size: torem(20px);
+				padding: torem(20px);
+			}
+		}
+		.modal1-ft{
+			border-top: torem(1px) solid #ccc;
+			span{
+				display: block;
+				text-align: center;
+				color:#0e90d2;
+				line-height: torem(50px);
+				font-size: torem(24px);
+			}
+			span:hover{
+				background:#ccc;
+			}
+		}
+	}
+	.m-modal-cancel{
+		display: none;
+		/*background:#fff;*/
+		position: fixed;
+		top:16%;
+		left:torem(70px);
+		z-index:1001;
+	}
+
+	.m-cancel-box{
+		/*padding: torem(70px);*/
+
+		.cancel-hd{
+			height: torem(56px);
+			background:#ccc;
+			border-top-left-radius: torem(20px);
+			border-top-right-radius: torem(20px);
+		}
+
+		.cancel-bd{
+			position: relative;
+			background:#fff;
+			
+			.cancel-bd1{
+				margin-bottom: torem(50px);
+				img{
+					position: absolute;
+					top:-34px;
+					left:32px;
+					width: torem(120px);
+					height: torem(122px);
+					background-size: contain;
+				}
+				p{
+					text-indent: torem(100px);
+					font-size: torem(30px);
+					line-height: torem(88px);
+					text-align: center;
+
+				}
+			}
+
+			.cancel-list{
+				padding: 0 torem(40px);
+				border-bottom: torem(2px) solid #ccc;
+				li{
+					margin-bottom: torem(44px);
+				}
+
+				a{
+					display: block;
+					overflow: hidden;
+				}
+				i{
+					float: left;
+				}
+
+				.icon-radio{
+					width: torem(32px);
+					height: torem(32px);
+					border-radius:torem(18px);
+					background-color: #fff;	
+					border: torem(2px) solid #000;
+				}
+
+
+				.icon-radio-cur{
+					/*background:$btncolorcur;*/
+					width: torem(36px);
+					height: torem(36px);
+					background: url(../images/icon-radio-cur.png) no-repeat;
+					background-size: contain;				
+				}
+				span{
+					float: left;
+					text-indent: torem(16px);
+					font-size: torem(30px);
+					line-height: torem(38px);
+				}
+			}
+		
+	}
+	.cancel-ft{
+			padding: torem(16px) torem(24px) torem(50px) torem(24px);
+			border-bottom-left-radius: torem(20px);
+			border-bottom-right-radius: torem(20px);
+			background:#fff;
+			a{
+				float: left;
+				width:torem(212px);
+				height:torem(56px);
+				border:torem(2px) solid #ccc;
+				background:#f2f2f2;
+				font-size: torem(26px);
+				line-height: torem(60px);
+				border-radius: torem(10px);
+				text-align: center;
+			}
+			.btn-cancel-yes{
+				margin-left: torem(24px);
+				height: torem(60px);
+				border: none;
+				background:#ccc;
+				color:#fff;
+			}
+		}
+
+	}
+
+	.m-modal2{
+		display: none;
+		/*width: torem(480px);*/
+		background:#f2f2f2;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top:0;
+		left:0;
+		z-index:1001;
+		.g-score{}
+		.m-score{
+			width: torem(440px);
+			margin: 0 auto;
+			padding: torem(28px) torem(100px);
+			overflow: hidden;
+			.u-score{
+				float: left;
+				width: torem(60px);
+				height: torem(58px);
+				margin: 0 torem(14px);
+				background: url(../images/icon-score-no.png) no-repeat;
+				background-size: contain;
+			}
+			.act{
+				background: url(../images/icon-score-yes.png) no-repeat;
+				background-size: contain;
+			}
+		}
+		
+
+		#comment_content{
+			background:#fff;
+			width: torem(600px);
+			padding: torem(20px);
+			border: none;
+			outline: none;
+			resize: none;
+		}
+		.m-photo-list{
+			background:#fff;
+			padding: torem(25px) torem(32px);
+			margin: torem(16px) 0;
+			overflow: hidden;
+		}
+		.btn-add-photo{
+			float: left;
+			padding: torem(44px) torem(40px);
+			background-color:#f2f2f2;
+		}
+		.icon-photo{
+			float: left;
+			width: torem(52px);
+			height: torem(42px);
+			background:url(../images/icon-photo.png) no-repeat;
+			background-size: contain;
+		}
+
+		.btn-send{
+			margin-left: torem(28px);
+			display: inline-block;
+			width: torem(584px);
+			height: torem(70px);
+			border-radius: torem(10px);
+			background:#c8a05a;
+			text-align: center;
+			line-height: torem(70px);
+			color:#1a1a1a;
+			font-size: torem(34px);
+		}
+	}
+
+	/*智能点餐*/
+	.m-mask-ordered{
+		display: none;
+		width: 100%;
+		height: 100%;
+		background:#000;
+		opacity: 0.8;
+		/*position: absolute;*/
+		position: fixed;
+		left:0;
+		top:0;	
+		z-index:1000;		
+	}
+
+	.m-menu-con{
+		display: none;
+		position: absolute;
+		top:torem(110px);
+		top:20%;
+		left:torem(40px);
+		/*width:torem(520px);					*/
+		z-index:1001;
+		/*padding: torem(110px) torem(40px);*/
+
+		.menu-hd{
+			position: relative;
+		}
+		img{
+			width: torem(560px);
+			height: torem(520px);
+			border-top-left-radius: torem(20px);
+			border-top-right-radius: torem(20px);
+		}
+		.btn-close{
+			position: absolute;
+			top:torem(26px);
+			right:torem(26px);
+			width: torem(40px);
+			height: torem(40px);
+			border: torem(2px) solid #fff;
+			border-radius: torem(22px);
+			color:#fff;
+			font-size: torem(32px);
+			text-align: center;
+			line-height: torem(40px);
+		}
+		.menu-bd{
+			border: torem(1px) solid #ccc;
+			border-bottom-left-radius: torem(20px);
+			border-bottom-right-radius: torem(20px);
+			padding-bottom: torem(52px);
+			background:#fff;
+		}
+		h3{
+			line-height: torem(78px);
+			text-align: center;
+			span{
+				font-size: torem(30px);
+			}
+		}
+		p{
+			padding-left: torem(60px);
+			padding-right: torem(34px);
+			overflow: hidden;
+			line-height: torem(52px);
+			em{
+				float: left;
+				font-size: torem(32px);
+			}
+			a{
+				float: right;
+				width: torem(38px);
+				height: torem(38px);
+				margin-top: torem(6px);
+				font-size: torem(40px);
+				line-height: torem(40px);
+				text-align: center;
+				border: torem(1px) solid #000;
+				border-radius: torem(20px);
+			}
+			strong{
+				float: right;
+				margin: 0 torem(20px);
+				font-weight: normal;
+			}
+			.btn-minus{
+				line-height: torem(30px);
+			}
+		}
+	}
+
+				.btn-reserved-cancel{
+				border: none;
+				width: 100%;
+				height: torem(86px);
+				font-size: torem(30px);
+				line-height: torem(86px);
+				color:#fff;
+				background:#1a1a1a;
+				text-align: center;
+			}
+			.btn-reserved-radius{
+				border: none;
+				width: torem(580px);
+				height: torem(70px);
+				background:#c8a05a;
+				font-size: torem(40px);
+				line-height: torem(70px);
+				text-align: center;
+				color:#fff;
+				margin-bottom: torem(20px);
+				border-radius: torem(15px);
+			}
+			.btn-reserved-cancel-ok{
+				background:#ccc;
+			}
+
+	/*预约*/
+
+		/*预约--信息提交页*/
+
+		.g-reserved-view{
+			background:#f2f2f2;
+			padding-top: torem(16px);
+
+			.m-reserved-view1{
+				background:#fff;
+				margin-bottom: torem(20px);
+				padding:torem(30px) torem(40px);
+				h2{
+					font-size: torem(26px);
+					span{
+						float: left;
+					}
+					em{
+						float: left;
+						margin-left: torem(10px);
+					}
+				}
+
+				p{
+					font-size: torem(22px);
+					padding-top: torem(40px);
+					overflow: hidden;
+					span{
+						float: left;
+					}
+					em{
+						float: left;
+						margin-left: torem(10px);
+					}
+				}
+			}
+
+			.m-reserved-view2{
+				p{
+					padding: torem(23px) torem(40px);
+					overflow: hidden;
+					background:#fff;
+					span{
+						float: left;
+						font-size: torem(24px);
+						line-height: torem(50px);
+					}
+
+					a{
+						float: right;
+						width: torem(90px);
+						height: torem(50px);
+						border-radius: torem(25px);
+						position: relative;		
+						i{
+							position: absolute;
+							left:torem(5px);
+							top:torem(5px);
+							width: torem(40px);
+							height: torem(40px);
+							background: #fff;
+							border-radius: torem(20px);
+						}
+					}
+
+					.u-off{
+						background:#ccc;
+						i{
+							left:torem(5px);
+						}
+					}
+					.u-on{
+						background:#53c123;
+						i{
+							left:torem(45px);
+						}
+					}
+				}
+			}
+
+			.m-reserved-view3{
+				background:#fff;
+				h3{
+					padding: torem(24px) torem(40px);
+					font-size: torem(24px);
+					background:#f2f2f2;
+				}
+				p{
+					padding: torem(20px) torem(40px);
+					overflow: hidden;
+					label{
+						float: left;
+						font-size: torem(26px);
+						margin-right: torem(20px);
+						line-height: torem(50px);
+					}
+					input{
+						float: left;
+						text-indent: torem(20px);
+						border: torem(1px) solid #ccc;
+						line-height: torem(50px);
+					}
+				}
+				.ipt-prompt-user,.ipt-prompt-contact{
+					display: none;
+					padding: 0 torem(40px);
+					color:#f00;
+					font-size: torem(20px);
+				}
+				.p2{
+					width: torem(560px);
+					padding:torem(20px) 0;
+					margin:  0 auto;
+					border-top:torem(1px) solid #ccc;
+					border-bottom: torem(1px) solid #ccc;
+				}
+				a{
+					float: left;
+					margin-right: torem(40px);
+					i{
+						float: left;
+					}
+					span{
+						float: left;
+						margin-left: torem(16px);	
+						line-height: torem(38px);
+					}
+				}
+				.ipt-radio{
+					.icon-radio{
+						width: torem(32px);
+						height: torem(32px);
+						border-radius:torem(18px);
+						background-color: #fff;	
+						border: torem(2px) solid #000;
+					}
+					
+				}
+
+				.ipt-radio-cur{
+					.icon-radio{
+						/*background:$btncolorcur;*/
+						width: torem(36px);
+						height: torem(36px);
+						background: url(../images/icon-radio-cur.png) no-repeat;
+						background-size: contain;				
+					}
+
+				}
+
+				.reserved-remark{
+					background:#f2f2f2;
+					textarea{
+						width: torem(560px);
+						padding:torem(30px) torem(40px);
+						border: none;
+						background:#fff;
+						margin-bottom: torem(58px);
+					}
+				}
+			}
+
+			
+		}
+
+		/*预约--等待状态页*/
+		
+		.g-reserved-wait{
+			background: #f2f2f2;
+			padding-top: torem(16px);		
+			.m-reserved-wait2{
+				li{
+					color:#ccc;
+				}
+			}
+
+			.m-reserved-wait3{
+				.reserved-wait3-hd{
+					padding: torem(38px) 0;
+					height: torem(76px);
+					text-align: center;
+					background:#fff;
+					p{
+						font-size: torem(30px);
+						margin-bottom: 10px;
+						text-align: center;
+					}
+					span{
+						display: block;
+						font-size: torem(24px);
+						text-align: center;
+						color:#ccc;
+					}
+				}
+
+				.reserved-wait3-bd{
+					padding: torem(36px) torem(200px);
+					overflow: hidden;
+					img{
+						float: left;
+						margin-right: torem(10px);
+						width: torem(28px);
+						height: torem(132px);
+						background-size: contain;
+					}
+					.wait-msg-list{
+						float: left;
+						li{
+							margin-bottom: torem(36px);
+						}
+						p{
+							margin-bottom: torem(14px);
+							font-size: torem(24px);
+						}
+					}
+				}
+			}
+
+		}
+
+		/*预约--预约成功页*/
+		.g-reserved-success{
+			background:#f2f2f2;
+			padding-top: torem(20px);
+			padding-bottom: torem(100px);
+			.m-reserved-success1{
+				font-size: torem(32px);
+
+				p:before{
+					background:url(../images/icon-success.png) no-repeat;
+					background-size: contain;
+				}
+			}
+
+			.m-reserved-success2{
+
+				.reserved-name{
+					border-bottom: torem(1px) solid #ccc;
+
+					i{
+					background:url(../images/icon-arrow-right2.png) no-repeat;
+					} 
+				}
+			}
+
+			.m-reserved-success3{
+				padding: torem(50px) torem(30px);
+				background:#fff;
+				em{
+					float: left;
+					width: torem(24px);
+					height: torem(32px);
+					background:url(../images/icon-map2.png) no-repeat;
+					background-size: contain;
+					margin-right: torem(24px);
+				}
+				span{
+					float: left;
+					width: torem(520px);
+					font-size: torem(24px);
+					line-height: torem(32px);
+				}
+				
+				i{
+					float: right;
+					width: torem(12px);
+					height: torem(20px);
+					background:url(../images/icon-arrow-right2.png) no-repeat;
+					background-size: contain;
+					margin-top: torem(6px);
+				}
+			}
+
+			.m-reserved-success4{
+				padding: torem(20px) torem(30px);
+				a{
+					display: block;
+					width: torem(580px);
+					height: torem(70px);
+					background:#c8a05a;
+					font-size: torem(40px);
+					line-height: torem(70px);
+					text-align: center;
+					color:#fff;
+					margin-bottom: torem(20px);
+					border-radius: torem(15px);
+				}
+
+			}
+			
+		}
+			
+		/*预约--取消预约*/
+		.g-reserved-cancel{
+			
+			.m-cancel-box{
+				padding: torem(70px);
+
+				.cancel-hd{
+					height: torem(56px);
+					background:#ccc;
+					border-top-left-radius: torem(20px);
+					border-top-right-radius: torem(20px);
+				}
+
+				.cancel-bd{
+					position: relative;
+					background:#fff;
+					
+					.cancel-bd1{
+						margin-bottom: torem(50px);
+						img{
+							position: absolute;
+							top:-34px;
+							left:32px;
+							width: torem(120px);
+							height: torem(122px);
+							background-size: contain;
+						}
+						p{
+							text-indent: torem(100px);
+							font-size: torem(30px);
+							line-height: torem(88px);
+							text-align: center;
+
+						}
+					}
+
+					.cancel-list{
+						padding: 0 torem(40px);
+						border-bottom: torem(2px) solid #ccc;
+						li{
+							margin-bottom: torem(44px);
+						}
+
+						a{
+							display: block;
+							overflow: hidden;
+						}
+						i{
+							float: left;
+						}
+
+						.icon-radio{
+							width: torem(32px);
+							height: torem(32px);
+							border-radius:torem(18px);
+							background-color: #fff;	
+							border: torem(2px) solid #000;
+						}
+
+
+						.icon-radio-cur{
+							/*background:$btncolorcur;*/
+							width: torem(36px);
+							height: torem(36px);
+							background: url(../images/icon-radio-cur.png) no-repeat;
+							background-size: contain;				
+						}
+						span{
+							float: left;
+							text-indent: torem(16px);
+							font-size: torem(30px);
+							line-height: torem(38px);
+						}
+					}
+					
+				}
+				.cancel-ft{
+						padding: torem(16px) torem(24px) torem(50px) torem(24px);
+						border-bottom-left-radius: torem(20px);
+						border-bottom-right-radius: torem(20px);
+						background:#fff;
+						a{
+							float: left;
+							width:torem(212px);
+							height:torem(56px);
+							border:torem(2px) solid #ccc;
+							background:#f2f2f2;
+							font-size: torem(26px);
+							line-height: torem(60px);
+							border-radius: torem(10px);
+							text-align: center;
+						}
+						.btn-cancel-yes{
+							margin-left: torem(24px);
+							height: torem(60px);
+							border: none;
+							background:#ccc;
+							color:#fff;
+						}
+					}
+
+			}
+
+		}
+
+	/*排队*/
+		.g-bd-queque{
+
+			.g-queque-con{
+				
+			}
+
+			.m-queque-tables{
+				padding: torem(10px) torem(20px);
+				background:#fff;
+				table{border-top: torem(2px) solid #999;}
+				tr{
+					border-bottom: torem(2px) solid #999;
+				}
+				th,td{
+					width: torem(200px);
+					text-align: center;
+					height: 44px;
+					line-height: torem(44px);
+					padding: torem(6px) 0;
+				}
+				th{
+					font-size: torem(26px);			
+				}
+				td{
+					font-size: torem(24px);
+					position: relative;
+				}
+				.tables-type{
+					position: absolute;
+					top:torem(1px);
+					left:0;
+					width: torem(200px);
+					height: torem(44px);
+					line-height: torem(44px);
+					padding: torem(6px) 0;
+					text-align: center;
+				}
+				p{
+					line-height: torem(24px);
+				}
+				.p2{
+					font-size: torem(12px);
+					line-height: 20px;
+				}
+				em{}
+				.queque-tables{}
+				.queque-times{}
+			}
+			
+			.m-queque-distance{
+				padding: torem(23px) torem(50px);
+				overflow: hidden;
+				background:#fff;
+				.distance-con{			
+					float: left;
+					padding: torem(5px) torem(66px) torem(5px) 0;
+					border-right: torem(2px) solid #999;
+					margin-right: torem(66px);
+				}
+
+				p{
+					font-size: torem(24px);
+					line-height: torem(34px);
+				}
+				span{
+					color:#ccc;
+				}
+				em{
+					text-indent: torem(16px);
+				}
+				.btn-offer-number-now{
+					float: left;
+					width: torem(190px);
+					height: torem(70px);
+					line-height: torem(70px);
+					font-size: torem(26px);
+					text-align: center;
+					color:#fff;
+					background:#c8a05a;
+					border-radius: torem(10px);
+				}
+			}
+
+			
+		}
+
+		/*取号成功*/
+		.queque-info{
+			overflow: hidden;
+			ul{
+				float: left;
+			}
+
+			.table-numbers{
+				float: right;
+				padding-top: torem(30px);
+				padding-right: torem(24px);
+				h2{
+					font-size: torem(42px);
+					font-weight: bold;
+					color:#f00;
+					line-height: torem(64px);
+				}
+				p{
+					font-size: torem(24px);
+				}
+			}
+		}
+
+		.m-queque-success1{
+			margin: torem(18px) 0;
+			font-size: torem(24px);
+			text-indent: torem(34px);
+			line-height: torem(50px);
+			background: $mcolor;
+		}
+
+		.m-queque-success2{
+			background:#fff;
+			margin-bottom: torem(20px);
+			padding:torem(26px);
+			overflow: hidden;
+			/*a{
+				display: block;
+				padding:torem(26px);
+			}*/
+			i{
+				float: left;
+				width: torem(28px);
+				height: torem(28px);
+				background:url(../images/icon-save.png) no-repeat;
+				background-size: contain;
+			}
+			em{
+				float: left;
+				text-indent: torem(20px);
+				font-size: torem(24px);
+				line-height: torem(28px);
+			}
+			.btn-save{
+				float: right;
+				font-size: torem(24px);
+				line-height: torem(26px);
+				color:#f00;
+				font-weight: bold;
+			}
+		}
+
+	/*点餐*/
+		.g-box-cart{
+			display: none;
+		}
+
+		.g-bd-ordered,.g-bd-cart{
+			.m-restaurant-ordered1{
+			}
+			.m-tnavs{
+				position: relative;
+				/*padding:0 torem(50px);*/
+				height: torem(50px);
+				line-height: torem(50px);
+				.btn-prev,.btn-next{
+					/*position: absolute;*/
+					width: torem(50px);
+					height: torem(50px);
+					/*top:torem(30px);*/
+				}
+
+				.btn-prev{
+					/*left:torem(32px);*/
+					float: left;
+					background:url(../images/icon-arrow-l.png) no-repeat;
+					background-size: contain;
+				}
+				.btn-next{
+					float: right;
+					/*right:torem(32px);*/
+					background:url(../images/icon-arrow-r.png) no-repeat;
+					background-size: contain;
+				}
+				.tnavs-list{
+					width: torem(540px);
+					height: torem(80px);
+					overflow: hidden;
+				}
+				.tnavs-list li{
+					float: left;
+					a{
+						float: left;
+						width: torem(120px);
+						padding: 0 torem(28px);
+						line-height: torem(80px);
+						font-size: torem(30px);
+						text-align: center;
+
+					}
+					
+				}
+				.tnavs-list .act{
+					background:red;
+				}
+				.tnavs-list li:after{
+					content: "";
+					float: left;
+					margin-top: torem(24px);
+					height: torem(30px);
+					border-right: torem(2px) solid #000;
+				}
+
+				.swiper-slide{
+
+					a{
+						display: block;
+						text-align: center;
+					}
+				}
+				.cur{
+					background:#f00;
+				}
+				.cur a{
+					color:#fff;
+				}
+				/*.swiper-slide-active{
+					background:#f00;
+				}
+				.swiper-slide-active a{
+					color:#fff;
+				}*/
+
+
+
+
+
+			}
+			
+			.m-restaurant-ordered2{
+				background:$mcolor;
+				p{
+					text-align: center;
+				}
+				strong,span,em{
+					display: inline-block;
+					line-height: torem(70px);	
+				}
+				strong{
+					font-size: torem(32px);
+					color:#fff;
+				}
+				span{
+					font-size: torem(20px);
+				}
+				em{
+					font-size: torem(20px);
+				}
+			}
+			.m-restaurant-ordered3{
+				padding-bottom: torem(100px);
+				.m-menu-list{
+					padding: torem(12px) torem(16px);
+				}
+				/*点餐首页*/
+				.menu-items{
+					overflow: hidden;
+					padding: torem(10px);
+					background:#fff;
+
+					img{
+						float: left;
+						width: torem(162px);
+						height: torem(162px);
+						background-size: contain;
+						border: torem(1px) solid #bbb;
+					}
+					h3,p{
+						float: left;
+						width: torem(376px);
+						margin: 0 torem(24px);
+					}
+					h3{
+						height: torem(72px);
+						line-height: torem(72px);
+						border-bottom: torem(2px) solid #ccc;
+						span{
+							float: left;
+							font-size: torem(30px);
+						}
+						i{
+							float: right;
+
+							margin-right: torem(6px);
+							text-indent: torem(4px);
+						}
+						i:after{
+							content:"";
+							float: left;
+							margin-top: torem(24px);
+							width: torem(26px);
+							height: torem(24px);
+							background:url(../images/icon-love.png) no-repeat;
+							background-size: contain;
+						}
+					}
+					p{
+						height: torem(90px);
+						line-height: torem(90px);
+						em{
+								float:left;
+								font-size: torem(32px);							
+						}
+						a{
+							float: right;
+							margin-top: torem(30px);
+							width: torem(28px);
+							height: torem(28px);
+							line-height: torem(28px);
+							border: 1px solid #000;
+							font-size: torem(28px);
+							text-align: center;
+						}
+						strong{
+							float: right;
+							margin: torem(2px) torem(24px);
+							font-size: torem(24px);
+							font-weight: bold;
+						}
+						.btn-minus{
+							line-height: torem(30px);
+						}
+					}
+				}
+				
+				/*智能点餐*/
+				.m-menu-con{
+					padding: torem(110px) torem(40px);
+					.menu-hd{
+						position: relative;
+					}
+					img{
+						width: torem(560px);
+						height: torem(520px);
+						border-top-left-radius: torem(20px);
+						border-top-right-radius: torem(20px);
+					}
+					.btn-close{
+						position: absolute;
+						top:torem(26px);
+						right:torem(26px);
+						width: torem(40px);
+						height: torem(40px);
+						border: torem(2px) solid #fff;
+						border-radius: torem(22px);
+						color:#fff;
+						font-size: torem(32px);
+						text-align: center;
+						line-height: torem(40px);
+					}
+					.menu-bd{
+						border: torem(1px) solid #ccc;
+						border-bottom-left-radius: torem(20px);
+						border-bottom-right-radius: torem(20px);
+						padding-bottom: torem(52px);
+					}
+					h3{
+						line-height: torem(78px);
+						text-align: center;
+						span{
+							font-size: torem(30px);
+						}
+					}
+					p{
+						padding-left: torem(60px);
+						padding-right: torem(34px);
+						overflow: hidden;
+						line-height: torem(52px);
+						em{
+							float: left;
+							font-size: torem(32px);
+						}
+						a{
+							float: right;
+							width: torem(38px);
+							height: torem(38px);
+							margin-top: torem(6px);
+							font-size: torem(40px);
+							line-height: torem(40px);
+							text-align: center;
+							border: torem(1px) solid #000;
+							border-radius: torem(20px);
+						}
+						strong{
+							float: right;
+							margin: 0 torem(20px);
+							font-weight: normal;
+						}
+						.btn-minus{
+							line-height: torem(30px);
+						}
+					}
+				}
+
+
+			}
+			
+			/*订单提交*/
+			.m-restaurant-ordered4{
+				margin-top: torem(32px);
+				padding: 0 torem(18px);
+				background:#fff;
+				h2,.menu-list,.div1{
+					border-bottom: torem(1px) solid #ccc;
+				}
+				h2{
+					font-size: torem(32px);
+					line-height: torem(90px);
+					text-indent: torem(18px);		
+				}
+
+				.menu-list{	
+					padding: torem(20px);
+					li{
+						overflow: hidden;
+
+					}
+					.g-num{
+						float: right;
+						height: torem(50px);
+						line-height: torem(50px);
+						.n1,.n2{
+							display: inline-block;
+						}
+						.n2{
+							margin-left: torem(50px);
+						}
+						em{
+							display: inline-block;
+							color:#ccc;
+							font-size: torem(26px);
+						}
+					}
+					strong{
+						float: left;
+						font-weight: normal;
+						line-height: torem(50px);
+					}
+					
+				}
+
+				.div1{
+					overflow: hidden;
+					line-height: torem(50px);
+					padding: 0 torem(20px);
+					line-height: torem(90px);
+					span{
+						float: left;		
+						font-size: torem(30px);
+					}
+					strong{
+						float: left;
+						margin-top: torem(20px);
+						width: torem(50px);
+						height: torem(50px);
+						font-size: torem(30px);
+						line-height: torem(50px);
+						color:#fff;
+						text-align: center;
+						background:#f00;
+						border-radius: torem(25px);
+						margin-right: torem(10px);
+					}
+					p{
+						float: right;
+					}
+					.u-red{
+						color:#f00;
+						font-weight: bold;
+					}
+					
+					em{
+						font-size: torem(26px);
+					}
+				}
+
+				.u-nline{
+					border: none;
+
+					em{
+						font-size: torem(40px);
+					}
+				}
+				
+			}
+			
+			.m-restaurant-ordered5{
+				margin-top: torem(30px);
+				padding: 0 torem(20px);
+				background:#fff;
+				.m-ordered-times,.m-ordered-form{
+					line-height: torem(34px);
+					padding: torem(28px) 0;
+					
+				}
+				.icon-hours,.icon-msg{
+					float: left;
+					margin-left: torem(12px);
+					background-size: contain;
+				}
+				.icon-hours{
+					margin-top: torem(1px);
+					margin-left: torem(16px);
+					width: torem(32px);
+					height: torem(32px);
+					background:url(../images/icon-hours.png) no-repeat;
+				}
+				.icon-msg{
+					margin-top: torem(14px);
+					width: torem(36px);
+					height: torem(26px);
+					background:url(../images/icon-msg.png) no-repeat;
+				}
+
+				.m-ordered-times{
+					border-bottom: torem(1px) solid #ccc;
+					overflow: hidden;
+					
+					strong{
+						font-weight:normal;
+						text-indent: torem(10px);
+					}
+					
+					strong,em,span,i{
+						float: left;
+						font-size: torem(30px);
+					}
+					em{
+						padding-right: torem(10px);
+						border-right: torem(4px) solid #000;
+						margin-right: torem(10px);
+					}
+					.icon-arrow-right3{
+						margin-top: torem(7px);
+						margin-left: torem(10px);
+						margin-right: torem(10px);
+						width: torem(12px);
+						height: torem(20px);
+						background:url(../images/icon-arrow-right3.png) no-repeat;
+						background-size: contain;
+					}
+
+
+				}
+				.m-ordered-form{
+					label{
+						float: left;
+						margin-top: 10px;
+						text-indent: torem(10px);
+						font-size: torem(30px);
+						margin-right: torem(24px);
+					}
+					input{
+						padding-left: torem(10px);
+						height: torem(50px);
+						line-height: torem(34px);
+						font-size: torem(30px);
+						border: torem(1px) solid #ccc;
+
+					}
+				}
+			}
+			
+			/*下单成功*/
+
+			.m-restaurant-ordered6{
+				background:#fff;
+				padding: 0 torem(18px);
+				margin-top: torem(20px);
+				
+				.menu-list-success{
+					padding: 0 torem(20px);
+					.restaurant-name{
+						font-size: torem(30px);
+						border-bottom: torem(1px) dashed #1a1a1a;
+					}
+					.menu-list{
+						/*padding: torem(20px) 0;*/
+					}
+					.menu-items,.menu-sum{
+						padding-left:torem(30px);
+						height: torem(50px);
+						line-height: torem(50px);
+						border-bottom: torem(1px) dashed #1a1a1a;
+						overflow: hidden;
+						span{float: left;}
+						em{
+							float: right;
+							margin-left: torem(50px);
+						}
+					}
+					.menu-items{
+						em{color:#ccc;}
+					}
+				}
+
+				p{
+					padding: torem(20px) 0;
+					margin-left: torem(20px);
+					font-size: torem(34px);
+					line-height: torem(40px);
+					border-bottom: torem(1px) solid #ccc;
+				}
+				.ordered-info{
+					padding: torem(28px) torem(20px);
+					
+				}
+				.info1{
+					line-height: torem(40px);
+					overflow: hidden;
+					margin-bottom: torem(20px);
+					i{
+						float: left;
+						background-size: contain;
+					}
+					i,span,em{
+						float: left;
+						color:#aaa;
+					}
+					.icon-number{
+						width: torem(32px);
+						height: torem(40px);
+						background:url(../images/icon-number.png) no-repeat;
+						background-size: contain;
+					}
+					.icon-hours{
+						margin-top: torem(4px);
+						width: torem(32px);
+						height: torem(32px);
+						background:url(../images/icon-hours.png) no-repeat;
+						background-size: contain;
+					}
+					span{
+						text-indent: torem(10px);
+					}
+					em{
+						text-indent: torem(24px);
+						
+					}
+				}
+			}
+
+			
+		}
+
+	/*支付*/
+		.g-bd-pay{
+			.m-restaurant-pay1{
+				margin:torem(20px) 0;
+				padding: torem(28px) torem(36px);
+				background:#fff;
+				p{
+					line-height: torem(50px);
+				}
+				span{
+					display: inline-block;
+					font-size: torem(30px);
+				}
+				em{
+					text-indent: torem(24px);
+					display: inline-block;
+					font-size: torem(26px);
+					color:$mcolor;
+				}
+				.u-fzc{
+					color:$mcolor;
+				}
+			}
+
+			.m-restaurant-pay2{
+				background:#fff;
+				.pay-list{}
+				.pay-items{padding: torem(40px);}
+				a{overflow: hidden;display: block;}
+				img{
+					float: left;
+					width: torem(116px);
+					height: torem(116px);
+					background-size: contain;
+				}
+				.pay-info{
+					text-indent: torem(24px);
+					float: left;
+					h2{
+						font-size: torem(30px);
+						line-height: torem(70px);
+					}
+					p{
+						font-size: torem(20px);
+					}
+				}
+				span{
+					float: right;
+					margin-top: torem(44px);
+					width: torem(32px);
+					height: torem(32px);
+					border: torem(2px) solid $mcolor;
+					border-radius: torem(18px);
+					background:#fff;
+					margin-right: torem(24px);
+				}
+				.pay-radio{
+					
+				}
+
+				.pay-radio-cur{
+					width: torem(36px);
+					height: torem(36px);
+					border: none;
+					background:url(../images/icon-radio-cur.png) no-repeat;
+					background-size: contain;
+					/*background:$btncolorcur;*/
+					/*background:$mcolor;*/
+				}
+			}
+			.m-restaurant-pay3{
+				padding: torem(30px);
+				.btn-pay-ok{
+					display: block;
+					height: torem(110px);
+					line-height: torem(110px);
+					font-size: torem(40px);
+					background:$mcolor;
+					border-radius: torem(16px);
+					text-align: center;
+					color:#fff;
+				}
+				/*span,strong,em{
+					display: inline-block;
+				}*/
+				span{
+					margin-right: torem(20px);
+				}
+
+				
+			}
+			
+		}
+
+/*底部主导航*/
+	.g-ft{
+		width: 100%;
+		position: fixed;
+		bottom:0;
+		left:0;
+		
+		.btn-reserved-now{
+			display: block;
+			height: torem(86px);
+			font-size: torem(30px);
+			line-height: torem(86px);
+			color:#fff;
+			background:#1a1a1a;
+			text-align: center;
+		}
+
+		.m-ordered-carts{
+			padding: torem(20px) 0;
+			background: $bgcolor;
+			position: relative;
+			overflow: hidden;
+
+			i{
+				float: left;
+				background-size: contain;
+			}
+			
+			.ordered-cart-txt1{
+				/*.icon-cart{
+					margin-left: torem(36px);
+					width: torem(56px);
+					height: torem(46px);
+					background:url(../images/icon-cart.png) no-repeat;	
+				}*/
+				.sum-num{
+					display: none;
+					position: absolute;
+					top:0;
+					left:torem(40px);
+					/*width: torem(28px);*/
+					/*height: torem(28px);*/
+					padding:torem(2px);
+					background:#f00;
+					font-size: torem(18px);
+					line-height: torem(28px);
+					border-radius: torem(14px);
+					color:#fff;
+					text-align: center;
+				}
+				.btn-cart{
+					float: left;
+					margin-left: torem(30px);
+					padding-right: torem(14px);
+					width: torem(56px);
+					height: torem(46px);
+					background:url(../images/icon-cart.png) no-repeat;
+					position: relative;	
+					background-size: contain;
+				}
+				span,strong{
+					float: left;
+					color:$mcolor;
+					line-height: torem(46px);
+				}
+				span{
+					font-size: torem(30px);
+					margin-left: torem(30px);
+				}
+				strong{
+					font-size: torem(43px);
+				}
+			}
+			
+			.ordered-cart-txt2{
+				float: left;
+				color:#fff;
+				padding-left: torem(30px);
+				line-height: torem(46px);
+				.btn-cart-sels{
+					float: left;
+					overflow: hidden;
+					/*background:#f00;*/
+				}
+				i{
+					margin-top: torem(4px);
+					margin-right: torem(10px);
+				}
+				.icon-radio{
+					width: torem(36px);
+					height: torem(36px);
+					border-radius: torem(18px);
+					background:#fff;
+					/*background:url(../images/icon-radio.png) no-repeat;*/
+				}
+				.icon-radio-cur{
+					width: torem(36px);
+					height: torem(36px);
+					background: url(../images/icon-radio-cur.png) no-repeat;
+					background-size: contain;				
+				}
+
+
+				span{
+					float: left;
+					color:#fff;
+				}
+				strong{
+					float: left;
+					color:$mcolor;
+					font-size: torem(36px);
+					margin-left: torem(18px);
+					margin-right: torem(10px);
+				}
+				em{
+					float: left;
+					font-size: torem(24px);
+				}
+
+
+			}
+			.ordered-cart-txt3{
+				float: left;
+				color:#fff;
+				padding-left: torem(40px);
+				font-size: torem(26px);
+				line-height: torem(46px);
+
+				.u-red{
+					color:#f00;
+				}
+			}
+
+			.cart-count{
+				float: right;
+				color:#fff;
+				margin-right: torem(10px);
+				line-height: torem(46px);
+				strong{
+					float: left;
+					color:$mcolor;
+					font-size: torem(36px);	
+				}
+				em{
+					float: left;
+					font-size: torem(24px);
+					margin-right: torem(12px);
+				}
+				.count-text{
+					margin: 0;
+					margin-left: torem(12px);
+				}
+			}
+			.btn-ordered-wisdom,.btn-ordered-statements{
+				float: right;
+				width: torem(162px);
+				height: torem(46px);
+				font-size: torem(32px);
+				text-align: center;
+				line-height: torem(46px);
+				color:#fff;
+				border-radius: torem(10px);
+				background:$mcolor;
+				margin-right: torem(16px);
+			}
+			#btn_ordered_ok{
+				display: none;
+			}
+
+			
+		}
+
+		.m-ordered-cart2{
+
+			.icon-radio{
+				float: left;
+				width: torem(38px);
+				height: torem(38px);
+				background:url(../images/icon-radio.png) no-repeat;
+				text-indent: torem(-9999px);
+			}
+			.icon-radio-cur{
+				width: torem(36px);
+				height: torem(36px);
+				background: url(../images/icon-radio-cur.png) no-repeat;
+				background-size: contain;				
+			}
+	}
+
+	}
+
+	.g-bnav{
+		
+	}
+
+	.m-bnav{
+		padding: torem(10px) torem(24px) 0 torem(24px);
+		background:#1a1a1a;
+		li{
+			float: left;
+		}
+
+		li.act{
+			
+		}
+
+		a{
+			float: left;
+			width: torem(148px);
+			text-align: center;
+		}
+
+		i{
+			display: block;
+			background-size: contain;
+			margin: 0 auto;
+		}
+		.icon-bnav-comment{
+			margin-top: torem(5px);
+			width: torem(44px);
+			height: torem(30px);
+			background:url(../images/icon-bnav-comment.png) no-repeat;
+			background-size: contain;
+		}
+		.icon-bnav-sign{
+			width: torem(40px);
+			height: torem(40px);
+			background: url(../images/icon-bnav-sign.png) no-repeat;
+			background-size: contain;
+		}
+		.icon-bnav-collection{
+			margin-top: torem(1px);
+			width: torem(40px);
+			height: torem(38px);
+			background: url(../images/icon-bnav-collection.png) no-repeat;
+			background-size: contain;
+		}
+		.icon-bnav-share{
+			margin-top: torem(4px);
+			width:torem(34px);
+			height: torem(32px);
+			background:url(../images/icon-bnav-share.png) no-repeat;
+			background-size: contain;
+		}
+
+		.icon-nav-home{
+			width: torem(36px);
+			height: torem(40px);
+			background: url(../images/icon-nav-home.png) no-repeat;
+			background-size: contain;
+		}
+
+		.icon-nav-ordered{
+			width: torem(44px);
+			height: torem(40px);
+			background: url(../images/icon-nav-ordered.png) no-repeat;
+			background-size: contain;
+		}
+
+		.icon-nav-find{
+			width: torem(38px);
+			height: torem(40px);
+			background: url(../images/icon-nav-find.png) no-repeat;
+			background-size: contain;
+		}
+		.icon-nav-my{
+			width: torem(40px);
+			height: torem(40px);
+			background: url(../images/icon-nav-my.png) no-repeat;
+			background-size: contain;
+		}
+
+
+		p{
+			line-height: torem(38px);
+			font-size: torem(18px);
+			color:#c8a05a;
+		}
+	}
+
+	.g-ft-ordered-success{
+		p{
+			color:#fff;
+		}
+	}

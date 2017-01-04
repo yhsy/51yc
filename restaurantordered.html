@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html class="g-html">
+
+<head>
+    <meta charset="UTF-8">
+    <title>预厨--点餐</title>
+    <link rel="stylesheet" href="css/libs/m-reset.css">
+    <link rel="stylesheet" href="scss/global.css">
+    <link rel="stylesheet" href="scss/restaurant.css">
+    <link rel="stylesheet" type="text/css" href="scss/plugin/swiper.min.css"/>
+</head>
+
+<body>
+	<!-- 点餐模块 -->
+	<div class="g-box">
+	    <div class="g-hd g-hd-restaurant">
+	        <a href="javascript:;" class="icon-back" id="icon_back_ordered"></a>
+	        <p class="hd-tit">点餐</p>
+	    </div>
+
+	    <div class="g-bd-restaurant g-bd-ordered">
+	    	<div class="m-tnavs m-restaurant-ordered1">
+	    		<a href="javascript:;" class="btn-prev"></a>
+	    		<a href="javascript:;" class="btn-next"></a>
+				<!-- <ul class="tnavs-list">
+					<li class="act"><a href="javascript:;">特色菜</a></li>
+					<li><a href="javascript:;">主食</a></li>
+					<li><a href="javascript:;">家常小菜</a></li>
+				</ul> -->
+			 	<div class="swiper-container swiper-container-horizontal">
+			        <div class="swiper-wrapper">
+			            <!-- <div class="swiper-slide"><a href="javascript:;">特色菜</div>
+			            <div class="swiper-slide"><a href="javascript:;">主食</a></div>
+			            <div class="swiper-slide"><a href="javascript:;">家常小炒</a></div>
+			            <div class="swiper-slide"><a href="javascript:;">肉菜</a></div>
+			            <div class="swiper-slide"><a href="javascript:;">素菜</a></div>
+			            <div class="swiper-slide"><a href="javascript:;">啤酒饮料</a></div> -->
+			        </div>
+			        <!-- <div class="swiper-button-prev"></div> -->
+    				<!-- <div class="swiper-button-next"></div> -->
+			    </div>
+
+
+	    	</div>
+	    	<div class="m-restaurant-ordered2">
+				<p>
+					<!-- <strong>24</strong>
+					<span>份冷菜</span>
+					<em>+</em>
+					<strong>15</strong>
+					<span>份热菜</span> -->
+					<strong>菜品数:</strong>
+					<strong class="menu-sum" id="menu_sum"></strong>
+					<strong>个</strong>
+				</p>
+	    	</div>
+	    	<div class="m-restaurant-ordered3">
+	    		<ul class="m-menu-list menu-list" id="menu_list">
+					<!-- 
+						<li class="menu-items">
+							<img src="images/business-img2.jpg" alt="">
+							<h3 class="menu-title">回锅肉炒饭</h3>
+							<p>
+								<em>¥
+								</em>
+								<em class="menu-price">15</em>
+								<a href="javascript:;" class="btn-plus">+</a>
+								<strong class="menu-num">0</strong>
+								<a href="javascript:;" class="btn-minus">-</a>						
+							</p>
+						</li> 
+					-->
+	    		</ul>
+	    	</div>
+
+
+	    </div>
+		<div class="m-mask-ordered"></div>
+	    <div class="m-menu-con" id="menu_con">
+			<div class="menu-hd">
+				<img src="images/business-img2.jpg" alt="" class="mask-img" >
+				<a href="javascript:;" class="btn-close">
+				X</a>
+			</div>
+			
+			
+			<div class="menu-bd">
+				<h3>
+					<span class="mask-tit">回锅肉炒饭</span>
+				</h3>
+				<p>
+
+					<em>¥
+					</em>
+					<em class="menu-price mask-price">15</em>
+					<a href="javascript:;" class="btn-plus" mid="" did="">+</a>
+					<strong class="menu-num mask-num">2</strong>
+					<a href="javascript:;" class="btn-minus" mid="" did="">-</a>
+					
+				</p>
+			</div>
+		</div>
+
+	    <div class="g-ft g-ft-ordered">
+			<div class="m-ordered-carts">
+				<div class="ordered-cart-txt1">
+					<a href="javascript:;" class="btn-cart" id="btn_cart">
+						<!-- <i class="icon-cart"></i> -->
+						<em class="sum-num">0</em>
+					</a>
+					<span>¥</span>
+					<strong class="sum-price">0</strong>
+				</div>
+				
+				<a href="javascript:;" class="btn-ordered-statements" id="btn_ordered_ok" >立即购买</a>
+				<!-- <a href="restaurantorderedwisdom.html" class="btn-ordered-wisdom">智能点餐</a> -->
+			</div>
+	    </div>
+    </div>
+	
+	<!-- 购物车模块 -->
+	<div class="g-box-cart">
+		<div class="g-hd g-hd-restaurant">
+	        <a href="javascript:;" class="icon-back" id="icon_back_cart"></a>
+	        <p class="hd-tit">购物车</p>
+    	</div>
+		<div class="g-bd-cart">
+			<div class="m-restaurant-ordered2">
+				<p>
+					<strong>菜品数:</strong>
+					<strong class="menu-sum" id="cmenu_sum">10</strong>
+					<strong>个</strong>
+				</p>
+			</div>
+			<div class="m-restaurant-ordered3">
+				<ul class="m-menu-list cmenu-list" id="cmenu_list">
+					<!-- 
+						<li class="menu-items">
+							<img src="images/business-img2.jpg" alt="">
+							<h3>
+								<span class="menu-title">回锅肉炒饭</span>
+								<i class="menu-love">70</i>
+							</h3>
+							<p>
+
+								<em>¥
+								</em>
+								<em class="menu-price">15</em>
+								<a href="javascript:;" class="btn-plus">+</a>
+								<strong class="menu-num">1</strong>
+								<a href="javascript:;" class="btn-minus">-</a>
+								
+								
+							</p>
+						</li> 
+					-->
+				</ul>
+			</div>
+		</div>
+		
+	    <div class="g-ft g-ft-ordered">
+		<div class="m-ordered-carts">
+			<div class="ordered-cart-txt2">
+				<!-- <a href="javascript:;" class="btn-cart-sels">
+					<i class="icon-radio"></i>
+					<span>全选</span>
+				</a> -->
+				
+				
+				
+			</div>
+			<a href="javascript:;" class="btn-ordered-statements" id="btn_cart_ok" >下单结算</a>
+			<div class="cart-count">
+					<em>合计:</em>
+					<strong class="sum-price">35</strong>
+					<em class="count-text">元</em>
+				</div>
+			
+
+		</div>
+    </div>
+
+	</div>
+
+
+
+    <script src="js/rem.js"></script>
+    <!-- 本地存储组件 -->
+	<script src="js/plugin/store.min.js"></script>	
+    <script src="js/libs/zepto.min.js"></script>
+    <!--轮播图组件-->
+	<script src="js/plugin/jquery-swiper.min.js"></script>
+    <script>
+    	/*默认载入--start*/ 
+		    // 根据餐厅id,显示餐厅的菜单(分类,菜品列表)
+		    if(window.location.hash){
+				// 获取餐厅详情页的hash值(既#餐厅Id)
+			    var Urlhash = window.location.hash;
+
+			    // 取得餐厅id
+			    var rId = Urlhash.slice(1,Urlhash.length);
+
+			    // 微信token
+			    var token = store.get('wxToken');
+
+		    	// 获取餐厅分类及菜品列表
+
+		    	// 导航菜单滑动(函数)
+	    			function menuSlide(){
+	    				var swiper = new Swiper('.swiper-container', {
+					        pagination: '.swiper-pagination',
+					        // 每页个数
+					        slidesPerView: 3,
+					        // 阻止滑动点击
+					        preventClicks : false,
+					        prevButton:'.btn-prev',
+							nextButton:'.btn-next',
+							// prevButton:'.swiper-button-prev',
+							// nextButton:'.swiper-button-next',
+					        // paginationClickable: true,
+					        // 菜单间隔
+					        spaceBetween: 30
+				    	});
+	    			}
+	    		// 遮罩层垂直居中(函数)
+	    			function popup_middle(popupName){
+	    				// 特别注意(scrollTop事件要用在window下,不能用在document下)
+					 	var _scrollHeight = $(window).scrollTop();//获取当前窗口距离页面顶部高度
+					  	var _windowHeight = $(window).height();//获取当前窗口高度
+					  	var _windowWidth = $(window).width();//获取当前窗口宽度
+					  	var _popupHeight = popupName.height();//获取弹出层高度
+					  	var _popupWidth = popupName.width();//获取弹出层宽度
+					  	var _posiTop = (_windowHeight - _popupHeight)/2 + _scrollHeight;
+					  	var _posiLeft = (_windowWidth - _popupWidth)/2;
+					  	popupName.css({"left": _posiLeft + "px","top":_posiTop + "px","display":"block"});//设置position
+					}
+
+		    	/*获取餐厅的菜单列表-start*/ 
+		    		// 菜单分类,菜品id
+			    	$.ajax({
+				    	type:"get",
+				    	headers:{"x-access-token":token,"Content-Type":"application/json"},
+				    	url:"http://api.51yuchu.com/restaurant/"+ rId +"/menu/get",
+				    	// url:"data/menuList.json",
+				    	dataType:"json",
+				    	success:function(data){
+				    		if(data.succeed){
+
+				    			// 菜单分类json列
+				    			var classIfyList = data.value.menuClassifyResponseList;
+
+				    			/*页面初始数据载入-start*/ 
+				    				// 1.载入默认菜单分类,默认菜单列表
+				    				// 2.根据菜单列表,载入已加购菜品数量,总数量,总价格
+
+					    			/*根据菜品数量,显示提示*/ 
+					    			if(classIfyList.length == 0){
+					    				alert('该餐厅菜品正在整理中！');
+					    			}else{
+					    				/* 菜单分类 --交互逻辑-start */ 
+					    					// 存放-菜品分类数据
+											var strClassify = "";
+							    			for(var i=0;i<classIfyList.length;i++){
+							    				// 菜单分类名称
+							    				// strClassify += '<li><a href="javascript:;">'+ classIfyList[i].name +'</a></li>';
+							    				strClassify += '<div class="swiper-slide"><a href="javascript:;">'+ classIfyList[i].name +'</a></div>'
+
+							    			}	
+
+							    			// strBtns ='<div class="swiper-button-prev"></div><div class="swiper-button-next"></div>';
+
+					    					// 插入菜单分类
+							    			$(".swiper-wrapper").html(strClassify);
+							    			// 导航滑动效果
+							    			menuSlide();
+
+							    			// 默认选中第一个菜单分类
+							    			$(".swiper-slide").eq(0).addClass('cur');
+							    			
+							    		/* 菜单分类 --交互逻辑-end */ 
+						    			
+							    		/*菜品列表--操作-start*/	
+							    			// 在默认分类下,插入默认菜品
+						    				$(".menu-list").html(menuDishList(0));
+						    				// 显示默认分类的菜品总数	
+					    					$("#menu_sum").html($("#menu_list li").length);
+						    				;
+
+											/*获取购物车--默认数据-start*/ 
+												
+
+												// (菜品id,菜品金额,菜品数量,总数量,总金额)
+												$.ajax({
+													type:"get",
+											    	headers:{"x-access-token":token,"Content-Type":"application/json"},
+											    	url:"http://api.51yuchu.com/cart/all/list?restaurantId="+rId,
+											    	// url:"data/menuList.json",
+											    	dataType:"json",
+											    	success:function(data){
+											    		// console.log(data);
+											    		if(data.succeed){
+											    			// 菜品数量列表 data.value.shopCarts
+											    			var shopCarts = data.value.shopCarts
+
+											    			// 根据获取的数据,填充到对应的数据里
+			
+											    			for(i=0;i<shopCarts.length;i++){
+											    				var dishId =  shopCarts[i].shopCart.dishId;
+											    				var index = i;
+											    				// alert(dishId);
+											    				findIndex(dishId,index);
+											    			}
+
+
+
+											    			// 总价:data.value.sumPrice
+											    			// 总数量:data.value.sumQuantity
+											    			if(data.value.sumQuantity >0){
+											    				$(".sum-num").html(data.value.sumQuantity);
+											    				$(".sum-num").show();
+											    				$("#btn_ordered_ok").show();
+											    			}
+											    			
+											    			$(".sum-price").html(data.value.sumPrice);
+											    			if(data.value.sumPrice>0){
+											    				// 显示总金额
+											    				$(".sum-num").show();
+											    				// 显示立即购买按钮
+											    				$("#btn_ordered_ok").show();
+											    			}
+
+											    			function findIndex(dId,index){
+											    				// alert(dId);
+											    				// alert(index);
+											    				var aBtn = $("#menu_list .menu-items .btn-plus");
+										    					for(var i=0;i<$("#menu_list .menu-items .btn-plus").length;i++){
+											    					// alert(dId);
+											    					var did = aBtn.eq(i).attr('did');
+											    					// alert(did);
+											    					if(did == dId){
+											    						// alert(i);
+											    						$("#menu_list .menu-items .btn-plus").eq(i).siblings(".menu-num").html(shopCarts[index].shopCart.quantity);
+											    					}
+											    					// if(did == dId){
+											    					// 	aBtn[i].siblings('.menu-num').html(shopCarts[index].shopCart.quantity);
+											    					// }else{
+											    					// 	aBtn[i].siblings('.menu-num').html(shopCarts[index].shopCart.quantity);
+											    					// }
+											    				}
+										    				}
+
+
+											    			
+
+
+
+											    		}
+											    	}
+												})
+											/*获取购物车--默认数据-end*/ 	
+								    						
+				    					/*菜品列表--操作-end*/
+
+
+
+
+							    		/*函数集合--start*/
+							    			// 默认显示的菜品(第1个菜单分类,索引为0)
+						    				// var DishList = classIfyList[index].menuDishResponseList;
+							    			function menuDishList(index){
+							    				var strDish = "";
+							    				var DishList = classIfyList[index].menuDishResponseList;
+						    					for(var j=0;j<DishList.length;j++){
+						    						// 菜品名称	DishList[j].name;
+						    						// 菜品图片	DishList[j].previewUrl;
+						    						// 菜品价格	DishList[j].price;	
+						    						
+						    						strDish += '<li class="menu-items"><img src="'+ DishList[j].previewUrl +'" alt=""><h3 class="menu-title">'+ DishList[j].name +'</h3><p><em>¥</em> <em class="menu-price">'+ DishList[j].price +'</em> <a href="javascript:;" class="btn-plus" mid="'+DishList[j].id+'" did="'+DishList[j].dishId+'">+</a> <strong class="menu-num">0</strong> <a href="javascript:;" class="btn-minus" mid="'+DishList[j].id+'" did="'+DishList[j].dishId+'">-</a></p></li>';
+						    						
+					    						}
+					    						return strDish;
+					    					}				    						
+										/*函数集合--end*/
+									}
+
+
+								/*页面初始数据载入-end*/ 
+
+
+								/*菜单分类--交互逻辑-start*/
+									// 菜单分类,点击-分类切换
+							    		$(".swiper-slide").click(function(){
+							    			$(".swiper-slide").removeClass("cur");
+							    			$(this).addClass("cur");
+							    			// 改变菜单的内容
+							    			// menuDishList($(this).index());
+							    			// alert(menuDishList($(this).index()));
+							    			// 分类下的菜品列表
+							    			$("#menu_list").html(menuDishList($(this).index()));
+							    			// 分类下的菜品加购数
+							    			// (菜品id,菜品金额,菜品数量,总数量,总金额)
+												$.ajax({
+													type:"get",
+											    	headers:{"x-access-token":token,"Content-Type":"application/json"},
+											    	url:"http://api.51yuchu.com/cart/all/list?restaurantId="+rId,
+											    	// url:"data/menuList.json",
+											    	dataType:"json",
+											    	success:function(data){
+											    		// console.log(data);
+											    		if(data.succeed){
+											    			// 菜品数量列表 data.value.shopCarts
+											    			var shopCarts = data.value.shopCarts
+
+											    			// 根据获取的数据,填充到对应的数据里
+											    			
+
+										    					
+											    			for(i=0;i<shopCarts.length;i++){
+											    				var dishId =  shopCarts[i].shopCart.dishId;
+											    				var index = i;
+											    				// alert(dishId);
+											    				findIndex(dishId,index);
+											    			}
+
+
+
+											    			// 总价:data.value.sumPrice
+											    			// 总数量:data.value.sumQuantity
+											    			if(data.value.sumQuantity >0){
+											    				$(".sum-num").html(data.value.sumQuantity);
+											    				$(".sum-num").show();
+											    				$("#btn_ordered_ok").show();
+											    			}
+											    			
+											    			$(".sum-price").html(data.value.sumPrice);
+
+											    			function findIndex(dId,index){
+											    				// alert(dId);
+											    				// alert(index);
+											    				var aBtn = $("#menu_list .menu-items .btn-plus");
+										    					for(var i=0;i<$("#menu_list .menu-items .btn-plus").length;i++){
+											    					// alert(dId);
+											    					var did = aBtn.eq(i).attr('did');
+											    					// alert(did);
+											    					if(did == dId){
+											    						// alert(i);
+											    						$("#menu_list .menu-items .btn-plus").eq(i).siblings(".menu-num").html(shopCarts[index].shopCart.quantity);
+											    					}
+											    					// if(did == dId){
+											    					// 	aBtn[i].siblings('.menu-num').html(shopCarts[index].shopCart.quantity);
+											    					// }else{
+											    					// 	aBtn[i].siblings('.menu-num').html(shopCarts[index].shopCart.quantity);
+											    					// }
+											    				}
+										    				}
+
+
+											    			
+
+
+
+											    		}
+											    	}
+												})
+
+											/*菜品操作--添删改查*/ 
+												/*增加菜品*/
+													$(".btn-plus").click(function(){
+														/*1.UI界面-变化-start*/ 
+															// 1.单个商品的数量变化(单个产品价格变化,提交到后台)
+																// 数量+(UI界面)
+																	// mNum表示加完后的数量(假数据)
+																	var mNum=parseInt($(this).siblings('.menu-num').html());
+																	mNum++;
+																	$(this).siblings('.menu-num').html(mNum);
+
+															// 2.购物车里的总数发生变化(总数量/总价格)
+																// 总数量+(UI界面)
+																	var sNum = $(".sum-num").html();
+																	sNum++;
+																	$(".sum-num").html(sNum);
+
+																// 总价格+(UI界面)
+																	var sPrice = parseFloat($(".sum-price").html());
+																	// alert(typeof(sPrice));
+																	// 获取该菜品价格(再转换成数值-保留小数)
+																	var mPrice = parseFloat($(this).siblings('.menu-price').html());
+																	// alert(typeof(mPrice));
+																	// 总价格 = 每次的单价加起来(保留小数点后两位)
+																	sPrice = (sPrice + mPrice).toFixed(2);;
+																	// 显示总价
+																	$(".sum-price").html(sPrice);
+														/*1.UI界面-变化-end*/ 
+														
+														/*2.数据+提交到后台-start*/ 
+															// 菜单明细Id
+																var mid = $(this).attr("mid");
+																// 菜品Id
+																var did = $(this).attr("did");
+
+																// 数量每次加1
+																cartAjax(mid,did,1);
+														/*2.数据+提交到后台-end*/ 
+													})	 
+												/*增加菜品*/
+
+												/*减少菜品*/
+													$(".btn-minus").click(function(){
+														/*1.UI界面-变化-start*/ 
+															// 1.单个商品的数量变化(单个产品价格变化,提交到后台)
+																// 数量+(UI界面)
+																	// mNum表示加完后的数量(假数据)
+																	var mNum=parseInt($(this).siblings('.menu-num').html());
+																	if(mNum>0){
+																		mNum--;
+																	}
+																	$(this).siblings('.menu-num').html(mNum);
+
+															// 2.购物车里的总数发生变化(总数量/总价格)
+																// 总数量+(UI界面)
+																	var sNum = $(".sum-num").html();
+																	sNum--;
+																	$(".sum-num").html(sNum);
+
+																// 总价格+(UI界面)
+																	var sPrice = parseFloat($(".sum-price").html());
+																	// alert(typeof(sPrice));
+																	// 获取该菜品价格(再转换成数值-保留小数)
+																	var mPrice = parseFloat($(this).siblings('.menu-price').html());
+																	// alert(typeof(mPrice));
+																	// 总价格 = 每次的单价加起来(保留小数点后两位)
+																	sPrice = (sPrice - mPrice).toFixed(2);;
+																	// 显示总价
+																	$(".sum-price").html(sPrice);
+														/*1.UI界面-变化-end*/ 
+
+														/*2.数据-提交到后台-start*/ 
+															// 菜单明细Id
+																var mid = $(this).attr("mid");
+																// 菜品Id
+																var did = $(this).attr("did");
+
+																// 数量每次加1
+																cartAjax(mid,did,-1);
+														/*2.数据-提交到后台-end*/ 
+													})	 
+												/*减少菜品*/
+
+												/*菜品增减Ajax函数-start*/ 
+													// quantity表示每次要加的值(1或-1)
+													function cartAjax(mid,did,qnum){
+														// 组合提交的数据
+														var postData = {"menuItemId":mid,"dishId":did,"quantity":qnum,"restaurantId":rId,"platformId":3};
+
+														// Ajax提交
+														$.ajax({
+															type:"post",
+															headers:{"x-access-token":token,"Content-Type":"application/json"},
+															url:"http://api.51yuchu.com/cart/add",
+															data:JSON.stringify(postData),
+															dataType:"json",
+															succees:function(data){
+																// console.log(data.succeed)
+															},
+															error:function(){
+																// alert("返回错误");
+															}
+														})
+													}
+												/*菜品增减Ajax函数-end*/ 
+											/*菜品操作--添删改查*/		
+
+							    			// 分类下的菜品总数
+							    			$("#menu_sum").html($("#menu_list li").length);
+
+							    		})
+
+							    	// 菜单分类-点击(前进,后退)
+							    		// 下一菜单
+								    		$(".btn-next").click(function(){
+								    			for(var i=0;i<$(".swiper-slide").length;i++){
+								    				if(($(".swiper-slide").eq(i).prop("class")).indexOf("cur")>=0){
+								    					var index = i;
+								    					index ++;
+							    						if(index<$(".swiper-slide").length){
+							    							// alert(i);
+							    							btnList(index);
+
+									    					// 退出循环
+									    					return false;
+							    						}
+								    				}
+								    			}
+								    		})
+
+							    		// 上一菜单
+								    		$(".btn-prev").click(function(){
+								    			for(var i=0;i<$(".swiper-slide").length;i++){
+								    				if(($(".swiper-slide").eq(i).prop("class")).indexOf("cur")>=0){
+								    					var index = i;
+								    					index --;
+							    						if(index>=0){
+							    							// alert(i);
+									    					btnList(index);
+
+									    					// 退出循环
+									    					return false;
+							    						}
+								    				}
+								    			}
+								    		})
+
+							    		// 点击按钮,根据选中菜单分类,切换对应数据
+								    		function btnList(index){
+								    			// 切换选中效果
+								    			$(".swiper-slide").removeClass("cur");
+						    					$(".swiper-slide").eq(index).addClass("cur");
+
+						    					// 获取菜品列表数据
+						    					$("#menu_list").html(menuDishList(index));
+						    					$("#menu_sum").html($("#menu_list li").length);
+								    		}
+
+								/*菜单分类--交互逻辑-end*/ 
+
+
+
+								/*菜品列表--交互逻辑-start*/
+									/*菜品遮罩--详情*/
+										/*菜品详情-显示隐藏-start*/
+											// 显示菜品详情
+										  	$("#menu_list li img").click(function(){
+										  		$(".m-menu-con").show();
+										  		// 弹出层位置
+										  			popup_middle($("#menu_con"));
+
+										  		// 改变图片
+										  			$(".mask-img").prop("src",$(this).prop("src"));
+										  		// 改变标题
+										  			$(".mask-tit").html($(this).next().html());
+										  		// 
+										  		// $(".menu-bd p").html($(this).next().next().html());
+										  		// 价格
+										  			// alert($(this).next().next().children(".menu-price").html());
+										  			$(".mask-price").html($(this).next().next().children(".menu-price").html());
+										  		// 数量
+										  			$(".mask-num").html($(this).next().next().children(".menu-num").html());
+
+										  		// mid和did的值
+										  			$(".menu-bd .btn-plus").attr("mid",$(this).next().next().children(".btn-plus").attr("mid"));
+										  			$(".menu-bd .btn-plus").attr("did",$(this).next().next().children(".btn-plus").attr("did"));
+
+										  			$(".menu-bd .btn-minus").attr("mid",$(this).next().next().children(".btn-minus").attr("mid"));
+										  			$(".menu-bd .btn-minus").attr("did",$(this).next().next().children(".btn-minus").attr("did"));
+
+
+										 		$(".m-mask-ordered").show();		
+										 		$(".m-menu-con").show();
+										 	});
+
+									  		// 关闭按钮
+										 	$(".btn-close").click(function(){
+										 		$(".m-mask-ordered").hide();
+										 		$(".m-menu-con").hide();
+										 	});
+
+
+										/*菜品详情-显示隐藏-end*/ 
+									/*菜品遮罩--详情*/ 
+
+									/*菜品操作--添删改查*/ 
+										/*增加菜品*/
+											$(".btn-plus").click(function(){
+												/*1.UI界面-变化-start*/ 
+													// 1.单个商品的数量变化(单个产品价格变化,提交到后台)
+														// 数量+(UI界面)
+															// mNum表示加完后的数量(假数据)
+															var mNum=parseInt($(this).siblings('.menu-num').html());
+															mNum++;
+															$(this).siblings('.menu-num').html(mNum);
+
+													// 2.购物车里的总数发生变化(总数量/总价格)
+														// 总数量+(UI界面)
+															var sNum = $(".sum-num").html();
+															sNum++;
+															$(".sum-num").html(sNum);
+
+
+														// 总价格+(UI界面)
+															var sPrice = parseFloat($(".sum-price").html());
+															// alert(typeof(sPrice));
+															// 获取该菜品价格(再转换成数值-保留小数)
+															var mPrice = parseFloat($(this).siblings('.menu-price').html());
+															// alert(typeof(mPrice));
+															// 总价格 = 每次的单价加起来(保留小数点后两位)
+															sPrice = (sPrice + mPrice).toFixed(2);;
+															// 显示总价
+															$(".sum-price").html(sPrice);
+															if(sPrice>0){
+																$(".sum-num").show();
+																$("#btn_ordered_ok").show();
+															}
+												/*1.UI界面-变化-end*/ 
+												
+												/*2.数据+提交到后台-start*/ 
+													// 菜单明细Id
+														var mid = $(this).attr("mid");
+														// 菜品Id
+														var did = $(this).attr("did");
+
+														// 数量每次加1
+														cartAjax(mid,did,1);
+												/*2.数据+提交到后台-end*/ 
+											})	 
+										/*增加菜品*/
+
+										/*减少菜品*/
+											$(".btn-minus").click(function(){
+												/*1.UI界面-变化-start*/ 
+													// 1.单个商品的数量变化(单个产品价格变化,提交到后台)
+														// 数量+(UI界面)
+															// mNum表示加完后的数量(假数据)
+															var mNum=parseInt($(this).siblings('.menu-num').html());
+															if(mNum>0){
+																mNum--;
+															}
+															$(this).siblings('.menu-num').html(mNum);
+
+													// 2.购物车里的总数发生变化(总数量/总价格)
+														// 总数量+(UI界面)
+															var sNum = $(".sum-num").html();
+															sNum--;
+															$(".sum-num").html(sNum);
+
+														// 总价格+(UI界面)
+															var sPrice = parseFloat($(".sum-price").html());
+															// alert(typeof(sPrice));
+															// 获取该菜品价格(再转换成数值-保留小数)
+															var mPrice = parseFloat($(this).siblings('.menu-price').html());
+															// alert(typeof(mPrice));
+															// 总价格 = 每次的单价加起来(保留小数点后两位)
+															sPrice = (sPrice - mPrice).toFixed(2);;
+															// 显示总价
+															$(".sum-price").html(sPrice);
+															if(sPrice>0){
+																$(".sum-num").show();
+																$("#btn_ordered_ok").show();
+															}else{
+																$(".sum-num").hide();
+																$("#btn_ordered_ok").hide();
+															}
+												/*1.UI界面-变化-end*/ 
+
+												/*2.数据-提交到后台-start*/ 
+													// 菜单明细Id
+														var mid = $(this).attr("mid");
+														// 菜品Id
+														var did = $(this).attr("did");
+
+														// 数量每次加1
+														cartAjax(mid,did,-1);
+												/*2.数据-提交到后台-end*/ 
+											})	 
+										/*减少菜品*/
+
+										/*菜品增减Ajax函数-start*/ 
+											// quantity表示每次要加的值(1或-1)
+											function cartAjax(mid,did,qnum){
+												// 组合提交的数据
+												var postData = {"menuItemId":mid,"dishId":did,"quantity":qnum,"restaurantId":rId,"platformId":3};
+
+												// Ajax提交
+												$.ajax({
+													type:"post",
+													headers:{"x-access-token":token,"Content-Type":"application/json"},
+													url:"http://api.51yuchu.com/cart/add",
+													data:JSON.stringify(postData),
+													dataType:"json",
+													succees:function(data){
+														// console.log(data.succeed)
+													},
+													error:function(){
+														// alert("返回错误");
+													}
+												})
+											}
+										/*菜品增减Ajax函数-end*/ 
+									/*菜品操作--添删改查*/
+									
+								/*菜品列表--交互逻辑-end*/ 
+
+
+								/*购物车--交互逻辑-end*/
+
+								/*购物车--交互逻辑-end*/
+
+
+
+
+						    			    			
+				    		}
+				    	},
+				    	error:function(){
+				    		
+				    	}
+				    })
+				
+				/*获取餐厅的菜单列表-end*/ 
+
+				
+
+
+		    }
+		/*默认载入--end*/ 
+
+		/*载入完成--start*/ 
+			$(function(){
+		    	/*全局--交互*/
+		    		// 点击 返回,跳转
+		    		$("#icon_back_ordered").click(function(){
+		    			window.location.href = "restaurantdetails.html#" + rId;
+		    		});
+
+		    		// 立即购买
+		    		$("#btn_ordered_ok").click(function(){
+		    			// CartSubmit();
+		    			var sPrice = parseFloat($(".sum-price").text());
+		    			window.location.href = "restaurantorderedconfirm.html#/ordered/" + rId+"/"+sPrice;
+		    		})
+
+		    		// 导航菜单滑动
+		    			function menuSlide(){
+		    				var swiper = new Swiper('.swiper-container', {
+						        pagination: '.swiper-pagination',
+						        slidesPerView: 3,
+						        paginationClickable: true,
+						        spaceBetween: 30
+					    	});
+		    			}
+		    		    
+		    	/*全局-交互*/ 
+
+
+	    		/*购物车--交互-start*/
+		    		// 点餐--点击 购物车
+			    		$("#btn_cart").click(function(){
+			    			// alert('哈哈');
+			    			$.ajax({
+			    				type:"get",
+						    	headers:{"x-access-token":token,"Content-Type":"application/json"},
+						    	url:"http://api.51yuchu.com/cart/list?restaurantId="+rId+"&page=1&size=10",
+						    	// url:"data/menuList.json",
+						    	dataType:"json",
+						    	success:function(data){
+						    		// alert(data);
+						    		// console.log(data);
+						    		var cList = data.value.list;
+
+						    		// 图片:data.value.list[i].menuItem.previewUrl
+						    		// 标题:data.value.list[i].menuItem.name
+						    		// 产品数量:data.value.list[i].shopCart.quantity
+						    		// 产品价格:data.value.list[i].shopCart.price
+						    		var strCartList = "";
+
+						    		for(var i=0;i<cList.length;i++){
+						    			strCartList += '<li class="menu-items"><img src="'+ cList[i].menuItem.previewUrl +'" alt=""><h3 class="menu-title">'+ cList[i].menuItem.name +'</h3><p><em>¥</em> <em class="menu-price">'+ cList[i].shopCart.price +'</em> <a href="javascript:;" class="btn-plus" mid="'+cList[i].menuItem.menuItemId+'" did="'+cList[i].menuItem.dishId+'">+</a> <strong class="menu-num">'+cList[i].shopCart.quantity+'</strong> <a href="javascript:;" class="btn-minus" mid="'+cList[i].menuItem.menuItemId+'" did="'+cList[i].menuItem.dishId+'">-</a></p></li>';
+						    		}
+						    		// alert(strCartList);
+						    		/*购物车-菜品列表*/
+						    		$("#cmenu_list").html(strCartList);
+						    		// 菜品数量
+						    		$("#cmenu_sum").html($("#cmenu_list li").length);
+						    		// 菜单数量
+						    	}
+			    			})
+			    			$(".g-box").hide();
+			    			$(".g-box-cart").show();
+			    		})
+
+		    		// 购物车-点击返回
+			    		$("#icon_back_cart").click(function(){
+			    			window.location.href = "restaurantordered.html#" + rId;
+			    			$(".g-box-cart").hide();
+			    			$(".g-box").show();
+			    		});
+
+			    	// 购物车-下单结算
+				    	$("#btn_cart_ok").click(function(){
+				    		// CartSubmit();
+			    			// window.location.href = "restaurantorderedconfirm.html#" + rId;	    	// 总价格
+		    				var sPrice = parseFloat($(".sum-price").text());
+		    				window.location.href = "restaurantorderedconfirm.html#/ordered/" + rId+"/"+sPrice;
+			    		})
+    			/*购物车--交互-end*/
+
+				/*交互函数--集合*/ 
+					// 提交订单函数
+					function CartSubmit(){
+						// transportType	物流方式（1：堂食， 2：外卖）
+		    			var tType = 1;
+		    			// 订单类型 1：外卖 2：预约 3：排队 4：点餐
+		    			var sType = 4;
+		    			// 总金额
+		    			var sPrice = $(".sum-price").html();
+		    			// platformId	IOS:1,安卓:2,微信:3,其他:4
+		    			var pId = 3;
+
+		    			// 通过函数取得items列表
+		    			getCart();
+		    			// 将字符串转为对象
+		    			var ItemsList = eval($("#btn_ordered_ok").attr("items"));
+		    			// alert(typeof(ItemsList));
+
+		    			var sData = {"order":{"transportType":tType, "restaurantId":rId, "type":sType, "totPayAmount":sPrice, "platformId":pId}, "items":ItemsList}
+		    			// {"order":{"transportType":"1", "restaurantId":9, "type":"4", "totPayAmount":79, "platformId":"1"}, "items":[{"id":3, "quantity":1}]}
+
+					    $.ajax({
+					    	type:"post",
+					    	headers:{"x-access-token":token,"Content-Type":"application/json"},
+					    	data:JSON.stringify(sData),
+					    	url:"http://api.51yuchu.com/dish/order/do?resubmitToken="+ token,
+					    	// url:"data/menuList.json",
+					    	dataType:"json",
+					    	success:function(data){
+					    		if(data.succeed){
+					    			console.log(data);
+					    			window.location.href = "restaurantorderedconfirm.html#" + rId;
+					    		}
+					    	}
+					    })
+
+		    			// window.location.href = "restaurantorderedconfirm.html#" + rId;	
+					}
+
+					// 获取购物车数据-函数(提交订单用)
+					function getCart(){
+	    				$.ajax({
+		    				type:"get",
+		    				async:false,
+					    	headers:{"x-access-token":token,"Content-Type":"application/json"},
+					    	url:"http://api.51yuchu.com/cart/list?restaurantId="+rId+"&page=1&size=10",
+					    	// url:"data/menuList.json",
+					    	dataType:"json",
+					    	success:function(data){
+					    		var cList = data.value.list;
+					    		var itemsList = [];
+					    		for(var i=0;i<cList.length;i++){
+					    			// var items = {};
+					    			// var items = {"id":cList[i].shopCart.id,"quantity":cList[i].shopCart.quantity};
+					    			itemsList.push({"id":cList[i].shopCart.id,"quantity":cList[i].shopCart.quantity});
+					    		}
+					    		// console.log(itemsList);
+					    		$("#btn_ordered_ok").attr("items",JSON.stringify(itemsList));
+					    		// alert(itemsList);
+
+					    		// return itemsList;
+					    	}
+				    	})
+	    			}
+				/*交互函数--集合*/ 	
+			})
+		/*载入完成--end*/ 
+		
+    </script>
+</body>
+
+</html>
