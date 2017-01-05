@@ -201,6 +201,7 @@
           background: url(../images/ico-more.png) no-repeat; }
     .i-bd .i-bd2 .i-recommend-list {
       padding: 0 0.125rem 0 0.275rem;
+      height: 5.75rem;
       overflow: hidden; }
       .i-bd .i-bd2 .i-recommend-list li {
         float: left;
