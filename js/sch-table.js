@@ -27,7 +27,19 @@
 	}
 
 	// 搜索历史--关键词(从数据库还是从本地)
-
+		/*历史搜索-start*/
+			if(store.get('history')){
+				var strHis = store.get('history');
+				var strHisList = "";
+				for(var i=0;i<strHis.length;i++){
+					strHisList += '<li><a href="javascript:;">'+strHis[i]+'</a></li>';
+				}
+				$(".sch-history-list").html(strHisList);
+			}else{
+				// 隐藏历史搜索
+				$(".sch-history-list").hide();
+			}
+		/*历史搜索-end*/
 
 	// 餐厅搜索--热门搜索关键词--函数
 		function SchHotAjax(url){
@@ -54,6 +66,8 @@
 					
 			})
 		}
+
+		
 
 		/*餐厅列表获取Ajax函数*/ 
 		function restaurantList(even){
@@ -155,13 +169,25 @@
 							
 
 
-							// 按回车(表示关键词输入完成)
+							
+							// 判断是否有历史关键词数据
+							if(store.get('history')){
+								// 获取本地存储的历史关键词数据		
+								var arrHistory = store.get('history');					
+							}else{
+								// 默认存放关键词数据的数组
+								var arrHistory = [];
+							}
+
 							var knum = 0;
-							if(event.keyCode == "13"){
-								knum ++; 
+							// 按回车(表示关键词输入完成)
+							if(event.keyCode == "13"){								knum ++; 
+
+								// 存入搜索关键词到搜索历史
+								arrHistory.push($("#search_ipt").val());
+								store.set('history',arrHistory);
 								// store.set('sch-history',{kval:$("#search_ipt").val()});
-								restaurantList($("#search_ipt").val());
-								
+								restaurantList($("#search_ipt").val());								
 			        		}
 							
 							

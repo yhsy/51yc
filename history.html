@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>御厨-搜索餐厅、菜系、商圈</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/libs/m-reset.css"/>
+		<style>
+			body{
+				padding: 30px;
+			}
+			.ipt-sch{
+				width: 300px;
+				height: 40px;
+				padding: 10px;
+				border: 2px solid #000;
+				line-height: 60px;
+				font-size: 30px;
+			}
+		</style>
+	</head>
+
+	<body>
+		
+		<input type="text" class="ipt-sch">
+		<button class="btn-sch">搜索</button>
+
+		<script src="js/rem.js"></script>
+		<!-- 本地存储组件 -->
+		<script src="js/plugin/store.min.js"></script>
+		<script src="js/libs/zepto.min.js"></script>
+	
+		<script>
+			$(function(){
+				if(store.get('history')){
+					// 获取本地存储的历史关键词数据		
+					var arrHistory = store.get('history');					
+				}else{
+					// 默认存放关键词数据的数组
+					var arrHistory = [];
+				}
+
+				$(".btn-sch").click(function(){
+					// 先判断输入框里的值是否为空
+					if($(".ipt-sch").val() !== ""){	
+						arrHistory.push($(".ipt-sch").val());
+						store.set('history',arrHistory);
+					}else{
+						alert("搜索内容不能为空");
+					}
+				})
+			})
+		</script>
+
+		
+	</body>
+
+</html>
