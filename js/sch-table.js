@@ -138,7 +138,7 @@
 
 							// 循环取出数据
 							for(var i=0;i<data.value.length;i++){
-								strHtml = strHtml + '<li class="sch-think"><i class="icon-schs"></i><span class="u-restaurant-name">'+data.value[i].restaurant.name+'</span><div class="u-sch-count"><em>12</em>&nbsp;个结果</div></li>';
+								strHtml = strHtml + '<li class="sch-think"><i class="icon-schs"></i><span class="u-restaurant-name">'+data.value[i].restaurant.name+'</span></li>';
 							}
 
 							// 显示搜索联想列表
