@@ -41,8 +41,14 @@
 		// 点击加载更多时
 		$(function(){			
 			$('.btn-loading-more').click(function(){
+				// 当前位置的Top值
+				console.log($(this).scrollTop());
 				oPage++;
 				listAjax(oPage,oSize);
+				// 数据完成之后跳转
+				console.log($(this).scrollTop());
+				
+
 				// console.log(oPage);
 				// console.log($(this).html());
 
