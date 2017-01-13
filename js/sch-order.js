@@ -19,15 +19,7 @@
 	    })
 	}
 
-	//	默认预约餐厅列表
-
-		// oPage是默认页数
-		var oPage = 1;
-		// oSize 是默认显示个数
-		var oSize = 10;
-		var strList = "";
-
-		
+	//	默认预约餐厅列表		
 		// 默认载入，获取本地数据
 		var user = store.get('user');
 		// var token = user.token;
@@ -35,52 +27,58 @@
 		var lat = user.lat;
 		var cityId = user.cityId;
 
+		// 默认页数
+	    var Opage = 0;
+	    // 默认每页展示10个
+	    var Osize = 10;
 
-		listAjax(oPage,oSize);
-		
-		// 点击加载更多时
-		$(function(){			
-			$('.btn-loading-more').click(function(){
-				// 当前位置的Top值
-				console.log($(this).scrollTop());
-				oPage++;
-				listAjax(oPage,oSize);
-				// 数据完成之后跳转
-				console.log($(this).scrollTop());
-				
-
-				// console.log(oPage);
-				// console.log($(this).html());
-
-			})
-		})
-		
-		console.log(cityId);
-		// 餐厅列表Ajax
-		function listAjax(page,size){		
-			$.ajax({
-				type:"get",
-				url:"http://api.51yuchu.com/restaurant/book/list?cityId="+ cityId +"&lat="+ lat +"&lng="+ lng +"&page="+page+"&size="+size,
-				dataType:"json",
-				beforeSend:Loading,
-				success:function(data){
-					if(data.succeed){
-						for(var i=0;i<data.value.list.length;i++){
-							strList = strList +'<li class="m-restaurant"><a href="restaurantdetails.html#'+data.value.list[i].restaurant.id+'" class="m-restaurant-img"><img src="'+data.value.list[i].restaurant.previewUrl+'"alt=""></a><a href="restaurantdetails.html#'+data.value.list[i].restaurant.id+'" class="m-restaurant-text"><h3 class="m-restaurant-tit">'+data.value.list[i].restaurant.name+'</h3><p class="m-restaurant-region">'+data.value.list[i].country.name+'</p><p class="m-restaurant-price">'+data.value.list[i].restaurant.priceStr+'</p></a><div class="m-restaurant-evaluate"><img src="images/bg-pie.png"alt=""><div class="m-evaluate-con"><h4>好评率</h4><p class="m-evaluate-ratio">'+data.value.list[i].praisePrecent+'％</p><p class="m-evaluate-votes">'+data.value.list[i].commentAssessment+'&nbsp;票</p></div></div></li>'
-						}	
-						// console.log(strList);
-						$('.m-restaurant-list').html(strList);
-						
-					}
-					// $('.m-restaurant-list').append('<button class="btn-loading-more">加载更多</button>');
-					// console.log($('.btn-loading-more').html());
-
-					
-					
-				}
-			})
-		}
-			
+		$(function(){
+		    
+		    // dropload -- 下拉刷新
+		    $('.g-restaurant').dropload({
+		        scrollArea : window,
+		        loadDownFn : function(me){
+		            Opage++;
+		            // 拼接HTML
+		            var strList = '';
+		            $.ajax({
+		                type: 'GET',
+		                url:"http://api.51yuchu.com/restaurant/book/list?cityId="+ cityId +"&lat="+ lat +"&lng="+ lng +"&page="+Opage+"&size="+Osize,
+		                dataType: 'json',
+		                success: function(data){
+		                	// 服务器返回成功
+		                	if(data.succeed){
+			                    var arrLen = data.value.list.length;
+			                    if(arrLen > 0){
+			                    	for(var i=0;i<arrLen;i++){
+										strList = strList + '<li class="m-restaurant"><a href="restaurantdetails.html#'+data.value.list[i].restaurant.id+'" class="m-restaurant-img"><img src="'+data.value.list[i].restaurant.previewUrl+'"alt=""></a><a href="restaurantdetails.html#'+data.value.list[i].restaurant.id+'" class="m-restaurant-text"><h3 class="m-restaurant-tit">'+data.value.list[i].restaurant.name+'</h3><p class="m-restaurant-region">'+data.value.list[i].country.name+'</p><p class="m-restaurant-price">'+data.value.list[i].restaurant.priceStr+'</p></a><div class="m-restaurant-evaluate"><img src="images/bg-pie.png"alt=""><div class="m-evaluate-con"><h4>好评率</h4><p class="m-evaluate-ratio">'+data.value.list[i].praisePrecent+'％</p><p class="m-evaluate-votes">'+data.value.list[i].commentAssessment+'&nbsp;票</p></div></div></li>'
+									}	
+			                        
+			                    // 如果没有数据
+			                    }else{
+			                        // 锁定
+			                        me.lock();
+			                        // 无数据
+			                        me.noData();
+			                    }
+			                    // 为了测试，延迟1秒加载
+			                    setTimeout(function(){
+			                        // 插入数据到页面，放到最后面
+			                        $('.m-restaurant-list').append(strList);
+			                        // 每次数据插入，必须重置
+			                        me.resetload();
+			                    },300);
+		                    }
+		                },
+		                error: function(xhr, type){
+		                    alert('Ajax error!');
+		                    // 即使加载出错，也得重置
+		                    me.resetload();
+		                }
+		            });
+		        }
+		    });
+		});
 			
 	//筛选Ajax 数据对接
 	function orderAjax(path){

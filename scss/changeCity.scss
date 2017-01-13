@@ -385,7 +385,8 @@
         }
         
         .m-restaurant-list{
-            width: 100%;   
+            width: 100%;
+            height: 100%;   
             .m-restaurant{                
                 overflow: hidden;
                 padding: torem(22px) torem(10px);   
@@ -404,8 +405,11 @@
             }
             .m-restaurant-text{
                 float: left;
-                
+                width:torem(350px);
                 .m-restaurant-tit{
+                    word-wrap: break-word;
+                    overflow: hidden;
+                    text-overflow:ellipsis;
                     height: torem(42px);
                     line-height: torem(42px);
                     font-size: torem(30px);
