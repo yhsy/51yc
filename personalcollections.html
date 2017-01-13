@@ -35,87 +35,6 @@
 							</div>
 						</a>
 					</li>
-					<li>
-						<a href="javascrtipt:;">
-							<img src="images/img-personal1.jpg" alt="">
-							<div class="coll-info">
-								<p><i class="icon-star-small"></i><span class="coll-tit">顶龙意境粤菜(万象城店)</span></p>
-								<p><i class="icon-address-small"></i><span class="coll-address">温州市温瑞大道999号万象城5F</span></p>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="javascrtipt:;">
-							<img src="images/img-personal1.jpg" alt="">
-							<div class="coll-info">
-								<p>
-									<i class="icon-star-small"></i>
-									<span class="coll-tit">顶龙意境粤菜(万象城店)</span>
-								</p>
-								<p>
-									<i class="icon-address-small"></i>
-									<span class="coll-address">温州市温瑞大道999号万象城5F</span>
-								</p>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="javascrtipt:;">
-							<img src="images/img-personal1.jpg" alt="">
-							<div class="coll-info">
-								<p><i class="icon-star-small"></i><span class="coll-tit">顶龙意境粤菜(万象城店)</span></p>
-								<p><i class="icon-address-small"></i><span class="coll-address">温州市温瑞大道999号万象城5F</span></p>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="javascrtipt:;">
-							<img src="images/img-personal1.jpg" alt="">
-							<div class="coll-info">
-								<p>
-									<i class="icon-star-small"></i>
-									<span class="coll-tit">顶龙意境粤菜(万象城店)</span>
-								</p>
-								<p>
-									<i class="icon-address-small"></i>
-									<span class="coll-address">温州市温瑞大道999号万象城5F</span>
-								</p>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="javascrtipt:;">
-							<img src="images/img-personal1.jpg" alt="">
-							<div class="coll-info">
-								<p><i class="icon-star-small"></i><span class="coll-tit">顶龙意境粤菜(万象城店)</span></p>
-								<p><i class="icon-address-small"></i><span class="coll-address">温州市温瑞大道999号万象城5F</span></p>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="javascrtipt:;">
-							<img src="images/img-personal1.jpg" alt="">
-							<div class="coll-info">
-								<p>
-									<i class="icon-star-small"></i>
-									<span class="coll-tit">顶龙意境粤菜(万象城店)</span>
-								</p>
-								<p>
-									<i class="icon-address-small"></i>
-									<span class="coll-address">温州市温瑞大道999号万象城5F</span>
-								</p>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="javascrtipt:;">
-							<img src="images/img-personal1.jpg" alt="">
-							<div class="coll-info">
-								<p><i class="icon-star-small"></i><span class="coll-tit">顶龙意境粤菜(万象城店)</span></p>
-								<p><i class="icon-address-small"></i><span class="coll-address">温州市温瑞大道999号万象城5F</span></p>
-							</div>
-						</a>
-					</li>
 				-->
 			</ul>
 		</div>
@@ -123,36 +42,6 @@
     </div>
 
     <div class="g-ft g-ft-personal">
-		<!-- 		
-			<nav class="g-nav">
-				<ul class="m-nav f-cb">
-					<li>
-			   			<a href="javascript:;" id="Home">
-			   				<i class="ico-nav-home"></i>
-			   				<span>首页</span>
-			   			</a>
-			   		</li>
-			   		<li>
-			   			<a href="javascript:;" id="Ordered">
-			   				<i class="ico-nav-ordered"></i>
-			   				<span>预约</span>
-			   			</a>
-			   		</li>
-			   		<li>
-			   			<a href="javascript:;" id="Search">
-			   				<i class="ico-nav-search"></i>
-			   				<span>发现</span>
-			   			</a>
-			   		</li>
-			   		<li class="act">
-			   			<a href="javascript:;" id="My">
-			   				<i class="ico-nav-my"></i>
-			   				<span>我的</span>
-			   			</a>
-			   		</li>
-				</ul>
-			</nav> 
-		-->
     </div>
 
     <script src="js/rem.js"></script>
@@ -184,7 +73,7 @@
 							}else{
 								$(".m-prompt-text").hide();
 		    					for(var i=0;i<data.value.list.length;i++){
-		    						strList +='<li><a href="restaurantdetails.html"><img src="'+ data.value.list[i].restaurant.previewUrl +'" alt=""><div class="coll-info"><p><i class="icon-star-small"></i> <span class="coll-tit">'+ data.value.list[i].restaurant.name +'</span></p><p><i class="icon-address-small"></i> <span class="coll-address">'+ data.value.list[i].restaurant.address +'</span></p></div></a></li>';
+		    						strList +='<li><a href="restaurantdetails.html#'+data.value.list[i].restaurant.id+'"><img src="'+ data.value.list[i].restaurant.previewUrl +'" alt=""><div class="coll-info"><p><i class="icon-star-small"></i> <span class="coll-tit">'+ data.value.list[i].restaurant.name +'</span></p><p><i class="icon-address-small"></i> <span class="coll-address">'+ data.value.list[i].restaurant.address +'</span></p></div></a></li>';
 		    					}
 		    					$('.m-collections-list').html(strList);
 		    				}
