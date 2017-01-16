@@ -26,7 +26,7 @@
 		</div>
 
 		<div class="g-personal4">
-			<p class="m-prompt-text">您还没有预约订单,赶紧去点餐吧！</p>
+			<p class="m-prompt-text">您还没有订单,赶紧去点餐吧！</p>
 			<ul class="personal-ordered-list g-ordered-list">
 				<li>
 					<div class="f-fl">
@@ -136,7 +136,6 @@
 
 			// 预点订单~处理函数
 			function PersonalOrderedAjax(token,url){
-
 				$.ajax({
 					type:"get",
 					headers:{'Content-Type':'application/json','x-access-token': token},
@@ -152,8 +151,9 @@
 						if(data.succeed){
 							if(data.value.length == 0){
 								$(".m-prompt-text").show();
+								$('.g-ordered-list').hide();
 							}else{
-								$(".m-prompt-text").hide();
+								$(".m-prompt-text").hide();								
 								for(var i=0;i<data.value.length;i++){
 									console.log(data);
 
@@ -195,6 +195,7 @@
 								}
 
 								$('.g-ordered-list').html(strList);
+								$('.g-ordered-list').show();
 							}
 						}
 					}
@@ -237,8 +238,10 @@
 				// console.log(222);
 			})
 
-			// 预约失败订单
+			// 预约失败订单(后台暂无数据)
 			$('#order_no').click(function(){
+				$(".m-prompt-text").show();
+				$('.g-ordered-list').hide();
 				// var url = "data/personal-reserved3.json";
 				// PersonalOrderedAjax(url);
 				// console.log(333);
